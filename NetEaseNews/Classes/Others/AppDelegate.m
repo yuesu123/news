@@ -186,15 +186,16 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
     //最新的申请 0808
     [UMSocialWechatHandler setWXAppId:@"wxbe671438ed60b594" appSecret:@"b338bd851024c20bd35881d4acc350b8" url:@"http://www.umeng.com/social"];
     
-    
-    [UMSocialQQHandler setQQWithAppId:@"1104542895" appKey:@"HwUCcG8aX41WaQHc" url:@"http://www.baidu.com"];
+//    APP ID  //公司的1104542895
+//    APP KEY //HwUCcG8aX41WaQHc
+    [UMSocialQQHandler setQQWithAppId:@"1105377005" appKey:@"Aeg9DySWotm74n5n" url:@"http://www.baidu.com"];
     // 打开新浪微博的SSO开关
     // 将在新浪微博注册的应用appkey、redirectURL替换下面参数，并在info.plist的URL Scheme中相应添加wb+appkey，如"wb3921700954"，详情请参考官方文档。
 //    4082440725  27bc1719c12f359515d033b09fb7f922 公司的
     
-    [UMSocialSinaSSOHandler openNewSinaSSOWithAppKey:@"4082440725"
-                                              secret:@"27bc1719c12f359515d033b09fb7f922"
-                                         RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
+    [UMSocialSinaSSOHandler /*4082440725*/openNewSinaSSOWithAppKey:@"464496571"
+                                 /*27bc1719c12f359515d033b09fb7f922*/             secret:@"01cf6a54aa248134adb0c4a5e05fa6ea"
+                                        RedirectURL:@"http://sns.whalecloud.com/sina2/callback"];
     
     
     
