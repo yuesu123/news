@@ -1,0 +1,6 @@
+/Users/hlh/Library/Developer/Xcode/DerivedData/NetEaseNews-afopetskaethbfdefhhgqsyklxvf/Build/Products/Debug-iphoneos/NetEaseNews.app
+iPhone Developer
+//:configuration = Debug
+CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer: Gaochao Zhang (7PYFQYJYW8)
+
+//:completeSettings = none

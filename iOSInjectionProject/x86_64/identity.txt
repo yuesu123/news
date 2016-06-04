@@ -1,0 +1,2 @@
+/Users/hlh/Library/Developer/Xcode/DerivedData/NetEaseNews-dujiigpkvusvtcdrcyuunpfqignp/Build/Products/Debug-iphonesimulator/NetEaseNews.app
+iPhone Developer: Gaochao Zhang (7PYFQYJYW8)
