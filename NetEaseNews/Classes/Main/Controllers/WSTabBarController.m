@@ -154,10 +154,11 @@
         _adView = adView;
         UIImageView *adImg = [[UIImageView alloc]initWithImage:[SXAdManager getAdImage]];
         //添加网易新闻有态度的门户的图片
-        UIImageView *adBottomImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"adBottom.png"]];
+        UIImageView *adBottomImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"lauch_bottom"]];
+        adView.backgroundColor = [UIColor whiteColor];
         [adView addSubview:adBottomImg];
         [adView addSubview:adImg];
-        adBottomImg.frame = CGRectMake(0, self.view.height - 135, self.view.width, 135);
+        adBottomImg.frame = CGRectMake(120, self.view.height - 135+20+15, self.view.width-240, 65);
         adImg.frame = CGRectMake(0, 0, self.view.width, self.view.height - 135);
         
         //        adImg.frame = [UIScreen mainScreen].bounds;

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3228AE5E1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */; };
+		3228AE631D0715E20076F27A /* lanuch_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE611D0715E20076F27A /* lanuch_up@2x.png */; };
+		3228AE641D0715E20076F27A /* lauch_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE621D0715E20076F27A /* lauch_bottom@2x.png */; };
 		324693D71CF9539A0071ADD6 /* WSTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */; };
 		324693DC1CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D91CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m */; };
 		324693DD1CFAB46B0071ADD6 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693DB1CFAB46B0071ADD6 /* UIViewController+HUD.m */; };
@@ -433,6 +436,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */ = {isa = PBXFileReference; lastKnownFileType = file; path = "仿北仑发布需求v3.0 05301715.numbers"; sourceTree = "<group>"; };
+		3228AE5F1D07119C0076F27A /* target.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = target.h; sourceTree = "<group>"; };
+		3228AE601D0713AD0076F27A /* targetHaveDone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = targetHaveDone.h; sourceTree = "<group>"; };
+		3228AE611D0715E20076F27A /* lanuch_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanuch_up@2x.png"; sourceTree = "<group>"; };
+		3228AE621D0715E20076F27A /* lauch_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauch_bottom@2x.png"; sourceTree = "<group>"; };
 		324693D51CF9539A0071ADD6 /* WSTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTopicContentListModel.h; sourceTree = "<group>"; };
 		324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTopicContentListModel.m; sourceTree = "<group>"; };
 		324693D81CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
@@ -1366,6 +1374,8 @@
 		32B53D181CF0367700412EAC /* HomeNews */ = {
 			isa = PBXGroup;
 			children = (
+				3228AE611D0715E20076F27A /* lanuch_up@2x.png */,
+				3228AE621D0715E20076F27A /* lauch_bottom@2x.png */,
 				32B53FBC1CF1DC8400412EAC /* adBottom.png */,
 			);
 			path = HomeNews;
@@ -1911,7 +1921,10 @@
 		651D63781C45069D00DAF34E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */,
 				651D64F71C4506E500DAF34E /* Info.plist */,
+				3228AE5F1D07119C0076F27A /* target.h */,
+				3228AE601D0713AD0076F27A /* targetHaveDone.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -3284,6 +3297,7 @@
 				7AE05C431CDC7553003A947A /* UMShareEditViewController.xib in Resources */,
 				32B53F371CF0714D00412EAC /* smallImage_checkCode.png in Resources */,
 				65987CFE1C4A28A900A69EE4 /* pauseBtn@2x.png in Resources */,
+				3228AE631D0715E20076F27A /* lanuch_up@2x.png in Resources */,
 				65987CEA1C4A28A900A69EE4 /* logo.m1905.com@2x.png in Resources */,
 				65987CD61C4A28A900A69EE4 /* gobackBtn@3x.png in Resources */,
 				32B53EE61CF0447000412EAC /* checkmark@2x.png in Resources */,
@@ -3303,6 +3317,7 @@
 				65987CD11C4A28A900A69EE4 /* bg_share_large.png in Resources */,
 				651D64C31C4506DD00DAF34E /* Media.storyboard in Resources */,
 				65987D001C4A28A900A69EE4 /* playBtn.png in Resources */,
+				3228AE5E1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers in Resources */,
 				7AE05C421CDC7553003A947A /* UMSCommentInputControlleriPad.xib in Resources */,
 				65987D061C4A28A900A69EE4 /* rating_gray@2x.png in Resources */,
 				65987CD91C4A28A900A69EE4 /* iconfont-yuanquan-2.png in Resources */,
@@ -3318,6 +3333,7 @@
 				65987D021C4A28A900A69EE4 /* playBtn@3x.png in Resources */,
 				32B53F3C1CF0714D00412EAC /* smallImage_phone@2x.png in Resources */,
 				65987CE91C4A28A900A69EE4 /* logo.m1905.com.png in Resources */,
+				3228AE641D0715E20076F27A /* lauch_bottom@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
