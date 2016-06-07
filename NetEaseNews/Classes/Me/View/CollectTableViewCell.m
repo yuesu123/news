@@ -19,6 +19,7 @@
         cell = [[CollectTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
         
     }
+    ///
     
     return cell;
 }
