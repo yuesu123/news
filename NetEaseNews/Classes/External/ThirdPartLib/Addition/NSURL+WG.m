@@ -18,6 +18,7 @@
    }else{
     urlNew = [NSString stringWithFormat:@"%@%@",sg_privateNetworkBaseUrl,url.absoluteString];
   }
+    ECLog(@"图片%@",urlNew);
     NSURL *newUrl = [NSURL URLWithString:urlNew];
     return newUrl;
     

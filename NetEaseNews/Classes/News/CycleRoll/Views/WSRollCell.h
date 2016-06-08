@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 @class WSAds;
-
+@class Blocknews;
 @interface WSRollCell : UICollectionViewCell
 
-@property (strong, nonatomic) WSAds *ad;
+//@property (strong, nonatomic) WSAds *ad;
+@property (strong, nonatomic)  Blocknews *ad;
 
 @end

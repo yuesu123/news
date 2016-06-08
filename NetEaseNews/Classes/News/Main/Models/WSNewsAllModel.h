@@ -58,7 +58,7 @@
 @interface Blocknews : NSObject
 
 @property (nonatomic, assign) NSInteger Id;
-
+@property (nonatomic, assign) NSInteger Showtype;
 @property (nonatomic, copy) NSString *Newslink;
 
 @property (nonatomic, copy) NSString *Edittime;
@@ -70,6 +70,8 @@
 @property (nonatomic, assign) NSInteger Hits;
 
 @property (nonatomic, copy) NSString *Picsmall;
+@property (nonatomic, copy) NSString *Picsmall2;
+@property (nonatomic, copy) NSString *Picsmall3;
 
 @property (nonatomic, assign) NSInteger Subid;
 
@@ -89,7 +91,7 @@
 @property (strong, nonatomic) NSArray *ads;
 
 @property (nonatomic, assign) NSInteger Infoid;
-
+@property (nonatomic, assign) NSInteger Showtype;
 @property (nonatomic, assign) NSInteger Isshen;
 
 @property (nonatomic, assign) NSInteger Id;
@@ -101,6 +103,9 @@
 @property (nonatomic, assign) NSInteger Hits;
 
 @property (nonatomic, copy) NSString *Picsmall;
+@property (nonatomic, copy  ) NSString   *Picsmall2;
+@property (nonatomic, copy  ) NSString   *Picsmall3;
+@property (nonatomic, assign) NSInteger Goods;
 
 @property (nonatomic, assign) NSInteger Subid;
 

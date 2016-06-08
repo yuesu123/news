@@ -9,7 +9,9 @@
 #import "WSRollController.h"
 #import "WSRollCell.h"
 #import "Masonry.h"
-#import "WSAds.h"
+//#import "WSAds.h"
+#import "WSNewsAllModel.h"
+
 
 @interface WSRollController ()
 
@@ -176,8 +178,8 @@ static NSString * const reuseIdentifier = @"rollCell";
     WSRollCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     cell.ad = self.ads[indexPath.item];
-    
-    self.titleLbl.text = [self.ads[indexPath.item] title];
+    Blocknews *news =  self.ads[indexPath.item];
+    self.titleLbl.text = news.Title;
     
     return cell;
 }

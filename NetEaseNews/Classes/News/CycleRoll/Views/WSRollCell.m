@@ -8,8 +8,9 @@
 
 #import "WSRollCell.h"
 #import "UIImageView+WebCache.h"
-#import "WSAds.h"
+//#import "WSAds.h"
 #import "WSImageView.h"
+#import "WSNewsAllModel.h"
 
 @interface WSRollCell ()
 
@@ -19,14 +20,12 @@
 
 @implementation WSRollCell
 
-
-- (void)setAd:(WSAds *)ad{
-    
+- (void)setAd:(Blocknews *)ad{
     _ad = ad;
-    
     self.imageView.contentMode = UIViewContentModeCenter;
-   [self.imageView sd_setImageWithURL:[NSURL URLWithString:ad.imgsrc] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
-
+    ECLog(@"轮播:%@",ad.Picsmall);
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:ad.Picsmall] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
 }
+
 
 @end

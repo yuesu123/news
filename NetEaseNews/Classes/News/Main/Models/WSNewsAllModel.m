@@ -34,7 +34,6 @@
 
 + (void)newsListDataWithNewsID:(NSString *)newsID newsCache:(BOOL)isCache getDataSuccess:(GetDataSuccessBlock)success getFailure:(GetDataFailureBlock)failure{
     
-    
     [WSGetDataTool GETJSON:newsID GetDataType:WSGETDataTypeBaseURL progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         WSNewsAllModel *allModel = [WSNewsAllModel objectWithKeyValues:responseObject];
@@ -78,6 +77,9 @@
     }];
     
 }
+
+
+
 
 + (NSMutableArray*)getWSNewsModel:(WSNewsAllModel*)allModel{
     NSArray *NewslistArr = allModel.Newslist;

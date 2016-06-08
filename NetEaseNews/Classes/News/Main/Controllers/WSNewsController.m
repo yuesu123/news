@@ -54,7 +54,7 @@
     NSArray *ads = nil;
     
     if (self.jsonNews.count>0) {
-        ads = nil; // [self.jsonNews.firstObject ads] ? : @[self.jsonNews.firstObject];
+        ads = [self.jsonNews.firstObject ads] ? : @[self.jsonNews.firstObject];
     }
     
     //轮播赋值
@@ -112,97 +112,39 @@
     [self loadMoreDataCount];
 }
 
-//- (void)refreshData { //此处代码无用
-//    
-//    [refreshHeader beginRefreshing];
-//}
-
-//- (void)setRefreshView {
-//    
-//    refreshHeader = [[YiRefreshHeader alloc] init];
-//    refreshHeader.titleLoading = @"正在加载中...";
-//    refreshHeader.titlePullDown = @"拉动刷新更多数据....";
-//    refreshHeader.titleRelease = @"松手加载更多数据...";
-//    refreshHeader.scrollView = self.tableView;
-//    [refreshHeader header];
-//    
-//    typeof(self) __weak weakSelf = self;
-//    
-//    refreshHeader.beginRefreshingBlock = ^(){
-//        
-//        weakSelf.index = 0;
-//        [weakSelf loadMoreDataCount:0];
-//        [[SDImageCache sharedImageCache] clearMemory];
-//        
-//        //        NSLog(@"刷新数据");
-//        
-//    };
-//    
-//    refreshFooter = [[YiRefreshFooter alloc] init];
-//    refreshFooter.scrollView = self.tableView;
-//    [refreshFooter footer];
-//    
-//    refreshFooter.beginRefreshingBlock = ^(){
-//        
-//        [weakSelf loadMoreDataCount:weakSelf.index];
-//        //        NSLog(@"加载更多数据");
-//    };
-//    
-//    [refreshHeader beginRefreshing];
-//}
-
-
 - (void)loadMoreDataCount {
-    
-//    typeof(refreshHeader) __weak weakHeader = refreshHeader;
     typeof(self) __weak weakSelf = self;
-//    typeof(refreshFooter) __weak weakFooter = refreshFooter;
-    
     ECLog(@"加载数据请求:%@",[self newsURL]);
-    [Newslist newsListDataWithNewsID:[self newsURL] newsCache:(_currentPage==1) getDataSuccess:^(NSArray *dataArr) {
-        WSNewsAllModel *allModel = [dataArr firstObject];
-        
+    [QTFHttpTool requestGETURL:[self newsURL] params:nil refreshCach:YES needHud:NO hudView:nil loadingHudText:nil errorHudText:nil sucess:^(id json) {
+        WSNewsAllModel *allModel = [WSNewsAllModel objectWithKeyValues:json];
         if (allModel.Newslist.count > 0) {
             
-            if (/*weakSelf.index == 0*/_currentPage == 1) [weakSelf.jsonNews removeAllObjects];
+            if (_currentPage == 1){ [weakSelf.jsonNews removeAllObjects];
+            }
             
             [weakSelf.jsonNews addObjectsFromArray:allModel.Newslist];
             
-//            weakSelf.index += 20;
+            //            weakSelf.index += 20;
             //图片轮播赋值
-//            weakSelf.rollVC.ads = [weakSelf.jsonNews.firstObject ads] ? : @[weakSelf.jsonNews.firstObject] ;
             
+            if (allModel.Blocknews.count>0) {
+                Newslist *list = [[Newslist alloc] init];
+                list.ads = allModel.Blocknews;
+                [weakSelf.jsonNews insertObject:list atIndex:0];
+            }
+            weakSelf.rollVC.ads = [weakSelf.jsonNews.firstObject ads] ? : @[weakSelf.jsonNews.firstObject] ;
             
             [weakSelf.tableView reloadData];
             [self refreshCurentPg:_currentPage Total:allModel.Total pgSize:allModel.Pagesize];
-//            [weakHeader endRefreshing];
-//            [weakFooter endRefreshing];
         }
         
-    } getFailure:^(NSError *error) {
-        
-        NSLog(@"刷新失败:%@",error);
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self endRefresh];
-//            [weakHeader endRefreshing];
-//            [weakFooter endRefreshing];
-        });
+    } failur:^(NSError *error) {
+        [self endRefresh];
     }];
-    
-    
-    
-    
-    
-    
 }
 
-//- (NSString *)newsURL{
-//    
-//    return [self.channelUrl stringByReplacingOccurrencesOfString:self.channelUrl.lastPathComponent withString:[NSString stringWithFormat:@"%ld-%ld.html?from=toutiao&passport=tg%%2BXeARESp%%2BKk1cvff3CYYHneQ4Vgz8zRIWyqxFlJl4%%3D&devId=vLWbfIXxCa1CK9%%2B20Q0f98IOSn9ZTn2pjLRXOOBn3fttg3OsEQzfSL238z3USCkJ&size=20&version=5.5.0&spever=false&net=wifi&lat=&lon=&ts=1451223862&sign=W1v%%2BccS4kqTPNo1XoI1hRA7NJTZ9WFoR3TGwx3F1fDB48ErR02zJ6%%2FKXOnxX046I&encryption=1&canal=appstore",self.index, self.index+20]];
-//}
 
 - (NSString *)newsURL{
-//    http://app.53bk.com/api/newslist?classid=3&pg=1&pagesize=1
     return [NSString stringWithFormat:@"api/newslist?classid=%@&pg=%ld&pagesize=2",self.channelID,(long)_currentPage] ;
 }
 
@@ -260,7 +202,11 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     Newslist *news = self.jsonNews[indexPath.row];
-    
+    if(indexPath.row == 1){
+        news.Showtype = 2;
+    }else if(indexPath.row == 5){
+        news.Showtype = 1;
+    }
     WSNewsCell *cell = [WSNewsCell newsCellWithTableView:tableView cellNews:news IndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 
@@ -274,17 +220,14 @@
     Newslist *content = self.jsonNews[indexPath.row];
     
     WSNewsCellType type = 0;
-    
-//    if (content.imgextra.count == 2) {//三图
-//        
-//        type = WSNewsCellTypeThreeImage;
-//    }else if (content.imgType){ //大图
-//        
-//        type = WSNewsCellTypeBigImage;
-//    }else{
+    if (content.Showtype == 2) {//三图
+        type = WSNewsCellTypeThreeImage;
+    }else if (content.Showtype == 1){ //大图
+        type = WSNewsCellTypeBigImage;
+    }else{
         type = WSNewsCellTypeNormal;//单图
-//    }
-    
+    }
+//      -- 0为左图右标题样式 1 为直栏模式 2为三图模式
     return [WSNewsCell rowHeighWithCellType:type];
 }
 

@@ -240,5 +240,7 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>CFBundleDisplayName</key>
+	<string>开发导报</string>
 </dict>
 </plist>
