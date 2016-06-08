@@ -48,17 +48,25 @@
     [super viewDidLoad];
     
     self.tableView.tableFooterView = [[UIView alloc] init];
-    
+    [self createRefresh];
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self isShoulfCheckVersion];
+    });
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+}
+
+
+- (void)addRoll:(NSArray*)arr {
     typeof(self) __weak weakSelf = self;
     
     NSArray *ads = nil;
     
-    if (self.jsonNews.count>0) {
-        ads = [self.jsonNews.firstObject ads] ? : @[self.jsonNews.firstObject];
-    }
+//    if (self.jsonNews.count>0) {
+//        ads = [self.jsonNews.firstObject ads] ? : @[self.jsonNews.firstObject];
+//    }
     
     //轮播赋值
-    [self.rollVC rollControllerWithAds:ads selectedItem:^(id obj) {
+    [self.rollVC rollControllerWithAds:arr selectedItem:^(id obj) {
         
         if([obj isKindOfClass:[WSAds class]]){
             
@@ -68,7 +76,7 @@
                 
                 WSContentController *contentVC = [WSContentController contentControllerWithItem:ad.docid];
                 //hideBottomBar
-
+                
                 [weakSelf.navigationController pushViewController:contentVC animated:YES];
             }else{
                 
@@ -81,7 +89,7 @@
             Newslist *news = obj;
             WSContentController *contentVC = [WSContentController contentControllerWithItem:news.Newslink];
             //hideBottomBar
-
+            
             [weakSelf.navigationController pushViewController:contentVC animated:YES];
             
         }
@@ -95,18 +103,9 @@
         self.rollVC.view.hidden = YES;
         self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     }
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
-    
-//    self.index = 0;
-    
-    //设置刷新
-//    [self setRefreshView];
-    [self createRefresh];
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self isShoulfCheckVersion];
-    });
 }
+
+
 
 - (void)loadDataWithCache:(BOOL)cache{
     [self loadMoreDataCount];
@@ -127,12 +126,15 @@
             //            weakSelf.index += 20;
             //图片轮播赋值
             
-            if (allModel.Blocknews.count>0) {
-                Newslist *list = [[Newslist alloc] init];
-                list.ads = allModel.Blocknews;
-                [weakSelf.jsonNews insertObject:list atIndex:0];
+//            if (allModel.Blocknews.count>0) {
+//                Newslist *list = [[Newslist alloc] init];
+//                list.ads = allModel.Blocknews;
+//                [weakSelf.jsonNews insertObject:list atIndex:0];
+//            }
+            //轮播赋值
+            if(_currentPage == 1){
+                [self addRoll:allModel.Blocknews];
             }
-            weakSelf.rollVC.ads = [weakSelf.jsonNews.firstObject ads] ? : @[weakSelf.jsonNews.firstObject] ;
             
             [weakSelf.tableView reloadData];
             [self refreshCurentPg:_currentPage Total:allModel.Total pgSize:allModel.Pagesize];
