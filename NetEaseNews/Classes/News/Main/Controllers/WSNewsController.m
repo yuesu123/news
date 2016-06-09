@@ -22,8 +22,9 @@
 #import "QTFHttpTool.h"
 #import "WSNewsController+CheckVersion.h"
 #import "DDNewsCache.h"
+#import "WSTopicContentListModel.h"
 
-@interface WSNewsController ()
+@interface WSNewsController ()<UIAlertViewDelegate>
 {
     
 //    YiRefreshHeader *refreshHeader;
@@ -36,6 +37,8 @@
 //@property (assign, nonatomic) NSInteger index;
 
 @property (weak, nonatomic) WSRollController *rollVC;
+@property (nonatomic, strong) NSDictionary *activeNotiInfo;
+@property (nonatomic, assign) BOOL isShowAlert;
 
 @end
 
@@ -53,6 +56,73 @@
         [self isShoulfCheckVersion];
     });
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(notificationInactiveDic:) name:kNotificationInactiveDic object:nil];
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(notificationActiveDic:) name:kNotificationActiveDic object:nil];
+
+    
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    _isShowAlert = YES;
+}
+
+- (void)viewDidDisappear:(BOOL)animated{
+    [super viewDidDisappear:animated];
+    _isShowAlert = NO;
+}
+
+
+- (void)notificationInactiveDic:(NSNotification*)noti{
+    ECLog(@"后台通知:%@",noti.userInfo);
+    [self gotoNotiControllercreatItem:noti.userInfo];
+    
+}
+
+- (void)gotoNotiControllercreatItem:(NSDictionary*)userInfo{
+//    NSDictionary *userInfoDic = userInfo[@"userInfo"];
+    //标题
+    NSString *messageAlert = [[userInfo objectForKey:@"aps"]objectForKey:@"alert"];
+    //ID
+    NSInteger newsid = (NSInteger)userInfo[@"newsid"];
+    NSInteger ztnewsid = (NSInteger)userInfo[@"ztnewsid"];
+    if (newsid>0) {
+        Newslist *newsList = [[Newslist alloc] init];
+        newsList.Title = messageAlert;
+        newsList.Id = 1;//newsid;
+        [self gotoWSContentController:newsList];
+    }else{
+        ZtNewslist *ztnews = [[ZtNewslist alloc] init];
+        ztnews.Title = messageAlert;
+        ztnews.Id = 1;//ztnewsid;
+        [self gotoWSContentController:ztnews];
+    }
+}
+
+- (void)notificationActiveDic:(NSNotification*)noti{
+    ECLog(@"前台通知:%@",noti);
+    NSDictionary *userInfo = noti.userInfo;
+    _activeNotiInfo = userInfo;
+    NSString *messageAlert = [[userInfo objectForKey:@"aps"]objectForKey:@"alert"];
+    UIAlertView *alertView = [[UIAlertView alloc]initWithTitle:@"新闻通知" message:messageAlert delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"前往", nil];
+    alertView.delegate = self;
+    //        self.pushAlertClickBtnFlag = 55;  // 判断是不是远程推送消息的弹窗
+    if (_isShowAlert) {
+        [alertView show];//只在新闻页面弹框
+    }
+    // 将消息保存着  等待点击alert按钮 进行跳不跳转
+    //        self.notiUserInfo = userInfo;
+    // 8秒后将退出弹框
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(8.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [alertView dismissWithClickedButtonIndex:0 animated:YES];
+    });
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == 0) {
+        return;
+    }
+    [self gotoNotiControllercreatItem:_activeNotiInfo];
 }
 
 
@@ -168,14 +238,20 @@
 //        
 //    }else{
     
-        WSContentController *contentVC = [WSContentController contentControllerWithItem:news];
-//        contentVC.newsLink = @"https://wap.baidu.com";//news.Newslink;
-//    contentVC.docid =[NSString convertIntgerToString:news.Id];
-//    //hideBottomBar
-//    contentVC.wscontentControllerType = WSContentControllerTypeNews;
-        [self.navigationController pushViewController:contentVC animated:YES];
-//    }
+     //    }
+    [self gotoWSContentController:news];
     
+}
+
+
+- (void)gotoWSContentController:(id)news{
+    WSContentController *contentVC = [WSContentController contentControllerWithItem:news];
+    //        contentVC.newsLink = @"https://wap.baidu.com";//news.Newslink;
+    //    contentVC.docid =[NSString convertIntgerToString:news.Id];
+    //    //hideBottomBar
+    //    contentVC.wscontentControllerType = WSContentControllerTypeNews;
+    [self.navigationController pushViewController:contentVC animated:YES];
+
 }
 
 - (void)pushPhotoControllerWithPhotoID:(NSString *)photoid replyCount:(NSInteger)count{
@@ -269,5 +345,8 @@
     }
 }
 
+- (void)dealloc{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 @end

@@ -52,13 +52,16 @@
     UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_netease"]];
     self.navigationItem.titleView = imageView;
     
-    //leftitem
-    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navi_bell_normal"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
-    self.navigationItem.leftBarButtonItem = leftItem;
-    
-    //rightItem
-    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
-    self.navigationItem.rightBarButtonItem = rightItem;
+    if (self.tabBarController.selectedIndex == 0) {
+        //leftitem
+        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navi_bell_normal"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
+        self.navigationItem.leftBarButtonItem = leftItem;
+        
+        //rightItem
+        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
+        self.navigationItem.rightBarButtonItem = rightItem;
+    }
+   
     
     
 }
@@ -84,11 +87,24 @@
 
 - (NSArray *)news{
     
-    if (!_news) {
-        
-        NSArray *newArr = [NSArray arrayWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"News.plist" ofType:nil]];
+//    if (!_news) {
         NSMutableArray *arrM = [NSMutableArray array];
-       NSMutableArray* arrModelAll = [WSMenuInstance sharedWSMenuInstance].menuOneArr;
+        NSMutableArray* arrModelAll;
+        if (self.tabBarController.selectedIndex == 0&&([WSMenuInstance  sharedWSMenuInstance].tabbarArr.count == 1)) {
+            arrModelAll  = [WSMenuInstance sharedWSMenuInstance].menuOneArr;
+        }else if(self.tabBarController.selectedIndex == 0&&([WSMenuInstance  sharedWSMenuInstance].tabbarArr.count == 2)) {
+            arrModelAll  = [WSMenuInstance sharedWSMenuInstance].menuOneArr;
+        }else if(self.tabBarController.selectedIndex == 2&&([WSMenuInstance  sharedWSMenuInstance].tabbarArr.count == 2)) {
+            arrModelAll  = [WSMenuInstance sharedWSMenuInstance].menuTwoArr;
+        }else if(self.tabBarController.selectedIndex == 0&&([WSMenuInstance  sharedWSMenuInstance].tabbarArr.count == 3)) {
+            arrModelAll  = [WSMenuInstance sharedWSMenuInstance].menuOneArr;
+            
+        }else if(self.tabBarController.selectedIndex == 2&&([WSMenuInstance  sharedWSMenuInstance].tabbarArr.count == 3)) {
+            arrModelAll  = [WSMenuInstance sharedWSMenuInstance].menuTwoArr;
+        }else if(self.tabBarController.selectedIndex == 3&&([WSMenuInstance  sharedWSMenuInstance].tabbarArr.count == 3)) {
+            arrModelAll  = [WSMenuInstance sharedWSMenuInstance].menuThreeArr;
+        }
+        
         for (WSOneMenuModel *model in arrModelAll) {
             /**频道的标识*/
             WSChannel *ch = [[WSChannel alloc] init];
@@ -101,7 +117,7 @@
         
         _news = arrM.copy;
         
-    }
+//    }
     return _news;
 }
 

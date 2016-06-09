@@ -78,7 +78,7 @@ static NSString * const reuseIdentifier = @"rollCell";
     UIImageView *typeView = [[UIImageView alloc] initWithImage:image];
     [self.view addSubview:typeView];
     _typeView = typeView;
-    typeView.contentMode = UIViewContentModeCenter;
+    typeView.contentMode = UIViewContentModeScaleToFill;
     [typeView mas_makeConstraints:^(MASConstraintMaker *make) {
        
         make.left.equalTo(self.view).offset(margin);

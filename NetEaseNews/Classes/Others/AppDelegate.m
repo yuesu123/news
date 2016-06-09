@@ -19,7 +19,10 @@
 #import "JPUSHService.h"
 #import <AdSupport/AdSupport.h>
 
+#import "WSContentController.h"
+
 @interface AppDelegate ()
+@property (nonatomic) BOOL isLaunchedByNotification;
 
 @end
 
@@ -28,7 +31,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    
+
+
     self.window = [[UIWindow alloc] initWithFrame:kScreenSize];
     
     WSTabBarController *tabBar = [[WSTabBarController alloc] init];
@@ -36,6 +40,27 @@
     self.window.rootViewController = tabBar;
     [self initUmeng];
     [self setupJPush:launchOptions];
+    
+    NSDictionary* remoteNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsRemoteNotificationKey];
+    NSDictionary *remoteNotification1 = [launchOptions objectForKey:kJPFNetworkDidReceiveMessageNotification];
+    if (remoteNotification1 != nil) {
+        self.isLaunchedByNotification = YES;
+    }else{
+        self.isLaunchedByNotification = NO;
+    }
+    
+    ECLog(@"远程通知的内容:%@",remoteNotification);
+    [application setApplicationIconBadgeNumber:0];
+    //程序处于后台
+    if (remoteNotification) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter]postNotificationName:kNotificationInactiveDic object:nil userInfo:remoteNotification];
+
+        });
+    }
+    
+
+    
     [self.window makeKeyAndVisible];
     
     return YES;
@@ -123,14 +148,35 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo {
     NSLog(@"收到通知:%@", [self logDic:userInfo]);
 }
 
+
 - (void)application:(UIApplication *)application
 didReceiveRemoteNotification:(NSDictionary *)userInfo
 fetchCompletionHandler:
-(void (^)(UIBackgroundFetchResult))completionHandler {
+(void (^)(UIBackgroundFetchResult))completionHandler
+{
     [JPUSHService handleRemoteNotification:userInfo];
-    NSLog(@"收到通知:%@", [self logDic:userInfo]);
     
+    NSLog(@"收到通知:%@", [self logDic:userInfo]);
     completionHandler(UIBackgroundFetchResultNewData);
+//    WSContentController *contentVC = [WSContentController contentControllerWithItem:news];
+//    [self.navigationController pushViewController:contentVC animated:YES];
+    
+
+    if (application.applicationState == UIApplicationStateActive) {//前台
+        //程序当前正处于前台
+        [application setApplicationIconBadgeNumber:0];
+        //只在没有启动的时候发通知
+//        [[NSNotificationCenter defaultCenter]postNotificationName:kNotificationActiveDic object:nil userInfo:userInfo];
+    }
+    else //后台来到这里
+    {
+        [application setApplicationIconBadgeNumber:0];
+        //程序处于后台
+        //只在没有启动的时候抛出通知
+//        [[NSNotificationCenter defaultCenter]postNotificationName:kNotificationInactiveDic object:nil userInfo:userInfo];
+        
+    }
+    
 }
 
 - (void)application:(UIApplication *)application
@@ -228,6 +274,7 @@ didReceiveLocalNotification:(UILocalNotification *)notification {
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    [application setApplicationIconBadgeNumber:0];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

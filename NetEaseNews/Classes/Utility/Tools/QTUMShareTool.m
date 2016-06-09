@@ -23,7 +23,9 @@
     if(!image) image = [UIImage imageNamed:@"logo108"];
     if(!platArr) platArr = shareBtnOrder;
     if(!urlStr) urlStr = shareurlStr;
-
+    if (!content) {
+        content = @"";
+    }
     //  微信好友内容
     [UMSocialData defaultData].extConfig.wechatSessionData.url = urlStr;
     [UMSocialData defaultData].extConfig.wechatSessionData.title = title;
@@ -33,7 +35,7 @@
    
     // 如果是朋友圈，则替换平台参数名即可 朋友圈调换title 和content
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = urlStr;
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = content;//shareTitleHasCode;//@"【开发导报】";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;//shareTitleHasCode;//@"【开发导报】";
     [UMSocialData defaultData].extConfig.wechatTimelineData.shareText = title;
     [UMSocialData defaultData].extConfig.wechatTimelineData.shareImage = image;
     
@@ -46,7 +48,7 @@
     //qZone
     [UMSocialData defaultData].extConfig.qzoneData.url = urlStr;
     [UMSocialData defaultData].extConfig.qzoneData.title = title;
-    [UMSocialData defaultData].extConfig.qzoneData.shareText = content;
+    [UMSocialData defaultData].extConfig.qzoneData.shareText = @"";
     [UMSocialData defaultData].extConfig.qzoneData.shareImage = image;
     
     
@@ -54,18 +56,12 @@
     [UMSocialControllerService defaultControllerService].socialUIDelegate = delegate;
 #pragma mark - -----
     
-    //如果来自分享app 那么 注明链接在浏览器中打开
-//    if([(NSString*)[platArr firstObject] isEqualToString:@"shareAppToWeibo"]){
-//        platArr = shareBtnOrder;
-//        content = [NSString stringWithFormat:@"%@,链接请在浏览器中打开",content];
-//    }
     
     if([urlStr isEqualToString:shareurlStr]){
         //只要是下载并且分享到微博 就提示在浏览器中打开
         platArr = shareBtnOrder;
         content = [NSString stringWithFormat:@"%@,链接请在浏览器中打开",content];
     }
-    
     [UMSocialSnsService presentSnsIconSheetView:delegate
                                          appKey:UmengAppkey
                                       shareText:[NSString stringWithFormat:@"%@%@%@",title,content,urlStr]

@@ -58,27 +58,17 @@
 - (void)loadDataWithCache:(BOOL)cache{
     
     typeof(self) __weak weakSelf = self;
-    
-    [Ztlist topicWithIndex:/*self.topicIndex*/_currentPage isCache:cache getDataSuccess:^(NSArray *dataArr) {
-        
-        if (dataArr.count == 0) {
-            NSLog(@"没有更多数据");
-            return ;
-        }
-        
+    NSString *url = [NSString stringWithFormat:@"api/ztlist?pg=%ld&pagesize=2",_currentPage];
+    [QTFHttpTool requestGETURL:url params:nil refreshCach:YES needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
+        NSDictionary *dict = (NSDictionary*)json;
+        //转成全部的模型
+        WSTopicModel *topModel = [WSTopicModel objectWithKeyValues:dict];
         //一进来就加载数据
-        WSTopicModel *allModel = [dataArr firstObject];
         if(_currentPage == 1) [weakSelf.topics removeAllObjects];
-        
-        [weakSelf.topics addObjectsFromArray:allModel.Ztlist];
-        
+        [weakSelf.topics addObjectsFromArray:topModel.Ztlist];
         [weakSelf.tableView reloadData];
-        
-        
-        [self refreshCurentPg:_currentPage Total:allModel.Total pgSize:allModel.Pagesize];//2
-        
-    } getDataFaileure:^(NSError *error) {
-        
+        [self refreshCurentPg:_currentPage Total:topModel.Total pgSize:topModel.Pagesize];//2
+    } failur:^(NSError *error) {
         NSLog(@"%@",error);
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(10 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self endRefresh];//3

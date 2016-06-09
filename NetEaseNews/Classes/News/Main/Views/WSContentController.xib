@@ -10,7 +10,7 @@
                 <outlet property="bottomCommentBtn" destination="JRS-cP-wuZ" id="Z1R-yW-XcZ"/>
                 <outlet property="bottomView" destination="j2j-7o-4fJ" id="Fnt-fW-o1q"/>
                 <outlet property="collectionBtn" destination="Gh4-AU-7dj" id="bij-cF-Wpo"/>
-                <outlet property="topCommentBtn" destination="tiB-Yk-RWc" id="brl-FE-bWA"/>
+                <outlet property="shareBtn" destination="tiB-Yk-RWc" id="nuq-XH-E2A"/>
                 <outlet property="view" destination="iN0-l3-epB" id="jjT-0F-dAw"/>
                 <outlet property="webView" destination="yIN-3e-ouP" id="qfp-Xr-NM9"/>
                 <outlet property="writeBtn" destination="gyZ-ek-8jI" id="Xlf-Qr-b5o"/>
@@ -37,7 +37,6 @@
                                 <constraint firstAttribute="height" constant="33" id="4du-Sx-5Gi"/>
                                 <constraint firstAttribute="width" constant="33" id="bu9-wp-pAf"/>
                             </constraints>
-                            <state key="normal" image="icon_share"/>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRS-cP-wuZ" userLabel="评论">
                             <rect key="frame" x="227" y="5" width="66" height="40"/>
@@ -116,10 +115,11 @@
                                 <constraint firstAttribute="height" constant="44" id="xiE-5Y-Z5j"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                            <inset key="contentEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                             <inset key="titleEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="1000跟帖" backgroundImage="contentview_commentbacky"/>
+                            <state key="normal" image="icon_share"/>
                             <connections>
-                                <action selector="commentBtn" destination="-1" eventType="touchUpInside" id="eqk-UM-die"/>
+                                <action selector="shareBtnClicked:" destination="-1" eventType="touchUpInside" id="HSA-G5-Qcg"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wtt-Zt-gJb">
@@ -169,7 +169,6 @@
         </view>
     </objects>
     <resources>
-        <image name="contentview_commentbacky" width="31" height="44"/>
         <image name="icon_back" width="54" height="44"/>
         <image name="icon_font" width="33" height="33"/>
         <image name="icon_share" width="33" height="33"/>

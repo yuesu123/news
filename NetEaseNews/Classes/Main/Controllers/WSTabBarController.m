@@ -158,7 +158,7 @@
         adView.backgroundColor = [UIColor whiteColor];
         [adView addSubview:adBottomImg];
         [adView addSubview:adImg];
-        adBottomImg.frame = CGRectMake(120, self.view.height - 135+20+15, self.view.width-240, 65);
+        adBottomImg.frame = CGRectMake(0, self.view.height - 135, self.view.width, 135);
         adImg.frame = CGRectMake(0, 0, self.view.width, self.view.height - 135);
         
         //        adImg.frame = [UIScreen mainScreen].bounds;
@@ -210,16 +210,17 @@
     
     UIStoryboard *sb1 = [UIStoryboard storyboardWithName:@"News" bundle:nil];
     UIViewController *vc1 = [sb1 instantiateInitialViewController];
-//    UIStoryboard *sb2 = [UIStoryboard storyboardWithName:@"News" bundle:nil];
-//    UIViewController *vc2 = [sb1 instantiateInitialViewController];
-//    UIStoryboard *sb3 = [UIStoryboard storyboardWithName:@"News" bundle:nil];
-//    UIViewController *vc3 = [sb1 instantiateInitialViewController];
+    UIStoryboard *sb2 = [UIStoryboard storyboardWithName:@"News" bundle:nil];
+    UIViewController *vc2 = [sb1 instantiateInitialViewController];
+    UIStoryboard *sb3 = [UIStoryboard storyboardWithName:@"News" bundle:nil];
+    UIViewController *vc3 = [sb1 instantiateInitialViewController];
+ 
+    //干掉不同的
+//    UIStoryboard *sb2 = [UIStoryboard storyboardWithName:@"Reader" bundle:nil];
+//    UIViewController *vc2 = [sb2 instantiateInitialViewController];
     
-    UIStoryboard *sb2 = [UIStoryboard storyboardWithName:@"Reader" bundle:nil];
-    UIViewController *vc2 = [sb2 instantiateInitialViewController];
-    
-    UIStoryboard *sb3 = [UIStoryboard storyboardWithName:@"Media" bundle:nil];
-    UIViewController *vc3 = [sb3 instantiateInitialViewController];
+//    UIStoryboard *sb3 = [UIStoryboard storyboardWithName:@"Media" bundle:nil];
+//    UIViewController *vc3 = [sb3 instantiateInitialViewController];
     
     UIStoryboard *sb4 = [UIStoryboard storyboardWithName:@"Topic" bundle:nil];
     UIViewController *vc4 = [sb4 instantiateInitialViewController];
@@ -227,32 +228,22 @@
     UIStoryboard *sb5 = [UIStoryboard storyboardWithName:@"Me" bundle:nil];
     UIViewController *vc5 = [sb5 instantiateInitialViewController];
     
-    NSMutableArray *tabarArr = [WSMenuInstance sharedWSMenuInstance].tabbarArr;
     NSMutableArray *tabArr = [NSMutableArray array];
     [tabArr addObject:vc1];
-    [tabArr addObject:vc2];
-    [tabArr addObject:vc3];
-
     [tabArr addObject:vc4];
-
-    //数据请求成功动态添加底部导航
-    if (0) {
-        for (int i = 0;i < tabarArr.count;i ++) {
-            WSOneMenuModel *model = [tabarArr objectAtIndex:i];
-            if ([model.Parentpath isEqualToString:@"0.1."]) {
-                //            [tabArr addObject:vc1];
-            }else if([model.Parentpath isEqualToString:@"0.2."]){
-                [tabArr addObject:vc2];
-            }else if([model.Parentpath isEqualToString:@"0.3."]){
-                [tabArr addObject:vc3];
-            }else if([model.Parentpath isEqualToString:@"0.4."]){
-                //            [tabArr addObject:vc4];
-            }
-        }
+    if ([WSMenuInstance sharedWSMenuInstance].menuTwoArr.count>0) {
+        [tabArr addObject:vc2];
     }
+    if ([WSMenuInstance sharedWSMenuInstance].menuThreeArr.count>0) {
+        [tabArr addObject:vc3];
+    }
+
     [tabArr addObject:vc5];
-    self.viewControllers = tabArr;
-//    self.viewControllers = @[vc1, vc2,, vc5];
+    if(success){//新闻+专题+...+我的
+        self.viewControllers = tabArr;
+    }else{//新闻+专题+我的
+       self.viewControllers = @[vc1,vc1, vc4, vc5];
+    }
 }
 
 
@@ -271,30 +262,29 @@
     
     //固定添加
     NSMutableArray *itemArr = [NSMutableArray array];
-    [itemArr addObject:item1];
-    [itemArr addObject:item2];
-    [itemArr addObject:item3];
-
-    [itemArr addObject:item4];
-    NSMutableArray *tabarArr = [WSMenuInstance sharedWSMenuInstance].tabbarArr;
-    if(0){
-        //动态添加item
-        for (int i = 0;i < tabarArr.count;i ++) {
-            WSOneMenuModel *model = [tabarArr objectAtIndex:i];
-            if ([model.Parentpath isEqualToString:@"0.1."]) {
-                //            [itemArr addObject:item1];
-            }else if([model.Parentpath isEqualToString:@"0.2."]){
-                [itemArr addObject:item2];
-            }else if([model.Parentpath isEqualToString:@"0.3."]){
-                [itemArr addObject:item3];
-            }else if([model.Parentpath isEqualToString:@"0.4."]){
-//                [itemArr addObject:item4];
-            }
-        }
+    NSMutableArray *itemArrSuccess = [NSMutableArray array];
+    [itemArrSuccess addObject:item1];//新闻
+    [itemArrSuccess addObject:item4];//话题
+    NSMutableArray *itemArrNotSuccess = [NSMutableArray array];
+    if ([WSMenuInstance sharedWSMenuInstance].menuTwoArr.count>0) {
+        [itemArrSuccess addObject:item2];//资讯
     }
- 
+    if ([WSMenuInstance sharedWSMenuInstance].menuThreeArr.count>0) {
+        [itemArrSuccess addObject:item3];//专栏
+    }
     //固定添加我的
-    [itemArr addObject:item5];
+    
+    if(success){
+        [itemArrSuccess addObject:item5];
+        [itemArr addObjectsFromArray:itemArrSuccess];
+    }else{
+        [itemArrNotSuccess addObject:item1];//新闻
+        [itemArrNotSuccess addObject:item2];//新闻
+
+        [itemArrNotSuccess addObject:item4];//话题
+        [itemArrNotSuccess addObject:item5];//我的
+        [itemArr addObjectsFromArray:itemArrNotSuccess];
+    }
     WSTabBar *tabBar = [WSTabBar tabBarWithItems:itemArr itemClick:^(NSInteger index) {
         self.selectedIndex = index;
     } ];

@@ -14,8 +14,11 @@
 #import "XFZCustomKeyBoard.h"
 #import "WSNewsAllModel.h"
 #import "WSTopicContentListModel.h"
+#import "QTUMShareTool.h"
+#import "UIImageView+WebCache.h"
+#import "UMSocialControllerService.h"
 
-@interface WSContentController ()<UIWebViewDelegate,XFZCustomKeyBoardDelegate>
+@interface WSContentController ()<UIWebViewDelegate,UMSocialUIDelegate,XFZCustomKeyBoardDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UIButton *collectionBtn;
@@ -25,8 +28,9 @@
 @property (weak, nonatomic) IBOutlet UIButton *writeBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
-@property (weak, nonatomic) IBOutlet UIButton *topCommentBtn;
 @property (nonatomic, strong) NSDictionary *dic;
+@property (weak, nonatomic) IBOutlet UIButton *shareBtn;
+@property (nonatomic, strong) XFZCustomKeyBoard *cuskeyBoard;
 
 @end
 
@@ -67,7 +71,12 @@
         [MBProgressHUD showError:@"登录才能评论"];
         return;
     }
+    [[XFZCustomKeyBoard customKeyBoard]textViewShowView:self delegate:self];
+
     XFZCustomKeyBoard *cus =  [XFZCustomKeyBoard customKeyBoard];
+    
+    [self setHide:NO];
+
     [cus.contentTextView becomeFirstResponder];
     
 }
@@ -104,6 +113,9 @@
         _dic = dic;
         
         NSString *Mvc_pingTotal = [QTCommonTools nsnumberToStr:_dic[@"Mvc_pingTotal"]];
+        
+        NSString *IsShare = [QTCommonTools nsnumberToStr:_dic[@"IsShare"]];
+        _shareBtn.hidden = ![IsShare isEqualToString:@"1"];
         if([Mvc_pingTotal intValue]>0){
             [_bottomCommentBtn setTitle:Mvc_pingTotal forState:UIControlStateNormal];
         }
@@ -157,10 +169,7 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBarHidden = YES;
-    self.bottomView.hidden = YES;
-    self.topCommentBtn.hidden = YES;
     
-    [[XFZCustomKeyBoard customKeyBoard]textViewShowView:self delegate:self];
 
     
     self.webView.delegate = self;
@@ -176,14 +185,21 @@
 //    }
     NSString *docid = nil;
     NSString *partUrl = nil;
+    _shareImage = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    _shareImage.hidden = YES;
+    [self.view addSubview:_shareImage];
+
     if ([_newsItem isKindOfClass:[Newslist class]]) {
         Newslist *news = (Newslist*)_newsItem;
         docid = [NSString convertIntgerToString:news.Id];
         partUrl = [NSString stringWithFormat:@"/s/news_article/%@",docid];
+    [_shareImage sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"logo108"]];
     }else{
         ZtNewslist *news = (ZtNewslist*)_newsItem;
         docid = [NSString convertIntgerToString:news.Id];
         partUrl = [NSString stringWithFormat:@"/s/ztnews_article/%@",docid];
+    [_shareImage sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"logo108"]];
+
     }
     NSString *url = [NSString stringWithFormat:@"%@%@",sg_privateNetworkBaseUrl,partUrl];
     ECLog(@"加载的网址%@",url);
@@ -194,7 +210,9 @@
     
 //    [self loadData];
     [_collectionBtn addTarget:self action:@selector(collectionViewClicked:) forControlEvents:UIControlEventTouchUpInside];
-    
+    _writeBtn.hidden = NO;
+    self.bottomView.hidden = NO;
+    self.shareBtn.hidden = YES;
     
     
     
@@ -252,9 +270,7 @@
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     [MBProgressHUD hideHUDForView:self.webView animated:YES];
-    _writeBtn.hidden = NO;
-    self.bottomView.hidden = NO;
-    self.topCommentBtn.hidden = NO;
+
     [self loadDataPinlunDianzan];
 }
 
@@ -264,7 +280,7 @@
     
     NSString *count = (content.replyCount <= 9999) ? [NSString stringWithFormat:@"%ld跟帖",content.replyCount] : [NSString stringWithFormat:@"%.1f万跟帖",(float)content.replyCount / 10000];
     
-    [self.topCommentBtn setTitle:count forState:UIControlStateNormal];
+//    [self.shareBtn setTitle:count forState:UIControlStateNormal];/
     [self.bottomCommentBtn setTitle:[NSString stringWithFormat:@"%ld",content.replyCount] forState:UIControlStateNormal];
     
     [self setDataWithContent:content];
@@ -303,7 +319,7 @@
     
     [_webView loadHTMLString:htmlStr baseURL:nil];
     self.bottomView.hidden = NO;
-    self.topCommentBtn.hidden = NO;
+    self.shareBtn.hidden = NO;
     [MBProgressHUD hideHUDForView:self.webView animated:YES];
 }
 
@@ -316,10 +332,57 @@
     
     [self.navigationController popViewControllerAnimated:YES];
 }
-- (IBAction)commentBtn {
+- (IBAction)shareBtnClicked:(UIButton *)sender {
+    NSString *title = nil;
+    NSString *content = nil;
+    NSString *urlClick = nil;
+    UIImage* image =  self.shareImage.image;
+    [self setHide:YES];
+    [[XFZCustomKeyBoard customKeyBoard]textViewShowView:nil delegate:nil];
+
+    
+    if ([_newsItem isKindOfClass:[Newslist class]]) {
+        Newslist *news = (Newslist*)_newsItem;
+        title  = news.Title;
+        content = news.Descriptions;
+        http://xapp.blnews.com.cn/s/news_article/18
+        urlClick = [NSString stringWithFormat:@"%@/s/news_article/%ld",sg_privateNetworkBaseUrl,news.Id];
+    }else{
+        ZtNewslist *news = (ZtNewslist*)_newsItem;
+        title  = news.Title;
+        content = news.HomeTitle;
+        urlClick = [NSString stringWithFormat:@"%@/s/ztnews_article/%ld",sg_privateNetworkBaseUrl,news.Id];
+    }
+    [QTUMShareTool shareWithTitle:title  //
+                          contend:content
+                           urlStr:urlClick
+                          platArr:nil
+                         delegate:self
+                            image:image];
+}
+
+-(void)didFinishGetUMSocialDataInViewController:(UMSocialResponseEntity *)response
+{
+    ECLog(@"分享完成");
+    //根据`responseCode`得到发送结果,如果分享成功
+    if(response.responseCode == UMSResponseCodeSuccess)
+    {
+        
+    }
+}
+
+
+
+
+- (void)setHide:(BOOL)hide{
+    [XFZCustomKeyBoard customKeyBoard].backView.hidden = hide;
+    [XFZCustomKeyBoard customKeyBoard].cancelButton.hidden = hide;
+    [XFZCustomKeyBoard customKeyBoard].sendButton.hidden = hide;
+}
+
+- (IBAction)commentBtn { //这里修改为分享
     
     WSCommentController *vc = [[WSCommentController alloc] init];
-//    vc.docid = self.docid;
 
     NSString *docid = nil;
     if ([_newsItem isKindOfClass:[Newslist class]]) {

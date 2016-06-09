@@ -23,13 +23,21 @@
     
     [super layoutSubviews];
     
-    if (self.image.size.width < self.bounds.size.width && self.image.size.height < self.bounds.size.height) {
-        
-        self.contentMode = UIViewContentModeCenter;
-    }else if(self.image.size.width >= self.bounds.size.width || self.image.size.height >= self.bounds.size.height){
-        
-        self.contentMode = UIViewContentModeScaleToFill;
-    }
+    self.contentMode = UIViewContentModeScaleToFill;
+//UIViewContentModeScaleAspectFit 会显示不全
+//UIViewContentModeScaleToFill 不管大小都会布图片
+ //UIViewContentModeScaleAspectFill 小的会填充大的会超出
+ //UIViewContentModeRedraw  晓得会显示不全 大的会超出
+//UIViewContentModeCenter 晓得会显示不全  大的会超出
+    
+    
+    
+    
+//    if (self.image.size.width < self.bounds.size.width && self.image.size.height < self.bounds.size.height) {
+//        self.contentMode = UIViewContentModeScaleAspectFill;
+//    }else if(self.image.size.width >= self.bounds.size.width || self.image.size.height >= self.bounds.size.height){
+//        self.contentMode = UIViewContentModeScaleAspectFit;
+//    }
 }
 
 @end

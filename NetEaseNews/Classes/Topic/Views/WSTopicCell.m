@@ -36,8 +36,8 @@
     
     _topic = topic;
     
-//    self.imgView.contentMode = UIViewContentModeCenter;
-    self.imgView.contentMode =UIViewContentModeScaleAspectFit ;//UIViewContentModeScaleAspectFill;
+    self.imgView.contentMode = UIViewContentModeCenter;
+//    self.imgView.contentMode =UIViewContentModeScaleAspectFit ;//UIViewContentModeScaleAspectFill;
     
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:topic.Picsmall] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
     self.detailLbl.text = topic.Edittime;

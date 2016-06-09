@@ -17,6 +17,7 @@ typedef enum {
 @interface WSContentController : UIViewController
 
 @property (nonatomic, strong) id newsItem;
+@property (nonatomic, strong) UIImageView *shareImage;
 
 ///**新闻内容标识*/
 //@property (copy, nonatomic) NSString *docid;

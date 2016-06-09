@@ -4,28 +4,18 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            scope = "0"
-            stopOnStyle = "0">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/Me/View/CollectTableViewCell.m"
-            timestampString = "486316827.184124"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+            timestampString = "487168418.250112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "-setCollectModel:"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "-viewDidDisappear:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -35,44 +25,76 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/Me/Control/CollectViewController.m"
-            timestampString = "486317007.163207"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+            timestampString = "487168418.250112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "131"
-            endingLineNumber = "131"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "-viewDidDisappear:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+            timestampString = "487168418.250112"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
+            landmarkName = "-gotoNotiControllercreatItem:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+            timestampString = "487168418.250112"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "-gotoNotiControllercreatItem:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[CollectViewController LoadDataDeleteCollection:]"
+                  symbolName = "-[WSNewsController gotoNotiControllercreatItem:]"
                   moduleName = "NetEaseNews"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggang/Downloads/WSNetEaseNews06031749/NetEaseNews/Classes/Me/Control/CollectViewController.m"
-                  timestampString = "486647819.290627"
+                  urlString = "file:///Users/wanggang/news/NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+                  timestampString = "487176058.823453"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "314">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "420">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__50-[CollectViewController LoadDataDeleteCollection:]_block_invoke"
+                  symbolName = "-[WSNewsController gotoNotiControllercreatItem:]"
                   moduleName = "NetEaseNews"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggang/Downloads/WSNetEaseNews06031749/NetEaseNews/Classes/Me/Control/CollectViewController.m"
-                  timestampString = "486647819.290875"
+                  urlString = "file:///Users/wanggang/news/NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+                  timestampString = "487176058.823626"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "131"
-                  endingLineNumber = "131"
-                  offsetFromSymbolStart = "39">
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "432">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -83,13 +105,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/Me/Control/CollectViewController.m"
-            timestampString = "486317095.537668"
+            filePath = "NetEaseNews/Classes/Others/AppDelegate.m"
+            timestampString = "487168233.309285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
-            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "-application:didFinishLaunchingWithOptions:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -99,13 +121,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/Me/Control/CollectViewController.m"
-            timestampString = "486317096.00482"
+            filePath = "NetEaseNews/Classes/Others/AppDelegate.m"
+            timestampString = "487168418.250112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
-            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "-application:didReceiveRemoteNotification:fetchCompletionHandler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -115,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/Me/Control/CollectViewController.m"
-            timestampString = "486317129.121754"
+            filePath = "NetEaseNews/Classes/Others/AppDelegate.m"
+            timestampString = "487168418.250112"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
+            startingLineNumber = "167"
+            endingLineNumber = "167"
+            landmarkName = "-application:didReceiveRemoteNotification:fetchCompletionHandler:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -131,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486647819.194858"
+            filePath = "NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+            timestampString = "487173404.96953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "690"
-            endingLineNumber = "690"
-            landmarkName = "-observeValueForKeyPath:ofObject:change:context:"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
+            landmarkName = "-loadViewControllers:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -147,44 +169,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652490.163964"
+            filePath = "NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+            timestampString = "487173404.96953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "1020"
-            endingLineNumber = "1020"
-            landmarkName = "-registerForKVO"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "-loadTabBarItems:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[MBBarProgressView registerForKVO]"
+                  symbolName = "-[WSTabBarController loadTabBarItems:]"
                   moduleName = "NetEaseNews"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggang/Downloads/WSNetEaseNews06031749/NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-                  timestampString = "486652490.17025"
+                  urlString = "file:///Users/wanggang/news/NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+                  timestampString = "487176058.827512"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1020"
-                  endingLineNumber = "1020"
-                  offsetFromSymbolStart = "55">
+                  startingLineNumber = "288"
+                  endingLineNumber = "288"
+                  offsetFromSymbolStart = "1816">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[MBBarProgressView registerForKVO]"
+                  symbolName = "__38-[WSTabBarController loadTabBarItems:]_block_invoke"
                   moduleName = "NetEaseNews"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/wanggang/Downloads/WSNetEaseNews06031749/NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-                  timestampString = "486652490.170595"
+                  urlString = "file:///Users/wanggang/news/NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+                  timestampString = "487176058.827694"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "1020"
-                  endingLineNumber = "1020"
-                  offsetFromSymbolStart = "65">
+                  startingLineNumber = "288"
+                  endingLineNumber = "288"
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -195,13 +217,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652499.336544"
+            filePath = "NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+            timestampString = "487173404.96953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "933"
-            endingLineNumber = "933"
-            landmarkName = "-drawRect:"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "-loadViewControllers:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -211,13 +233,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652505.099654"
+            filePath = "NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+            timestampString = "487172402.11325"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "907"
-            endingLineNumber = "907"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-loadDataAllNewsMenu"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -227,13 +249,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652516.140059"
+            filePath = "NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+            timestampString = "487172402.65164"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "826"
-            endingLineNumber = "826"
-            landmarkName = "-drawRect:"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "-loadDataAllNewsMenu"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -243,13 +265,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652545.339306"
+            filePath = "NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+            timestampString = "487172535.463455"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "805"
-            endingLineNumber = "805"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "-getMenuOneArr"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -259,13 +281,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652545.901847"
+            filePath = "NetEaseNews/Classes/Main/Controllers/WSTabBarController.m"
+            timestampString = "487173404.96953"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "807"
-            endingLineNumber = "807"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "-loadTabBarItems:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -275,13 +297,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652548.255765"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsContainerController.m"
+            timestampString = "487174362.543748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "801"
-            endingLineNumber = "801"
-            landmarkName = "-initWithFrame:"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "-news"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -291,13 +313,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652552.125868"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsContainerController.m"
+            timestampString = "487174362.543748"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "831"
-            endingLineNumber = "831"
-            landmarkName = "-drawRect:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-news"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -307,30 +329,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652553.732782"
+            filePath = "NetEaseNews/Classes/Me/Model/WSTopicModel.m"
+            timestampString = "487175590.660173"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "834"
-            endingLineNumber = "834"
-            landmarkName = "-drawRect:"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "+topicWithIndex:isCache:getDataSuccess:getDataFaileure:"
             landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/External/MBProgress/MBProgressHUD.m"
-            timestampString = "486652555.437526"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "839"
-            endingLineNumber = "839"
-            landmarkName = "-drawRect:"
-            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[Ztlist topicWithIndex:isCache:getDataSuccess:getDataFaileure:]"
+                  moduleName = "NetEaseNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggang/news/NetEaseNews/Classes/Me/Model/WSTopicModel.m"
+                  timestampString = "487176058.833218"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "192">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__64+[Ztlist topicWithIndex:isCache:getDataSuccess:getDataFaileure:]_block_invoke"
+                  moduleName = "NetEaseNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/wanggang/news/NetEaseNews/Classes/Me/Model/WSTopicModel.m"
+                  timestampString = "487176058.833396"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

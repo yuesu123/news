@@ -79,8 +79,8 @@ static NSString * threeImageID = @"threeImageCell";
     
     _news = news;
     
-    self.iconView.contentMode = UIViewContentModeCenter;
-    
+    self.iconView.contentMode = UIViewContentModeScaleToFill;
+
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
     
 //    NSArray *arr = [NSArray readFile:kCachedSelectCell];
@@ -103,12 +103,12 @@ static NSString * threeImageID = @"threeImageCell";
     if(news.Showtype == 2){
         for (NSInteger i=0; i<news.Showtype; i++) {
             UIImageView *imgView = self.extraImageViews[i];
-            imgView.contentMode = UIViewContentModeCenter;
+            imgView.contentMode = UIViewContentModeScaleToFill;
             [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:i]] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
         }
     }else{
         UIImageView *imgView = self.extraImageViews[0];
-        imgView.contentMode = UIViewContentModeCenter;
+        imgView.contentMode = UIViewContentModeScaleToFill;
         [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:0]] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
     }
     
