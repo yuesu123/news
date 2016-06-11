@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSCommentController : UIViewController
+@interface WSCommentController : BaseViewController2
 
 @property (copy, nonatomic) NSString *postid;
 
 @property (copy, nonatomic) NSString *docid;
+
+@property (nonatomic, strong) id item;
 
 @end

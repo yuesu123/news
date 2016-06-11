@@ -32,6 +32,7 @@
 		3246941B1CFB12EE0071ADD6 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 324694061CFB12EE0071ADD6 /* UIScrollView+MJExtension.m */; };
 		3246941C1CFB12EE0071ADD6 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 324694081CFB12EE0071ADD6 /* UIScrollView+MJRefresh.m */; };
 		3246941D1CFB12EE0071ADD6 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3246940A1CFB12EE0071ADD6 /* UIView+MJExtension.m */; };
+		32A2AFEA1D0A62B6001DA7B8 /* WSCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A2AFE91D0A62B6001DA7B8 /* WSCommentModel.m */; };
 		32B53D111CF02DF700412EAC /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B53D101CF02DF700412EAC /* MeTableViewController.m */; };
 		32B53D201CF03A3500412EAC /* mine_setting@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53D1F1CF03A3500412EAC /* mine_setting@2x.png */; };
 		32B53D231CF0403100412EAC /* ServiceExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B53D221CF0403100412EAC /* ServiceExampleViewController.m */; };
@@ -485,6 +486,8 @@
 		324694081CFB12EE0071ADD6 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		324694091CFB12EE0071ADD6 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		3246940A1CFB12EE0071ADD6 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		32A2AFE81D0A62B6001DA7B8 /* WSCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCommentModel.h; sourceTree = "<group>"; };
+		32A2AFE91D0A62B6001DA7B8 /* WSCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCommentModel.m; sourceTree = "<group>"; };
 		32B53D0F1CF02DF700412EAC /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
 		32B53D101CF02DF700412EAC /* MeTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MeTableViewController.m; sourceTree = "<group>"; };
 		32B53D121CF031FC00412EAC /* ConfigNews.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConfigNews.h; sourceTree = "<group>"; };
@@ -2317,6 +2320,8 @@
 				7AF1B1731CF8611800953D64 /* WSNewsModel.m */,
 				7A91C04B1CF8653400CF1A68 /* WSNewsAllModel.h */,
 				7A91C04C1CF8653400CF1A68 /* WSNewsAllModel.m */,
+				32A2AFE81D0A62B6001DA7B8 /* WSCommentModel.h */,
+				32A2AFE91D0A62B6001DA7B8 /* WSCommentModel.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -3369,6 +3374,7 @@
 				32B53EBA1CF0447000412EAC /* UIImage+CBExtension.m in Sources */,
 				32B53F001CF0447000412EAC /* maLabel.m in Sources */,
 				651D649F1C4506DD00DAF34E /* MASConstraintMaker.m in Sources */,
+				32A2AFEA1D0A62B6001DA7B8 /* WSCommentModel.m in Sources */,
 				7AC3EE841CE03B0300B08119 /* UIButton+WF.m in Sources */,
 				32B53EBC1CF0447000412EAC /* UIView+CBExtension.m in Sources */,
 				651D64A51C4506DD00DAF34E /* View+MASAdditions.m in Sources */,

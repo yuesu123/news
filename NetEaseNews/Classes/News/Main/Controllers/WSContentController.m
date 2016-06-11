@@ -383,16 +383,13 @@
 - (IBAction)commentBtn { //这里修改为分享
     
     WSCommentController *vc = [[WSCommentController alloc] init];
-
-    NSString *docid = nil;
     if ([_newsItem isKindOfClass:[Newslist class]]) {
         Newslist *news = (Newslist*)_newsItem;
-        docid = [NSString convertIntgerToString:news.Id];
+        vc.item = news;
     }else{
         ZtNewslist *news = (ZtNewslist*)_newsItem;
-        docid = [NSString convertIntgerToString:news.Id];
+        vc.item = news;
     }
-    vc.docid = docid;
     //hideBottomBar
     [self.navigationController pushViewController:vc animated:YES];
 }

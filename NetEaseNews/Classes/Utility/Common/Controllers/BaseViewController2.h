@@ -8,6 +8,10 @@
 #import <UIKit/UIKit.h>
 
 @interface BaseViewController2 : UIViewController
+{
+    NSInteger _currentPage;
+}
+
 @property (nonatomic, strong) UIView* noNetView;
 @property (nonatomic, strong) UIView* noNetViewScroll;
 @property (nonatomic, strong) UIButton* reLoad;

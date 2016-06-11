@@ -137,7 +137,9 @@
     
     //轮播赋值
     [self.rollVC rollControllerWithAds:arr selectedItem:^(id obj) {
-        
+        [self gotoWSContentController:obj];
+
+        /*
         if([obj isKindOfClass:[WSAds class]]){
             
             WSAds *ad = obj;
@@ -162,7 +164,7 @@
             
             [weakSelf.navigationController pushViewController:contentVC animated:YES];
             
-        }
+        }*/
         
     }];
     

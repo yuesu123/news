@@ -14,7 +14,7 @@ static XFZCustomKeyBoard* customKeyBoard = nil;
     static dispatch_once_t once;
     
     dispatch_once(&once, ^{
-       
+    
         customKeyBoard = [[self alloc]init];
     
     });

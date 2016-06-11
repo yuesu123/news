@@ -3,7 +3,7 @@
 */
 
 #define INJECTION_NOIMPL
-#define INJECTION_BUNDLE InjectionBundle2
+#define INJECTION_BUNDLE InjectionBundle4
 
 #define INJECTION_ENABLED
 #import "/tmp/injectionforxcode/BundleInjection.h"
@@ -28,9 +28,9 @@ extern
 };
 #endif
 
-@interface InjectionBundle2 : NSObject
+@interface InjectionBundle4 : NSObject
 @end
-@implementation InjectionBundle2
+@implementation InjectionBundle4
 
 + (void)load {
     Class bundleInjection = NSClassFromString(@"BundleInjection");
@@ -41,11 +41,9 @@ extern
 
 int injectionHook() {
     NSLog( @"injectionHook():" );
-    [InjectionBundle2 load];
+    [InjectionBundle4 load];
     return YES;
 }
-
-#import "/Users/hlh/Downloads/WSNetEaseNews06010909/NetEaseNews/Classes/Me/Control/QTLoginViewController.m"
 
 
 

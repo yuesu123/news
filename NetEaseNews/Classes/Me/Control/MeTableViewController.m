@@ -102,7 +102,7 @@
 - (void)gotoWeatherVc{
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
     vc.titleStr = @"天气";
-   NSString*url = @"http://demo.53bk.com/about/contribute?userid=";
+   NSString*url = sg_privateAboutWether;
     NSString *urlnew = [NSString stringWithFormat:@"%@%@",url,[QTUserInfo sharedQTUserInfo].userId];
     vc.urlStr = urlnew;
     vc.type = caseAnalyse;
@@ -133,13 +133,15 @@
 #pragma mark System Delegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
+    if (indexPath.row == 0&&0 == indexPath.section) {
         [self gotoWeatherVc];
-    }else if(indexPath.row == 1){
+    }else if(indexPath.row == 1&&0 == indexPath.section){
         [self gotoCollectionView];
+    }else if(indexPath.row == 2&&0 == indexPath.section){
+        [self gotoWeatherVc];
     }else if(indexPath.row == 3&&0 == indexPath.section){
         [self shareNew];
-    }else{
+    }else if(indexPath.row == 0&&1 == indexPath.section){
         [self gotoSettingVc];
     }
     

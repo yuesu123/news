@@ -125,18 +125,6 @@
     return YES;
 }
 
-//-(NSString*)getToken:(NSString*)time
-//{
-//
-//
-//    NSString* originalUrl = [NSString stringWithFormat:@"%@?e=%@&method=feed-back&mobile=%@&question=%@",REQUEST_URL,time,self.phoneNum.text,self.textView.text];
-//
-//
-////    NSString* finalUrl = [QTRequestTools getToken:originalUrl];
-//    return finalUrl;
-//    
-//    
-//}
 
 
 @end

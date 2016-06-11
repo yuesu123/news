@@ -77,7 +77,11 @@
     UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
     btn.selected = NO;
     self.navigationItem.rightBarButtonItem= rightItem;
-    [self LoadDataCollection];
+    if (strNotNil([QTUserInfo sharedQTUserInfo].passWD)) {
+        [self LoadDataCollection];
+    }else{
+        [MBProgressHUD showError:@"请先登录"];
+    }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.edgesForExtendedLayout =  UIRectEdgeNone;
@@ -93,6 +97,7 @@
     [HYBNetworking getWithUrl:url refreshCache:YES success:^(id response) {
         [MBProgressHUD hideHUDForView:weakSelf.view];
         NSArray *dicArray = (NSArray*)response;
+        
         for (NSDictionary*dic in dicArray) {
             CollectModel *AllModel = [CollectModel objectWithKeyValues:dic];
             ZtNewsMode *ztModel = [ZtNewsMode objectWithKeyValues:dic[@"ZtNewsMode"]];

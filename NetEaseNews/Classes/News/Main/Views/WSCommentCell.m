@@ -9,7 +9,7 @@
 #import "WSCommentCell.h"
 #import "AFNetworking.h"
 #import "UIImageView+WebCache.h"
-#import "WSComment.h"
+#import "WSCommentModel.h"
 
 @interface WSCommentCell ()
 
@@ -27,17 +27,19 @@
 @implementation WSCommentCell
 
 #pragma mark - 设置数据
-- (void)setComment:(WSComment *)comment{
-    
+- (void)setComment:(Mvc_Pingitems *)comment{
     _comment = comment;
-
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:comment.timg] placeholderImage:[UIImage imageNamed:@"comment_profile_mars"]];
-    self.titleView.text = comment.n.length >0 ? comment.n : @"火星人";
-    self.placeView.text = comment.f;
-    self.commentView.text = comment.b;
-    self.timeSpanView.text = comment.t;
-    self.supportCount.text = comment.v;
+    self.commentView.text = comment.Pldetail;
+    //    [self.iconView sd_setImageWithURL:[NSURL URLWithString:comment.timg] placeholderImage:[UIImage imageNamed:@"comment_profile_mars"]];
+    self.iconView.image  = [UIImage imageNamed:@"logo108"];
+    //    self.titleView.text = comment.n.length >0 ? comment.n : @"火星人";
+//        self.placeView.text = comment.f;
+        self.timeSpanView.text = comment.Addtime;
+    self.titleView.text = comment.Newstitle;
+    
+    //    self.supportCount.text = comment.v;
 }
+
 
 
 #pragma mark - init

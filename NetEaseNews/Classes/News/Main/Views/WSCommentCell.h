@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
-@class WSComment;
+#import "WSCommentModel.h"
+@class Mvc_Pingitems;
 
 @interface WSCommentCell : UITableViewCell
 
-@property (strong, nonatomic) WSComment *comment;
+@property (strong, nonatomic) Mvc_Pingitems *comment;
 
 + (instancetype)commentCellWithTableView:(UITableView *)tableView;
 
