@@ -82,17 +82,22 @@
     [self.navigationController pushViewController:vc animated:YES];
 }
 
-- (void)gotoColloctionVC{
-    WSCommentController *vc = [[WSCommentController alloc] init];
-    vc.docid = @"BNKAGEV500234KO7";
-    //hideBottomBar
-    
-    [self.navigationController pushViewController:vc animated:YES];
-}
+
 
 - (void)gotoZeroStudyListController{
     QTZeroStudyListViewController *vc = [[QTZeroStudyListViewController alloc] init];
     vc.title = @"收藏";
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+- (void)gotoBaoliaoViewController{
+    ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
+    vc.title = @"新闻爆料";
+    if (strNotNil([QTUserInfo sharedQTUserInfo].userId)) {
+        vc.urlStr = [NSString stringWithFormat:@"%@?userid=%@",sg_privateAboutBaoliao,[QTUserInfo sharedQTUserInfo].userId];
+    }else{
+        vc.urlStr = [NSString stringWithFormat:@"%@",sg_privateAboutBaoliao];
+    }
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -125,7 +130,7 @@
     if (section == 1) {
         return 1;
     }else{
-        return 4;
+        return 3;
     }
 }
 //
@@ -138,7 +143,7 @@
     }else if(indexPath.row == 1&&0 == indexPath.section){
         [self gotoCollectionView];
     }else if(indexPath.row == 2&&0 == indexPath.section){
-        [self gotoWeatherVc];
+        [self gotoBaoliaoViewController];
     }else if(indexPath.row == 3&&0 == indexPath.section){
         [self shareNew];
     }else if(indexPath.row == 0&&1 == indexPath.section){
@@ -149,11 +154,7 @@
 - (void)shareNew{
     NSString *invite_code =  standardUserForKey(@"invite_code");
     NSString *shareContendHasInviteCode = nil;
-//    if(strNotNil(invite_code)){
-//        shareContendHasInviteCode = [NSString stringWithFormat:@"%@,注册app补填邀请码:%@","11",invite_code];
-//    }else{
-        shareContendHasInviteCode = @"广州阅速科技有限公司";
-//    }
+    shareContendHasInviteCode = @"广州阅速科技有限公司";
     [QTUMShareTool shareWithTitle:shareTitleDownload  //shareTitleHasCode
                           contend:shareContendHasInviteCode
                            urlStr:shareurlStr
@@ -165,59 +166,6 @@
 
 
 
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    // Configure the cell...
-    
-    return cell;
-}
-*/
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 
 

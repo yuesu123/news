@@ -37,7 +37,10 @@
 
 - (void)loadDataAllNewsMenu{
     [[QTUserInfo sharedQTUserInfo] loadUserInfoFromDefault];
-    [HYBNetworking getWithUrl:@"api/menu" refreshCache:NO params:nil success:^(id response) {
+    [HYBNetworking getWithUrl:@"api/menu"
+                 refreshCache:YES
+                       params:nil
+                      success:^(id response) {
         if ([response isKindOfClass:[NSArray class]]){
             NSArray *deserializedArray = (NSArray *)response;
             NSMutableArray *menuAllArr = [WSOneMenuModel objectArrayWithKeyValuesArray:deserializedArray];
@@ -84,7 +87,7 @@
 }
 
 
-- (NSMutableArray *)getTabbarArr:(NSMutableArray*)arr{
+- (NSArray *)getTabbarArr:(NSMutableArray*)arr{
     NSMutableArray *newArr = [NSMutableArray array];
     for (int i = 0; i < arr.count; i++) {
         WSOneMenuModel *model = [arr objectAtIndex:i];
@@ -92,7 +95,16 @@
             [newArr addObject:model];
         }
     }
-    return newArr;
+    NSRange range = NSMakeRange(0, 3);
+    NSArray *arraySort = [newArr subarrayWithRange:range];
+    NSArray *arraySortAfter = [arraySort sortedArrayUsingComparator:
+                       ^NSComparisonResult(WSOneMenuModel *obj1, WSOneMenuModel *obj2) {
+                           // 先按照姓排序
+                           NSComparisonResult result = [getStrFromIntger(obj1.Parentid) compare:getStrFromIntger(obj2.Parentid)];
+                           
+                           return result;  
+                       }];
+    return arraySortAfter;
 }
 
 - (void)getMenuOneArr{

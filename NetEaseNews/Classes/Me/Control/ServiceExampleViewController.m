@@ -28,7 +28,8 @@
     webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, Main_Screen_Width, Main_Screen_Height - 64)];
     //    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://8235.wx.cdn.aodianyun.com/layout/party/4532"]];
     
-    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:_urlStr]];
+    NSString *allUrl =[NSString stringWithFormat:@"%@%@",sg_privateNetworkBaseUrl,_urlStr];
+    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:allUrl]];
     webView.delegate = self;
     [self.view addSubview: webView];
     [webView loadRequest:request];
