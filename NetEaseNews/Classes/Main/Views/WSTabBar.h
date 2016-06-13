@@ -15,6 +15,8 @@
 #pragma mark -
 @interface WSTabBarItem : UIView
 
+@property (weak, nonatomic) UILabel *itemLbl;
+
 @property (assign, nonatomic, getter=isSelected) BOOL selected;
 
 @property (copy, nonatomic) void (^_Nullable itemClick)(WSTabBarItem * _Nonnull item);

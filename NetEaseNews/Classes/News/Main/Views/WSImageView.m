@@ -33,8 +33,8 @@
     
     
     
-//    if (self.image.size.width < self.bounds.size.width && self.image.size.height < self.bounds.size.height) {
-//        self.contentMode = UIViewContentModeScaleAspectFill;
+//    if (self.image.size.width < self.bounds.size.width*0.6 && self.image.size.height < self.bounds.size.height*0.6) {
+//        self.contentMode = UIViewContentModeCenter;
 //    }else if(self.image.size.width >= self.bounds.size.width || self.image.size.height >= self.bounds.size.height){
 //        self.contentMode = UIViewContentModeScaleAspectFit;
 //    }

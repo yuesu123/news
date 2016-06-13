@@ -280,10 +280,13 @@
     NSMutableArray *itemArrNotSuccess = [NSMutableArray array];
     if ([WSMenuInstance sharedWSMenuInstance].menuTwoArr.count>0) {
         
-        item2.itemLbl
+        WSOneMenuModel *oneModel = [[WSMenuInstance sharedWSMenuInstance].tabbarArr objectAtIndex:1];
+        item2.itemLbl.text = oneModel.Classname;
         [itemArrSuccess addObject:item2];//资讯
     }
     if ([WSMenuInstance sharedWSMenuInstance].menuThreeArr.count>0) {
+        WSOneMenuModel *oneModel = [[WSMenuInstance sharedWSMenuInstance].tabbarArr objectAtIndex:2];
+        item3.itemLbl.text = oneModel.Classname;
         [itemArrSuccess addObject:item3];//专栏
     }
     //固定添加我的

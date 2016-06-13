@@ -31,7 +31,6 @@
 @interface WSTabBarItem ()
 
 @property (weak, nonatomic) WSButton *itemBtn;
-@property (weak, nonatomic) UILabel *itemLbl;
 
 @end
 
