@@ -279,6 +279,8 @@
     [itemArrSuccess addObject:item4];//话题
     NSMutableArray *itemArrNotSuccess = [NSMutableArray array];
     if ([WSMenuInstance sharedWSMenuInstance].menuTwoArr.count>0) {
+        
+        item2.itemLbl
         [itemArrSuccess addObject:item2];//资讯
     }
     if ([WSMenuInstance sharedWSMenuInstance].menuThreeArr.count>0) {
