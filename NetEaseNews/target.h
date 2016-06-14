@@ -21,8 +21,7 @@
     我的里面所有界面调整
     tabbar 按钮调整不要用视频
 
-    新闻爆料  直接加载url          等html5 url
-    意见反馈界面调整               等html5 url
+    意见反馈界面                 等html5 url
     积分展示                     等html5 url
 
 
