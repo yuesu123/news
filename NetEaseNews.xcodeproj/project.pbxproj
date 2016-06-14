@@ -220,7 +220,6 @@
 		651D64D11C4506DD00DAF34E /* WSNews.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D642F1C4506DD00DAF34E /* WSNews.m */; };
 		651D64D21C4506DD00DAF34E /* WSPhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D64311C4506DD00DAF34E /* WSPhoto.m */; };
 		651D64D31C4506DD00DAF34E /* News.plist in Resources */ = {isa = PBXBuildFile; fileRef = 651D64331C4506DD00DAF34E /* News.plist */; };
-		651D64D41C4506DD00DAF34E /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 651D64351C4506DD00DAF34E /* News.storyboard */; };
 		651D64D51C4506DD00DAF34E /* WSCommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D64371C4506DD00DAF34E /* WSCommentCell.m */; };
 		651D64D61C4506DD00DAF34E /* WSCommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651D64381C4506DD00DAF34E /* WSCommentCell.xib */; };
 		651D64D71C4506DD00DAF34E /* WSCommentController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 651D64391C4506DD00DAF34E /* WSCommentController.xib */; };
@@ -407,6 +406,7 @@
 		7AC3EE8B1CE03BF700B08119 /* QTCommonTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC3EE8A1CE03BF700B08119 /* QTCommonTools.m */; };
 		7AC3EE901CE03C6400B08119 /* NSDate+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC3EE8D1CE03C6400B08119 /* NSDate+Category.m */; };
 		7AC3EE941CE03C9100B08119 /* NSDateFormatter+Category.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AC3EE931CE03C9100B08119 /* NSDateFormatter+Category.m */; };
+		7AC6CE151D0FA98700CB75AB /* News.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AC6CE141D0FA98700CB75AB /* News.storyboard */; };
 		7AE05C521CDC75ED003A947A /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE05C511CDC75ED003A947A /* SystemConfiguration.framework */; };
 		7AE05C541CDC7643003A947A /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE05C531CDC7643003A947A /* Security.framework */; };
 		7AE05C561CDC7678003A947A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE05C551CDC7678003A947A /* CoreGraphics.framework */; };
@@ -872,7 +872,6 @@
 		651D64301C4506DD00DAF34E /* WSPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSPhoto.h; sourceTree = "<group>"; };
 		651D64311C4506DD00DAF34E /* WSPhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSPhoto.m; sourceTree = "<group>"; };
 		651D64331C4506DD00DAF34E /* News.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = News.plist; sourceTree = "<group>"; };
-		651D64351C4506DD00DAF34E /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		651D64361C4506DD00DAF34E /* WSCommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCommentCell.h; sourceTree = "<group>"; };
 		651D64371C4506DD00DAF34E /* WSCommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCommentCell.m; sourceTree = "<group>"; };
 		651D64381C4506DD00DAF34E /* WSCommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WSCommentCell.xib; sourceTree = "<group>"; };
@@ -1174,6 +1173,7 @@
 		7AC3EE921CE03C9100B08119 /* NSDateFormatter+Category.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDateFormatter+Category.h"; sourceTree = "<group>"; };
 		7AC3EE931CE03C9100B08119 /* NSDateFormatter+Category.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDateFormatter+Category.m"; sourceTree = "<group>"; };
 		7AC3EE951CE03DFE00B08119 /* Singleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Singleton.h; sourceTree = "<group>"; };
+		7AC6CE141D0FA98700CB75AB /* News.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = News.storyboard; sourceTree = "<group>"; };
 		7AE05C511CDC75ED003A947A /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		7AE05C531CDC7643003A947A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		7AE05C551CDC7678003A947A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -2342,7 +2342,7 @@
 		651D64341C4506DD00DAF34E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				651D64351C4506DD00DAF34E /* News.storyboard */,
+				7AC6CE141D0FA98700CB75AB /* News.storyboard */,
 				651D64361C4506DD00DAF34E /* WSCommentCell.h */,
 				651D64371C4506DD00DAF34E /* WSCommentCell.m */,
 				651D64381C4506DD00DAF34E /* WSCommentCell.xib */,
@@ -3247,7 +3247,6 @@
 				32B53F1C1CF0447000412EAC /* SVProgressHUD.bundle in Resources */,
 				65987CE21C4A28A900A69EE4 /* logo.hunantv.com@2x.png in Resources */,
 				7AAE221E1CDC3A43006FA57C /* navigationBar.png in Resources */,
-				651D64D41C4506DD00DAF34E /* News.storyboard in Resources */,
 				65987CDD1C4A28A900A69EE4 /* logo.fun.tv.png in Resources */,
 				7AF91C051D0D5CED005B3D05 /* UMSLoginViewController.xib in Resources */,
 				651D64DB1C4506DD00DAF34E /* WSImageContentController.xib in Resources */,
@@ -3323,6 +3322,7 @@
 				65987CE41C4A28A900A69EE4 /* logo.iqiyi.com@2x.png in Resources */,
 				65987D031C4A28A900A69EE4 /* rating.png in Resources */,
 				7A60545A1CF9A29600BCB9C7 /* WSTopicNewsListCell.xib in Resources */,
+				7AC6CE151D0FA98700CB75AB /* News.storyboard in Resources */,
 				7AF91C081D0D5CED005B3D05 /* UMSocialSDKResourcesNew.bundle in Resources */,
 				65987CDF1C4A28A900A69EE4 /* logo.funshion.com.png in Resources */,
 				7AF91C031D0D5CED005B3D05 /* UMShareEditViewController.xib in Resources */,

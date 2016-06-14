@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -23,6 +23,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdb-YG-axm">
                             <rect key="frame" x="267" y="2" width="50" height="45"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="34C-Fu-YOd"/>
                                 <constraint firstAttribute="height" constant="45" id="foY-6c-OzZ"/>
@@ -31,6 +32,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZJ-4p-me4">
                             <rect key="frame" x="317" y="2" width="50" height="45"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="5Zc-YF-r0L"/>
                                 <constraint firstAttribute="width" constant="50" id="Ke8-Sk-lpv"/>
@@ -38,6 +40,7 @@
                             <state key="normal" image="reader_share"/>
                         </button>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" red="0.039215686270000001" green="0.035294117649999998" blue="0.039215686270000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="Pdb-YG-axm" secondAttribute="bottom" constant="2" id="6Zq-Ja-O94"/>
@@ -54,6 +57,7 @@
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YQG-dy-d6a">
                             <rect key="frame" x="0.0" y="14" width="50" height="50"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="50" id="Mcc-TE-uz8"/>
                                 <constraint firstAttribute="height" constant="50" id="o2e-0d-vf6"/>
@@ -65,6 +69,7 @@
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Jz-Qo-Jvg">
                             <rect key="frame" x="299" y="20" width="76" height="44"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="76" id="abA-hJ-xi6"/>
                             </constraints>
@@ -76,6 +81,7 @@
                             </connections>
                         </button>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="trailing" secondItem="3Jz-Qo-Jvg" secondAttribute="trailing" id="9g8-eu-X9F"/>
@@ -87,6 +93,7 @@
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Jcn-qr-Dr4">
                     <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                    <animations/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TEJ-sF-x7Y">
                         <size key="itemSize" width="50" height="50"/>
@@ -96,6 +103,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" red="0.039215686274509803" green="0.035294117647058823" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstItem="Jcn-qr-Dr4" firstAttribute="top" secondItem="YhU-QG-c4y" secondAttribute="bottom" id="68R-uf-ZUT"/>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2CY-gC-BuS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2CY-gC-BuS">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -318,7 +318,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="203" translatesAutoresizingMaskIntoConstraints="NO" id="1Aj-iO-bMj" customClass="WSImageView">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UMS_email_on.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Aj-iO-bMj" customClass="WSImageView">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="180"/>
                                             <animations/>
                                             <color key="backgroundColor" red="0.86274509799999999" green="0.86666666670000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -357,7 +357,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="203" width="80" height="80"/>
+        <image name="UMS_email_on.png" width="19" height="19"/>
         <image name="night_cola_bubble_red" width="73" height="15"/>
     </resources>
 </document>

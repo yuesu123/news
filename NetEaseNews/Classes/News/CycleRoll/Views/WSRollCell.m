@@ -22,8 +22,9 @@
 
 - (void)setAd:(Blocknews *)ad{
     _ad = ad;
-//    self.imageView.contentMode = UIViewContentModeScaleAspectFill;//UIViewContentModeScaleAspectFit;//UIViewContentModeScaleToFill;
-    ECLog(@"轮播:%@",ad.Picsmall);
+    self.imageView.contentMode = UIViewContentModeScaleToFill;//
+////    UIViewContentModeScaleToFill/UIViewContentModeScaleAspectFill;//UIViewContentModeScaleAspectFit;//UIViewContentModeScaleToFill;
+//    ECLog(@"轮播:%@",ad.Picsmall);
     [self.imageView sd_setImageWithURL:[NSURL URLWithString:ad.Picsmall] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
 }
 

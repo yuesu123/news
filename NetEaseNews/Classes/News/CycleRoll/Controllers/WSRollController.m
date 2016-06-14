@@ -33,7 +33,6 @@
 
 
 - (void)rollControllerWithAds:(NSArray *)ads selectedItem:(SelectedItemBlock)sel{
-    
     self.ads = ads;
     self.selectedItem = sel;
 }
@@ -54,6 +53,7 @@ static NSString * const reuseIdentifier = @"rollCell";
     [self loadSubViews];
 }
 
+
 - (void)loadSubViews{
     
     CGFloat margin = 8;
@@ -72,7 +72,7 @@ static NSString * const reuseIdentifier = @"rollCell";
         
     }];
     
-    //imageView
+    //imageView 相机的
     UIImage *image = [UIImage imageNamed:@"cell_tag_photo"];
     image = [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     UIImageView *typeView = [[UIImageView alloc] initWithImage:image];
@@ -80,7 +80,6 @@ static NSString * const reuseIdentifier = @"rollCell";
     _typeView = typeView;
     typeView.contentMode = UIViewContentModeScaleToFill;
     [typeView mas_makeConstraints:^(MASConstraintMaker *make) {
-       
         make.left.equalTo(self.view).offset(margin);
         make.bottom.equalTo(self.view).offset(-margin);
         make.width.height.equalTo(@(height));
@@ -115,10 +114,15 @@ static NSString * const reuseIdentifier = @"rollCell";
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    
     [super viewWillAppear:animated];
-    
-    self.flowLayout.itemSize = self.collectionView.bounds.size;
+    self.flowLayout.itemSize = CGSizeMake(Main_Screen_Width, self.collectionView.size.height);//self.collectionView.bounds.size;
+    self.currentIndex = 0;
+}
+
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    self.flowLayout.itemSize = CGSizeMake(Main_Screen_Width, self.collectionView.size.height);//self.collectionView.bounds.size;
     self.currentIndex = 0;
 }
 
@@ -145,7 +149,7 @@ static NSString * const reuseIdentifier = @"rollCell";
     
     _currentIndex = currentIndex;
     
-    self.collectionView.contentOffset = CGPointMake(self.collectionView.bounds.size.width * currentIndex + self.collectionView.bounds.size.width * self.ads.count, 0);
+    self.collectionView.contentOffset = CGPointMake(Main_Screen_Width * currentIndex + Main_Screen_Width * self.ads.count, 0);
     
     self.pageControl.currentPage = currentIndex;
 }
@@ -154,7 +158,6 @@ static NSString * const reuseIdentifier = @"rollCell";
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
      
     if (self.selectedItem) {
-    
         self.selectedItem(self.ads[indexPath.item]);
     }
     
