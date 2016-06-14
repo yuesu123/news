@@ -86,9 +86,12 @@
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.edgesForExtendedLayout =  UIRectEdgeNone;
     }
-    
+//    [self createRefresh:tableview];
 }
 
+- (void)loadDataWithCache:(BOOL)cache{
+    [self LoadDataCollection];
+}
 
 - (void)LoadDataCollection{
     NSString *url = [NSString stringWithFormat:@"api/newsshoucang?userid=%@",[QTUserInfo sharedQTUserInfo].userId];
@@ -108,12 +111,13 @@
         }
         
         [self addNotingView:weakSelf.totalArr.count view:self.view title:@"暂无收藏" font:nil color:nil];
-
+//        [self refreshCurentPg:_currentPage Total:<#(NSInteger)#> pgSize:<#(NSInteger)#>]
         
-        
+        [self endRefresh];
         [tableview reloadData];
     } fail:^(NSError *error) {
         [MBProgressHUD hideHUDForView:weakSelf.view];
+        [self endRefresh];
     }];
 }
 

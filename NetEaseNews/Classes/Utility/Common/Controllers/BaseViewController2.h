@@ -28,4 +28,10 @@
  */
 - (void)addNotingView:(NSInteger)count view:(id)oldview title:(NSString*)title font:(UIFont*)font color:(UIColor*)color;
 
+
+- (void)createRefresh:(UITableView*)tableView;
+- (void)endRefresh;
+- (void)refreshCurentPg:(NSInteger)currentPage Total:(NSInteger)Total pgSize:(NSInteger)pgSize;
+- (void)loadDataWithCache:(BOOL)cache;
+
 @end

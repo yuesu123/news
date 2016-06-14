@@ -11,6 +11,7 @@
 @interface BaseViewController2 ()
 @property (nonatomic, strong) UIView  *nothingView;
 @property (nonatomic, strong) UIButton  *leftBtn;
+@property (nonatomic, strong) UITableView *tableView;
 
 @end
 
@@ -195,5 +196,48 @@
     }
     
 }
+
+#pragma mark -  刷新相关30行
+- (void)createRefresh:(UITableView*)tableView
+{
+    self.tableView = tableView;
+    __unsafe_unretained __typeof(self) weakSelf = self;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadLastData)];
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _currentPage = 1;
+        [weakSelf.tableView.mj_footer resetNoMoreData];
+        weakSelf.tableView.mj_footer.hidden = YES;
+        [weakSelf loadDataWithCache:NO];
+    }];
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadLastData方法）
+    
+    // 马上进入刷新状态
+    [self.tableView.mj_header beginRefreshing];
+}
+- (void)endRefresh{
+    self.tableView.mj_footer.hidden = NO;
+    self.tableView.mj_header.hidden = NO;
+    [self.tableView.mj_header endRefreshing];
+    [self.tableView.mj_footer endRefreshing];
+}
+- (void)loadLastData{
+    //加载footer 不需要加载缓存
+    self.tableView.mj_header.hidden = YES;
+    [self loadDataWithCache:NO];
+}
+- (void)refreshCurentPg:(NSInteger)currentPage Total:(NSInteger)Total pgSize:(NSInteger)pgSize{
+    [self endRefresh];
+    if ([QTCommonTools hasMoreData:currentPage totalNews:Total pageSize:pgSize]) {
+        ++_currentPage;
+    }else{
+        [self.tableView.mj_footer endRefreshingWithNoMoreData];
+    }
+}
+- (void)loadDataWithCache:(BOOL)cache{
+    
+}
+
+
 
 @end

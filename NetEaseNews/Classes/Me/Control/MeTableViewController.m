@@ -92,7 +92,7 @@
 }
 - (void)gotoBaoliaoViewController{
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
-    vc.title = @"新闻爆料";
+    vc.titleStr = @"新闻报料";
     if (strNotNil([QTUserInfo sharedQTUserInfo].userId)) {
         vc.urlStr = [NSString stringWithFormat:@"%@?userid=%@",sg_privateAboutBaoliao,[QTUserInfo sharedQTUserInfo].userId];
     }else{
@@ -101,6 +101,19 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
+- (void)gotoMyBaoliaoViewController{
+    ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
+    vc.titleStr = @"我的报料";
+    if (strNotNil([QTUserInfo sharedQTUserInfo].userId)) {
+        vc.urlStr = [NSString stringWithFormat:@"%@?userid=%@",sg_privateAboutMyBaoliao,[QTUserInfo sharedQTUserInfo].userId];
+    }else{
+        vc.urlStr = [NSString stringWithFormat:@"%@",sg_privateAboutMyBaoliao];
+    }
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
 
 
 //去天气webView控制器
@@ -130,7 +143,7 @@
     if (section == 1) {
         return 1;
     }else{
-        return 3;
+        return 4;
     }
 }
 //
@@ -145,7 +158,7 @@
     }else if(indexPath.row == 2&&0 == indexPath.section){
         [self gotoBaoliaoViewController];
     }else if(indexPath.row == 3&&0 == indexPath.section){
-        [self shareNew];
+        [self gotoMyBaoliaoViewController];
     }else if(indexPath.row == 0&&1 == indexPath.section){
         [self gotoSettingVc];
     }

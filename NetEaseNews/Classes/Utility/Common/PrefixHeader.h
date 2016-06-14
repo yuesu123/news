@@ -35,8 +35,11 @@ static NSString *sg_privateAboutMe = @"/s/aboutus";
 static NSString *sg_privateAboutWether = @"/s/weather";
 //隐私政策
 static NSString *sg_privateAbouTPrivtazhence = @"/s/items";
+//新闻爆料
 static NSString *sg_privateAboutBaoliao= @"/s/baoliao";
-
+//新闻爆料
+static NSString *sg_privateAboutMyBaoliao= @"/s/baoliaolist";
+//http://xapp.blnews.com.cn/s/baoliaolist?userid=9
 //http://xapp.blnews.com.cn/s/baoliao?userid=8
 
 
