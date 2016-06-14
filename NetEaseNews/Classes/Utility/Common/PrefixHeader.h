@@ -29,14 +29,15 @@
 
 
 static NSString *sg_privateNetworkBaseUrl = @"http://xapp.blnews.com.cn";
-//static NSString *sg_privateNetworkBaseUrl = @"http://app.53bk.com";
 //关于我们
-static NSString *sg_privateAboutMe = @"http://xapp.blnews.com.cn/s/aboutus";
+static NSString *sg_privateAboutMe = @"/s/aboutus";
 //天气
-static NSString *sg_privateAboutWether = @"http://xapp.blnews.com.cn/s/weather";
+static NSString *sg_privateAboutWether = @"/s/weather";
 //隐私政策
-static NSString *sg_privateAbouTPrivtazhence = @"http://xapp.blnews.com.cn/s/items";
+static NSString *sg_privateAbouTPrivtazhence = @"/s/items";
+static NSString *sg_privateAboutBaoliao= @"/s/baoliao";
 
+//http://xapp.blnews.com.cn/s/baoliao?userid=8
 
 
 

@@ -134,7 +134,6 @@
 }
 
 - (void)loadDataComment:(NSString*)content{
-//    http://xapp.blnews.com.cn/api/pinglunAdd
     NSString *userid =[QTUserInfo sharedQTUserInfo].userId;
     NSString *partUrl = nil;
     NSString *docid = nil;
@@ -345,7 +344,6 @@
         Newslist *news = (Newslist*)_newsItem;
         title  = news.Title;
         content = news.Descriptions;
-        http://xapp.blnews.com.cn/s/news_article/18
         urlClick = [NSString stringWithFormat:@"%@/s/news_article/%ld",sg_privateNetworkBaseUrl,news.Id];
     }else{
         ZtNewslist *news = (ZtNewslist*)_newsItem;

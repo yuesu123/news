@@ -33,9 +33,6 @@ static id _instance;
         urlStr = [NSString stringWithFormat:@"%@%@", commentURL, urlStr];
     }
     ECLog(@"请求url \n\n %@ \n\n",urlStr);
-//    urlStr = @"http://xapp.blnews.com.cn/api/newslist?classid=3";
-//    urlStr = @"http://xapp.blnews.com.cn/api/newslist";
-
    return [self GETJSON:urlStr progress:progress success:success failure:failure];
     
 }

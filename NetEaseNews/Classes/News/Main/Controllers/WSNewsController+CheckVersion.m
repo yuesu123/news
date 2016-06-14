@@ -30,13 +30,11 @@
 {
     [MBProgressHUD showMessage:loadingNetWorkStr toView:self.view];
     __weak typeof (self) w_self = self;
-    
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     [params setObject:@"last-version" forKey:@"method"];
     [params setObject:@"1" forKey:@"versionType"];//1是苹果
-    
-    [QTFHttpTool requestWithMethodHasSecretNew:@"POST" url:REQUEST_URL parameters:params sucess:^(NSDictionary *json) {
-        BOOL success = [json[@"success"] boolValue];
+    [QTFHttpTool requestGETURL:@"api/iosversion" params:nil refreshCach:YES needHud:NO hudView:nil loadingHudText:nil errorHudText:nil sucess:^(id json) {
+        BOOL success = [json[@"Success"] boolValue];
         NSDate *Newdate = [NSDate date];
         NSUserDefaults *user =   [NSUserDefaults standardUserDefaults];
         [user setObject:Newdate forKey:@"kUnCharchiveFilePathVersion"];
@@ -51,14 +49,11 @@
             //存储旧的日期
         }
         ECLog(@"响应:%@",json);
-        
         [MBProgressHUD hideHUDForView:w_self.view];
-    } failur:^(NSError *error) {
-        [MBProgressHUD hideHUDForView:w_self.view];
-        [MBProgressHUD showError:@"网络连接失败"];
+    }failur:^(NSError *error) {
         self.isgetVersion = getVersionShould;
+
     }];
-    
 }
 
 //     NSOrderedAscending = -1,上升
@@ -68,10 +63,11 @@
 // NSLiteralSearch 区分大小写(完全比较)
 // NSNumericSearch 只比较字符串的个数，而不比较字符串的字面值
 - (void)checkHasNewBanben:(NSDictionary*)dic{
-    NSString *maxBanben = dic[@"versionName"];
-    NSString *minBanben = dic[@"iosMinVersion"];
-    NSString *content = dic[@"content"];
-    self.urlStr = dic[@"url"];
+    NSString *maxBanben = dic[@"VersionName"];
+    NSString *minBanben = dic[@"IosMinVersion"];
+    NSString *content = dic[@"Content"];
+   content = [QTCommonTools replaceStringWithOldLongStr:content oldSmallstr:@"<br>" withNew:@""];
+    self.urlStr = dic[@"Url"];
     int resultVerNormal = [appCurVersionStr compare:maxBanben options:NSCaseInsensitiveSearch];//=-1 appCurVersionStr < maxBanben ;
     
     int resultVer = [appCurVersionStr compare:minBanben options:NSCaseInsensitiveSearch];//=-1  appCurVersionStr < minBanben;
