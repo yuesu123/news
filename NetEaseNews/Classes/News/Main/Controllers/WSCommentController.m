@@ -120,6 +120,8 @@
 }
 
 
+
+
 - (void)loadDataComment{
     NSString *partUrl = nil;
     if ([_item isKindOfClass:[Newslist class]]) {
