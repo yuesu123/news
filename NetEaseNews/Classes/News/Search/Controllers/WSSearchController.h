@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WSSearchController : UIViewController
+@interface WSSearchController : BaseViewController2
 
 @end

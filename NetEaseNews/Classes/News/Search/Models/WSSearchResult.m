@@ -11,33 +11,33 @@
 @implementation WSSearchResult
 
 
-+ (void)searchResultWithKey:(NSString *)key result:(GetDataSuccessBlock)result{
-    
-    
-    NSString *urlStr = [NSString stringWithFormat:@"/search/comp/MA%%3D%%3D/20/%@.html?deviceId=NDE5NzAwMEItQTNFQi00OUVBLUI2NjktQkZEMzE0MTMxNUM1&version=NS41LjA%%3D&channel=5aS05p2h",[self base64Encoder:key]];
-    
-    [WSGetDataTool GETJSON:urlStr GetDataType:WSGETDataTypeBaseURL progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        
-        NSArray *dictArr = responseObject[@"doc"][@"result"];
-        
-        NSMutableArray *arrM = [NSMutableArray array];
-        for (NSDictionary *dict in dictArr) {
-            
-            WSSearchResult *result = [WSSearchResult resultWithDict:dict];
-            [arrM addObject:result];
-        }
-        
-        if (arrM.count>0) {
-            
-            result(arrM.copy);
-        }
-        
-        
-    } failure:^(NSURLSessionDataTask *task, NSError *error) {
-        NSLog(@"%@",error);
-    }];
-    
-}
+//+ (void)searchResultWithKey:(NSString *)key result:(GetDataSuccessBlock)result{
+//    
+//    
+//    NSString *urlStr = [NSString stringWithFormat:@"/search/comp/MA%%3D%%3D/20/%@.html?deviceId=NDE5NzAwMEItQTNFQi00OUVBLUI2NjktQkZEMzE0MTMxNUM1&version=NS41LjA%%3D&channel=5aS05p2h",[self base64Encoder:key]];
+//    
+//    [WSGetDataTool GETJSON:urlStr GetDataType:WSGETDataTypeBaseURL progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+//        
+//        NSArray *dictArr = responseObject[@"doc"][@"result"];
+//        
+//        NSMutableArray *arrM = [NSMutableArray array];
+//        for (NSDictionary *dict in dictArr) {
+//            
+//            WSSearchResult *result = [WSSearchResult resultWithDict:dict];
+//            [arrM addObject:result];
+//        }
+//        
+//        if (arrM.count>0) {
+//            
+//            result(arrM.copy);
+//        }
+//        
+//        
+//    } failure:^(NSURLSessionDataTask *task, NSError *error) {
+//        NSLog(@"%@",error);
+//    }];
+//    
+//}
 
 +(NSString *)base64Encoder:(NSString *)originalStr{
     

@@ -144,8 +144,8 @@
          }
          [self.comments addObjectsFromArray:model.Mvc_pingItems];
          [self refreshCurentPg:_currentPage Total:model.Mvc_pingTotal pgSize:20];//2
-
-        [self addNotingView:weakSelf.comments.count view:self.view title:@"暂无评论" font:nil color:nil];
+         [self showHint:@"暂无评论!"];
+//        [self addNotingView:weakSelf.comments.count view:self.tableView title:@"暂无评论" font:[UIFont systemFontOfSize:15] color:[UIColor redColor]];
         
         [self.tableView reloadData];
     } failur:^(NSError *error) {

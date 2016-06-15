@@ -10,6 +10,8 @@
 #import "WSSearchResult.h"
 #import "WSContentController.h"
 #import "WSImageContentController.h"
+#import "WSNewsAllModel.h"
+#import "WSTopicContentListModel.h"
 
 @interface WSSearchController ()<UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
@@ -26,12 +28,44 @@
 
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
     
-    [WSSearchResult searchResultWithKey:searchBar.text result:^(NSArray *dataArr) {
-        
-        [self.result addObjectsFromArray:dataArr];
+    NSString *url = [NSString stringWithFormat:@"api/infosearch?key=%@",searchBar.text];
+    ECLog(@"搜索字段%@",searchBar.text);
+    [QTFHttpTool requestPOSTURL:url paras:nil needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
+        NSArray * wsResultArr = [WSSearchResult objectArrayWithKeyValuesArray:json[@"List"]];
+        [self.result addObjectsFromArray:wsResultArr];
         [self.tableView reloadData];
         [self.searchBar resignFirstResponder];
+        if (wsResultArr.count == 0) {
+            [self showHint:@"暂无相关新闻"];
+        }
+//        [self addNotingView:wsResultArr.count view:self.tableView title:@"暂无相关新闻" font:nil color:nil];
+    } failur:^(NSError *error) {
     }];
+}
+
+- (void)gotoNotiControllercreatItem:(WSSearchResult*)result{
+
+    NSInteger newsid = result.Newsid;
+    NSInteger ztnewsid = result.ZtNewsid;
+    if (newsid>0) {
+        Newslist *newsList = [[Newslist alloc] init];
+        newsList.Title = result.Title;
+        newsList.Id = newsid;
+        [self gotoWSContentController:newsList];
+    }else{
+        ZtNewslist *ztnews = [[ZtNewslist alloc] init];
+        ztnews.Title = result.Title;
+        ztnews.Id = ztnewsid;
+        [self gotoWSContentController:ztnews];
+    }
+}
+- (void)gotoWSContentController:(id)news{
+    WSContentController *contentVC = [WSContentController contentControllerWithItem:news];
+    //        contentVC.newsLink = @"https://wap.baidu.com";//news.Newslink;
+    //    contentVC.docid =[NSString convertIntgerToString:news.Id];
+    //    //hideBottomBar
+    //    contentVC.wscontentControllerType = WSContentControllerTypeNews;
+    [self.navigationController pushViewController:contentVC animated:YES];
     
 }
 
@@ -43,27 +77,9 @@
 #pragma mark - tableview delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     WSSearchResult *result = self.result[indexPath.row];
-    
-    if ([result.skipType isEqualToString:@"doc"]) {
-        
-        WSContentController *content = [[WSContentController alloc] init];
-//        content.docid = result.docid;
-        //hideBottomBar
-
-        [self.navigationController pushViewController:content animated:YES];
-        
-    }else if ([result.skipType isEqualToString:@"photoset"]){
-        
-        WSImageContentController *vc = [[WSImageContentController alloc] init];
-        vc.replycount = 0;
-        vc.photosetID = result.skipID;
-        //hideBottomBar
-
-        [self.navigationController pushViewController:vc animated:YES];
-        
-    }
+    [self gotoNotiControllercreatItem:result];
 }
 
 
@@ -87,8 +103,8 @@
     
     WSSearchResult *result = self.result[indexPath.row];
     
-    cell.textLabel.text = result.title;
-    cell.detailTextLabel.text = result.ptime;
+    cell.textLabel.text = result.Title;
+    cell.detailTextLabel.text = result.Edittime;
     cell.textLabel.numberOfLines = 0;
     
     return cell;

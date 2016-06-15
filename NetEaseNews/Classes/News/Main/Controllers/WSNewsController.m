@@ -89,12 +89,12 @@
     if (newsid>0) {
         Newslist *newsList = [[Newslist alloc] init];
         newsList.Title = messageAlert;
-        newsList.Id = 1;//newsid;
+        newsList.Id = newsid;
         [self gotoWSContentController:newsList];
     }else{
         ZtNewslist *ztnews = [[ZtNewslist alloc] init];
         ztnews.Title = messageAlert;
-        ztnews.Id = 1;//ztnewsid;
+        ztnews.Id = ztnewsid;
         [self gotoWSContentController:ztnews];
     }
 }
