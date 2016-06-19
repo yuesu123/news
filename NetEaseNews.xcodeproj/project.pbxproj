@@ -12,6 +12,7 @@
 		3228AE681D09314C0076F27A /* lauch_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE671D09314C0076F27A /* lauch_bottom@2x.png */; };
 		323FFEE51D165224002F2C74 /* WSAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE41D165224002F2C74 /* WSAdModel.m */; };
 		323FFEE81D16526B002F2C74 /* WSNewsAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */; };
+		323FFEF31D1666BF002F2C74 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323FFEF21D1666BE002F2C74 /* Info.plist */; };
 		324693D71CF9539A0071ADD6 /* WSTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */; };
 		324693DC1CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D91CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m */; };
 		324693DD1CFAB46B0071ADD6 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693DB1CFAB46B0071ADD6 /* UIViewController+HUD.m */; };
@@ -254,7 +255,6 @@
 		651D64F21C4506DD00DAF34E /* WSNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D64841C4506DD00DAF34E /* WSNavigationView.m */; };
 		651D64F31C4506DD00DAF34E /* WSGetDataTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D64871C4506DD00DAF34E /* WSGetDataTool.m */; };
 		651D64F61C4506DD00DAF34E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 651D64941C4506DD00DAF34E /* Assets.xcassets */; };
-		651D64F81C4506E500DAF34E /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 651D64F71C4506E500DAF34E /* Info.plist */; };
 		651D64FC1C45077200DAF34E /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D64FB1C45077200DAF34E /* MBProgressHUD.m */; };
 		651D65221C4518CB00DAF34E /* WSVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D65211C4518CB00DAF34E /* WSVideo.m */; };
 		652794201C703CD000BBFDFA /* NSString+WS.m in Sources */ = {isa = PBXBuildFile; fileRef = 6527941C1C703CD000BBFDFA /* NSString+WS.m */; };
@@ -448,6 +448,7 @@
 		323FFEE41D165224002F2C74 /* WSAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAdModel.m; sourceTree = "<group>"; };
 		323FFEE61D16526B002F2C74 /* WSNewsAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewsAllModel.h; sourceTree = "<group>"; };
 		323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNewsAllModel.m; sourceTree = "<group>"; };
+		323FFEF21D1666BE002F2C74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		324693D51CF9539A0071ADD6 /* WSTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTopicContentListModel.h; sourceTree = "<group>"; };
 		324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTopicContentListModel.m; sourceTree = "<group>"; };
 		324693D81CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
@@ -931,7 +932,6 @@
 		651D64861C4506DD00DAF34E /* WSGetDataTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSGetDataTool.h; sourceTree = "<group>"; };
 		651D64871C4506DD00DAF34E /* WSGetDataTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSGetDataTool.m; sourceTree = "<group>"; };
 		651D64941C4506DD00DAF34E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		651D64F71C4506E500DAF34E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		651D64FA1C45077200DAF34E /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		651D64FB1C45077200DAF34E /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		651D65201C4518CB00DAF34E /* WSVideo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSVideo.h; sourceTree = "<group>"; };
@@ -1930,8 +1930,8 @@
 		651D63781C45069D00DAF34E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				323FFEF21D1666BE002F2C74 /* Info.plist */,
 				3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */,
-				651D64F71C4506E500DAF34E /* Info.plist */,
 				3228AE5F1D07119C0076F27A /* target.h */,
 				3228AE601D0713AD0076F27A /* targetHaveDone.h */,
 			);
@@ -3268,6 +3268,7 @@
 				651D649C1C4506DD00DAF34E /* Info.plist in Resources */,
 				32B53F3E1CF0714D00412EAC /* smallImage_username@2x.png in Resources */,
 				65987CF51C4A28A900A69EE4 /* logo.tudou.com.png in Resources */,
+				323FFEF31D1666BF002F2C74 /* Info.plist in Resources */,
 				32B53F421CF0799700412EAC /* regist_shuru@2x.png in Resources */,
 				65987CF11C4A28A900A69EE4 /* logo.sina.com.png in Resources */,
 				32B53F491CF07FF300412EAC /* unchecked.png in Resources */,
@@ -3296,7 +3297,6 @@
 				65987CF21C4A28A900A69EE4 /* logo.sina.com@2x.png in Resources */,
 				324694191CFB12EE0071ADD6 /* MJRefresh.bundle in Resources */,
 				65987CF61C4A28A900A69EE4 /* logo.tudou.com@2x.png in Resources */,
-				651D64F81C4506E500DAF34E /* Info.plist in Resources */,
 				32B53FBD1CF1DC8400412EAC /* adBottom.png in Resources */,
 				32B53F3A1CF0714D00412EAC /* smallImage_password@2x.png in Resources */,
 				32B53F381CF0714D00412EAC /* smallImage_checkCode@2x.png in Resources */,

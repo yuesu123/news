@@ -119,7 +119,7 @@ static const CGFloat kDetailsLabelFontSize = 12.f;
 //    MBProgressHUDModeDeterminateHorizontalBar,
 //    /** Progress is shown using a ring-shaped progress view. */
 //    MBProgressHUDModeAnnularDeterminate,
-    hud.mode = MBProgressHUDModeDeterminate;
+    hud.mode = MBProgressHUDModeIndeterminate;
 	hud.removeFromSuperViewOnHide = YES;
 	[view addSubview:hud];
 	[hud show:animated];

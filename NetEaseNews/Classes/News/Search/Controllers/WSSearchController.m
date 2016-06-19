@@ -122,8 +122,8 @@
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 50;
-    
+    self.tableView.rowHeight = 90;
+    self.tableView.tableFooterView = [[UIView alloc] init];
 }
 - (void)viewWillAppear:(BOOL)animated{
     
