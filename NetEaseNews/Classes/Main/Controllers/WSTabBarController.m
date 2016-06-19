@@ -13,6 +13,7 @@
 #import "WSOneMenuModel.h"
 #import "WSMenuInstance.h"
 #import "QTLoginViewController.h"
+#import "CheckNetWorkState.h"
 
 @interface WSTabBarController ()
 @property (nonatomic ,strong) UIView *adView;
@@ -37,6 +38,12 @@
 
 - (void)loadDataAllNewsMenu{
     [[QTUserInfo sharedQTUserInfo] loadUserInfoFromDefault];
+//    if ([CheckNetWorkState checkNetworkState]== NotReachable) {
+//        [self loadMenu:NO];
+//        //去登录 需要延时
+//        [self LoadDataLogin:YES];
+//        return;
+//    }
     [HYBNetworking getWithUrl:@"api/menu"
                  refreshCache:YES
                        params:nil

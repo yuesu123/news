@@ -36,9 +36,10 @@
  返回的是导航5个 每个导航下面至少3个分类的 新闻测试 90%ok
  新闻爆料  直接加载url          ok
  意见反馈界面                 暂时不做 100%ok
- 设置pagesize=2 修改为20 已经修改其他的暂不修改
  广告功能每三页一条  首页的classId =0 全部新闻 100%ok
-
+ but you still need to add "remote-notification" to the list of your supported UIBackgroundModes in your Info.plist 100%ok
+ 无网络启动App 检测没有网络直接去显示默认的 ok
+ 需要更改导航的颜色 不用网易内容也是灰色的 ok
 
 
 /*

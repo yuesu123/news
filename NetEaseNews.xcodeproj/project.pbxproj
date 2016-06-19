@@ -13,6 +13,7 @@
 		323FFEE51D165224002F2C74 /* WSAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE41D165224002F2C74 /* WSAdModel.m */; };
 		323FFEE81D16526B002F2C74 /* WSNewsAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */; };
 		323FFEF31D1666BF002F2C74 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323FFEF21D1666BE002F2C74 /* Info.plist */; };
+		323FFEF61D167336002F2C74 /* CheckNetWorkState.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEF51D167336002F2C74 /* CheckNetWorkState.m */; };
 		324693D71CF9539A0071ADD6 /* WSTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */; };
 		324693DC1CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D91CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m */; };
 		324693DD1CFAB46B0071ADD6 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693DB1CFAB46B0071ADD6 /* UIViewController+HUD.m */; };
@@ -449,6 +450,8 @@
 		323FFEE61D16526B002F2C74 /* WSNewsAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewsAllModel.h; sourceTree = "<group>"; };
 		323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNewsAllModel.m; sourceTree = "<group>"; };
 		323FFEF21D1666BE002F2C74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		323FFEF41D167336002F2C74 /* CheckNetWorkState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckNetWorkState.h; sourceTree = "<group>"; };
+		323FFEF51D167336002F2C74 /* CheckNetWorkState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckNetWorkState.m; sourceTree = "<group>"; };
 		324693D51CF9539A0071ADD6 /* WSTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTopicContentListModel.h; sourceTree = "<group>"; };
 		324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTopicContentListModel.m; sourceTree = "<group>"; };
 		324693D81CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
@@ -2340,6 +2343,8 @@
 				7A40981B1CF6F7480036DE77 /* DDNewsCache.h */,
 				7A40981C1CF6F7480036DE77 /* DDNewsCache.m */,
 				651D64331C4506DD00DAF34E /* News.plist */,
+				323FFEF41D167336002F2C74 /* CheckNetWorkState.h */,
+				323FFEF51D167336002F2C74 /* CheckNetWorkState.m */,
 			);
 			path = Others;
 			sourceTree = "<group>";
@@ -3633,6 +3638,7 @@
 				7A60544E1CF99C7200BCB9C7 /* CAAnimation+WAnimation.m in Sources */,
 				32B53D2A1CF0419000412EAC /* BaseViewController2.m in Sources */,
 				3246941A1CFB12EE0071ADD6 /* MJRefreshConst.m in Sources */,
+				323FFEF61D167336002F2C74 /* CheckNetWorkState.m in Sources */,
 				32B53EA71CF0447000412EAC /* UISearchBar+BackgroundColor.m in Sources */,
 				7AAE220F1CDC3008006FA57C /* DetailImageWebModel.m in Sources */,
 				32B53EF71CF0447000412EAC /* MJPhotoProgressView.m in Sources */,

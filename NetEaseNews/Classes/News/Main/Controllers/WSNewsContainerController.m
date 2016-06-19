@@ -55,6 +55,7 @@
     if (self.tabBarController.selectedIndex == 0) {
         //leftitem
         UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navi_bell_normal"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
+        leftItem.enabled = NO;
         self.navigationItem.leftBarButtonItem = leftItem;
         
         //rightItem
@@ -67,7 +68,8 @@
 }
 
 - (void)leftItemClick {
-    
+    //不允许点击
+    return;
     WSDayNewsController *dayNews = [WSDayNewsController dayNews];
     //hideBottomBar
 

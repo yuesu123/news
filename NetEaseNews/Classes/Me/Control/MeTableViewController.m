@@ -97,6 +97,8 @@
         vc.urlStr = [NSString stringWithFormat:@"%@?userid=%@",sg_privateAboutBaoliao,[QTUserInfo sharedQTUserInfo].userId];
     }else{
         vc.urlStr = [NSString stringWithFormat:@"%@",sg_privateAboutBaoliao];
+        [self showLoginFirst];
+
     }
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
@@ -108,11 +110,18 @@
         vc.urlStr = [NSString stringWithFormat:@"%@?userid=%@",sg_privateAboutMyBaoliao,[QTUserInfo sharedQTUserInfo].userId];
     }else{
         vc.urlStr = [NSString stringWithFormat:@"%@",sg_privateAboutMyBaoliao];
+        [self showLoginFirst];
+
     }
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+- (void)showLoginFirst{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [MBProgressHUD showError:@"请先登录"];
+    });
+}
 
 
 
