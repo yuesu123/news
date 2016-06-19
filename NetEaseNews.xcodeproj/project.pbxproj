@@ -10,6 +10,8 @@
 		3228AE5E1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */; };
 		3228AE631D0715E20076F27A /* lanuch_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE611D0715E20076F27A /* lanuch_up@2x.png */; };
 		3228AE681D09314C0076F27A /* lauch_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE671D09314C0076F27A /* lauch_bottom@2x.png */; };
+		323FFEE51D165224002F2C74 /* WSAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE41D165224002F2C74 /* WSAdModel.m */; };
+		323FFEE81D16526B002F2C74 /* WSNewsAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */; };
 		324693D71CF9539A0071ADD6 /* WSTopicContentListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */; };
 		324693DC1CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693D91CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.m */; };
 		324693DD1CFAB46B0071ADD6 /* UIViewController+HUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 324693DB1CFAB46B0071ADD6 /* UIViewController+HUD.m */; };
@@ -357,7 +359,6 @@
 		7A6054591CF9A29600BCB9C7 /* WSTopicNewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6054571CF9A29600BCB9C7 /* WSTopicNewsListCell.m */; };
 		7A60545A1CF9A29600BCB9C7 /* WSTopicNewsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6054581CF9A29600BCB9C7 /* WSTopicNewsListCell.xib */; };
 		7A60545E1CF9AE2E00BCB9C7 /* WSTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A60545D1CF9AE2E00BCB9C7 /* WSTopicModel.m */; };
-		7A91C04D1CF8653400CF1A68 /* WSNewsAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A91C04C1CF8653400CF1A68 /* WSNewsAllModel.m */; };
 		7AAE21991CDC2DB0006FA57C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE21931CDC2DB0006FA57C /* HelpViewController.m */; };
 		7AAE219B1CDC2DB0006FA57C /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE21971CDC2DB0006FA57C /* ShareViewController.m */; };
 		7AAE21BB1CDC2DD0006FA57C /* CollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE21B01CDC2DD0006FA57C /* CollectModel.m */; };
@@ -443,6 +444,10 @@
 		3228AE601D0713AD0076F27A /* targetHaveDone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = targetHaveDone.h; sourceTree = "<group>"; };
 		3228AE611D0715E20076F27A /* lanuch_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanuch_up@2x.png"; sourceTree = "<group>"; };
 		3228AE671D09314C0076F27A /* lauch_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauch_bottom@2x.png"; sourceTree = "<group>"; };
+		323FFEE31D165224002F2C74 /* WSAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAdModel.h; sourceTree = "<group>"; };
+		323FFEE41D165224002F2C74 /* WSAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAdModel.m; sourceTree = "<group>"; };
+		323FFEE61D16526B002F2C74 /* WSNewsAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewsAllModel.h; sourceTree = "<group>"; };
+		323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNewsAllModel.m; sourceTree = "<group>"; };
 		324693D51CF9539A0071ADD6 /* WSTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTopicContentListModel.h; sourceTree = "<group>"; };
 		324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTopicContentListModel.m; sourceTree = "<group>"; };
 		324693D81CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
@@ -1080,8 +1085,6 @@
 		7A60545B1CF9A69E00BCB9C7 /* WSTopicNewsListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSTopicNewsListCell.h; sourceTree = "<group>"; };
 		7A60545C1CF9AE2E00BCB9C7 /* WSTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTopicModel.h; sourceTree = "<group>"; };
 		7A60545D1CF9AE2E00BCB9C7 /* WSTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTopicModel.m; sourceTree = "<group>"; };
-		7A91C04B1CF8653400CF1A68 /* WSNewsAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewsAllModel.h; sourceTree = "<group>"; };
-		7A91C04C1CF8653400CF1A68 /* WSNewsAllModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSNewsAllModel.m; sourceTree = "<group>"; };
 		7AAE21921CDC2DB0006FA57C /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		7AAE21931CDC2DB0006FA57C /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		7AAE21961CDC2DB0006FA57C /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
@@ -2303,6 +2306,8 @@
 		651D64231C4506DD00DAF34E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				323FFEE31D165224002F2C74 /* WSAdModel.h */,
+				323FFEE41D165224002F2C74 /* WSAdModel.m */,
 				651D64241C4506DD00DAF34E /* WSAds.h */,
 				651D64251C4506DD00DAF34E /* WSAds.m */,
 				651D64261C4506DD00DAF34E /* WSChannel.h */,
@@ -2317,12 +2322,12 @@
 				651D642F1C4506DD00DAF34E /* WSNews.m */,
 				651D64301C4506DD00DAF34E /* WSPhoto.h */,
 				651D64311C4506DD00DAF34E /* WSPhoto.m */,
+				323FFEE61D16526B002F2C74 /* WSNewsAllModel.h */,
+				323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */,
 				32CE36591CF73F9200C80AAA /* WSOneMenuModel.h */,
 				32CE365A1CF73F9200C80AAA /* WSOneMenuModel.m */,
 				7AF1B1721CF8611800953D64 /* WSNewsModel.h */,
 				7AF1B1731CF8611800953D64 /* WSNewsModel.m */,
-				7A91C04B1CF8653400CF1A68 /* WSNewsAllModel.h */,
-				7A91C04C1CF8653400CF1A68 /* WSNewsAllModel.m */,
 				32A2AFE81D0A62B6001DA7B8 /* WSCommentModel.h */,
 				32A2AFE91D0A62B6001DA7B8 /* WSCommentModel.m */,
 			);
@@ -3369,6 +3374,7 @@
 				7AAE219B1CDC2DB0006FA57C /* ShareViewController.m in Sources */,
 				651D64B51C4506DD00DAF34E /* UIImageView+HighlightedWebCache.m in Sources */,
 				7A6054491CF99C7200BCB9C7 /* ASIS3BucketRequest.m in Sources */,
+				323FFEE51D165224002F2C74 /* WSAdModel.m in Sources */,
 				7AAE21E91CDC2E7D006FA57C /* FMResultSet.m in Sources */,
 				651D64D91C4506DD00DAF34E /* WSImageCell.m in Sources */,
 				32B53EAD1CF0447000412EAC /* UIImage+WF.m in Sources */,
@@ -3440,7 +3446,6 @@
 				32CE365B1CF73F9200C80AAA /* WSOneMenuModel.m in Sources */,
 				651D64C91C4506DD00DAF34E /* WSImageContentController.m in Sources */,
 				32B53F261CF046F300412EAC /* UIView+ZLExtension.m in Sources */,
-				7A91C04D1CF8653400CF1A68 /* WSNewsAllModel.m in Sources */,
 				324694141CFB12EE0071ADD6 /* MJRefreshBackNormalFooter.m in Sources */,
 				32B53EB41CF0447000412EAC /* NSArray+Extension.m in Sources */,
 				7AC3EE831CE03B0300B08119 /* GTMBase64.m in Sources */,
@@ -3623,6 +3628,7 @@
 				7A6054481CF99C7200BCB9C7 /* ASIS3BucketObject.m in Sources */,
 				7AC3EE751CE0395200B08119 /* QTRegidterViewController.m in Sources */,
 				651D64E51C4506DD00DAF34E /* WSReaderController.m in Sources */,
+				323FFEE81D16526B002F2C74 /* WSNewsAllModel.m in Sources */,
 				32CE36521CF738CF00C80AAA /* HYBNetworking.m in Sources */,
 				7A60544E1CF99C7200BCB9C7 /* CAAnimation+WAnimation.m in Sources */,
 				32B53D2A1CF0419000412EAC /* BaseViewController2.m in Sources */,

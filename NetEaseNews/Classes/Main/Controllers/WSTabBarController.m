@@ -144,6 +144,20 @@
         }
     }
     //获取导航数组one
+    WSOneMenuModel *home = [[WSOneMenuModel alloc] init];
+    home.Classname = @"首页";
+    home.Classen = @"sy";
+    home.Parentid = 1;
+    home.Depth = 1;
+    home.Id = 0;
+    home.Parentpath = @"0.1.0";
+    home.Sortid = 1;
+    home.Referurl = @"/sy/";
+    if (newArrone.count>0) {
+        [newArrone insertObject:home atIndex:0];
+    }
+    
+    //获取导航数组one
     [WSMenuInstance sharedWSMenuInstance].menuOneArr = newArrone;
     [WSMenuInstance sharedWSMenuInstance].menuTwoArr = newArrTwo;
     [WSMenuInstance sharedWSMenuInstance].menuThreeArr = newArrThree;

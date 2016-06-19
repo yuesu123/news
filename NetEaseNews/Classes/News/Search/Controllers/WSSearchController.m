@@ -122,7 +122,7 @@
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 100;
+    self.tableView.rowHeight = 50;
     
 }
 - (void)viewWillAppear:(BOOL)animated{

@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "MJExtension.h"
 #import "WSGetDataTool.h"
+#import "WSAdModel.h"
 
 @class Newsclass,Blocknews,Newslist;
 @interface WSNewsAllModel : NSObject
@@ -17,7 +18,7 @@
 
 @property (nonatomic, strong) NSArray<Blocknews *> *Blocknews;
 
-@property (nonatomic, strong) NSArray<Newslist *> *Newslist;
+@property (nonatomic, strong) NSMutableArray<Newslist *> *Newslist;
 
 @property (nonatomic, assign) NSInteger Type;
 
@@ -26,6 +27,8 @@
 @property (nonatomic, assign) NSInteger Curpage;
 
 @property (nonatomic, strong) Newsclass *Newsclass;
+@property (nonatomic, strong)NSArray<WSAdModel *> *Newsad;
+
 
 @property (nonatomic, assign) NSInteger Pagesize;
 
@@ -80,6 +83,9 @@
 @property (nonatomic, copy) NSString *Title;
 
 @end
+
+
+
 
 
 //每一个新闻的news 模型 == WSNews

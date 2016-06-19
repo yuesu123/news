@@ -63,11 +63,12 @@
     if (indexPath.row == 0&&indexPath.section == 0) {
         [self clearCache];
     }else if(indexPath.row == 1&&indexPath.section == 0){
-        [self  gotoOpinionVc];
-    }else if(indexPath.row == 2&&indexPath.section == 0){
+//        [self  gotoOpinionVc];
         [self  gotoAboutUsVc];
-    }else if(indexPath.row == 3&&indexPath.section == 0){
+
+    }else if(indexPath.row == 2&&indexPath.section == 0){
         [self  gotoAboutPrivateZhenze];
+
     }else if(indexPath.row == 0&&indexPath.section == 1){
         [self  showAlertPSTLogout];
     }

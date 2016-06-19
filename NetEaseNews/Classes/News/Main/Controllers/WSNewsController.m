@@ -33,6 +33,8 @@
 }
 
 @property (strong, nonatomic) NSMutableArray *jsonNews;
+@property (strong, nonatomic) NSMutableArray *NewsadArr;
+
 
 //@property (assign, nonatomic) NSInteger index;
 
@@ -191,9 +193,13 @@
         if (allModel.Newslist.count > 0) {
             
             if (_currentPage == 1){ [weakSelf.jsonNews removeAllObjects];
+                _NewsadArr = [NSMutableArray arrayWithArray:allModel.Newsad];
+
             }
             
             [weakSelf.jsonNews addObjectsFromArray:allModel.Newslist];
+            [WSAdModel  inserAdArr:_NewsadArr toArr:weakSelf.jsonNews  path:3];
+
             
             //            weakSelf.index += 20;
             //图片轮播赋值
@@ -219,7 +225,7 @@
 
 
 - (NSString *)newsURL{
-    return [NSString stringWithFormat:@"api/newslist?classid=%@&pg=%ld&pagesize=2",self.channelID,(long)_currentPage] ;
+    return [NSString stringWithFormat:@"api/newslist?classid=%@&pg=%ld&pagesize=20",self.channelID,(long)_currentPage] ;
 }
 
 
