@@ -130,7 +130,7 @@
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
     vc.titleStr = @"天气";
    NSString*url = sg_privateAboutWether;
-    NSString *urlnew = [NSString stringWithFormat:@"%@%@",url,[QTUserInfo sharedQTUserInfo].userId];
+    NSString *urlnew = [NSString stringWithFormat:@"%@",url];
     vc.urlStr = urlnew;
     vc.type = caseAnalyse;
     [self.navigationController pushViewController:vc animated:YES];

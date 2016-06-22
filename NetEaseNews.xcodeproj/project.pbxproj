@@ -452,6 +452,7 @@
 		323FFEF21D1666BE002F2C74 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		323FFEF41D167336002F2C74 /* CheckNetWorkState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckNetWorkState.h; sourceTree = "<group>"; };
 		323FFEF51D167336002F2C74 /* CheckNetWorkState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckNetWorkState.m; sourceTree = "<group>"; };
+		323FFF5F1D1ACD97002F2C74 /* changeUI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = changeUI.h; sourceTree = "<group>"; };
 		324693D51CF9539A0071ADD6 /* WSTopicContentListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTopicContentListModel.h; sourceTree = "<group>"; };
 		324693D61CF9539A0071ADD6 /* WSTopicContentListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTopicContentListModel.m; sourceTree = "<group>"; };
 		324693D81CFAB46B0071ADD6 /* UIViewController+DismissKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+DismissKeyboard.h"; sourceTree = "<group>"; };
@@ -1937,6 +1938,7 @@
 				3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */,
 				3228AE5F1D07119C0076F27A /* target.h */,
 				3228AE601D0713AD0076F27A /* targetHaveDone.h */,
+				323FFF5F1D1ACD97002F2C74 /* changeUI.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
