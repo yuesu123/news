@@ -28,17 +28,17 @@
         <scene sceneID="iz0-Du-2zD">
             <objects>
                 <tableViewController id="dAC-XF-PKq" customClass="WSTopicController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="244" sectionHeaderHeight="28" sectionFooterHeight="28" id="Va6-nT-KIa">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="248" sectionHeaderHeight="28" sectionFooterHeight="28" id="Va6-nT-KIa">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="240" id="kzG-93-JbI" customClass="WSTopicCell">
-                                <rect key="frame" x="0.0" y="92" width="375" height="240"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="250" id="kzG-93-JbI" customClass="WSTopicCell">
+                                <rect key="frame" x="0.0" y="92" width="375" height="250"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kzG-93-JbI" id="Mi3-sJ-kCc">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="239"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MyK-wr-O4h" customClass="WSImageView">
@@ -68,20 +68,31 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohc-eh-AbW">
+                                            <rect key="frame" x="0.0" y="236" width="375" height="13"/>
+                                            <animations/>
+                                            <color key="backgroundColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="wmm-C9-Lbf"/>
+                                            </constraints>
+                                        </view>
                                     </subviews>
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="0dd-4d-Y2Q" secondAttribute="trailing" constant="8" id="0vv-fQ-qEZ"/>
                                         <constraint firstItem="0dd-4d-Y2Q" firstAttribute="leading" secondItem="Mi3-sJ-kCc" secondAttribute="leading" constant="8" id="3GO-MD-aE9"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="ohc-eh-AbW" secondAttribute="trailing" constant="-8" id="4Zl-uN-gXw"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="pRb-0e-Q71" secondAttribute="trailing" constant="8" id="9vd-yh-fC9"/>
                                         <constraint firstItem="MyK-wr-O4h" firstAttribute="leading" secondItem="Mi3-sJ-kCc" secondAttribute="leading" id="Jxc-IE-8hM"/>
                                         <constraint firstItem="pRb-0e-Q71" firstAttribute="leading" secondItem="Mi3-sJ-kCc" secondAttribute="leadingMargin" id="RpE-hZ-XlQ"/>
+                                        <constraint firstItem="ohc-eh-AbW" firstAttribute="top" secondItem="0dd-4d-Y2Q" secondAttribute="bottom" constant="3" id="TQC-5A-Sxq"/>
                                         <constraint firstItem="pRb-0e-Q71" firstAttribute="top" secondItem="MyK-wr-O4h" secondAttribute="bottom" constant="8" id="d6L-dy-aO6"/>
                                         <constraint firstAttribute="trailing" secondItem="MyK-wr-O4h" secondAttribute="trailing" id="duT-Yo-vii"/>
                                         <constraint firstItem="MyK-wr-O4h" firstAttribute="top" secondItem="Mi3-sJ-kCc" secondAttribute="top" id="iCk-R1-UGf"/>
                                         <constraint firstItem="0dd-4d-Y2Q" firstAttribute="top" secondItem="pRb-0e-Q71" secondAttribute="bottom" id="kTm-N3-vSf"/>
                                         <constraint firstItem="pRb-0e-Q71" firstAttribute="leading" secondItem="Mi3-sJ-kCc" secondAttribute="leadingMargin" id="tOq-Fd-OiM"/>
                                         <constraint firstItem="0dd-4d-Y2Q" firstAttribute="top" secondItem="MyK-wr-O4h" secondAttribute="bottom" constant="38" id="yns-9O-0Ho"/>
+                                        <constraint firstItem="ohc-eh-AbW" firstAttribute="leading" secondItem="Mi3-sJ-kCc" secondAttribute="leadingMargin" constant="-8" id="zPx-kI-VY0"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">

@@ -30,7 +30,9 @@
     [super viewDidLoad];
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    self.tableView.separatorStyle = NO;
+//    　　tableView.separatorStyle = NO;
+
     self.leftBarButton.hidden = YES;
 //    self.topicIndex = 0;
     

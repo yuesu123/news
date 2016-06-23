@@ -29,7 +29,7 @@
 
 + (CGFloat)rowHeight{
     
-    return 240;
+    return 245;
 }
 
 - (void)setTopic:(Ztlist *)topic{
