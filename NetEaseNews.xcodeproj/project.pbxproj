@@ -133,8 +133,6 @@
 		32B53F2A1CF0708300412EAC /* nameAndPas@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53F281CF0708300412EAC /* nameAndPas@2x.png */; };
 		32B53F411CF0799700412EAC /* regist_shuru.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53F3F1CF0799700412EAC /* regist_shuru.png */; };
 		32B53F421CF0799700412EAC /* regist_shuru@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53F401CF0799700412EAC /* regist_shuru@2x.png */; };
-		32B53F471CF07FF300412EAC /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53F431CF07FF300412EAC /* checked.png */; };
-		32B53F481CF07FF300412EAC /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53F441CF07FF300412EAC /* checked@2x.png */; };
 		32B53F491CF07FF300412EAC /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53F451CF07FF300412EAC /* unchecked.png */; };
 		32B53F4A1CF07FF300412EAC /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 32B53F461CF07FF300412EAC /* unchecked@2x.png */; };
 		32B53F531CF166BF00412EAC /* UIViewController+WGWhichOne.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B53F521CF166BF00412EAC /* UIViewController+WGWhichOne.m */; };
@@ -717,8 +715,6 @@
 		32B53F281CF0708300412EAC /* nameAndPas@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "nameAndPas@2x.png"; sourceTree = "<group>"; };
 		32B53F3F1CF0799700412EAC /* regist_shuru.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = regist_shuru.png; sourceTree = "<group>"; };
 		32B53F401CF0799700412EAC /* regist_shuru@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "regist_shuru@2x.png"; sourceTree = "<group>"; };
-		32B53F431CF07FF300412EAC /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
-		32B53F441CF07FF300412EAC /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
 		32B53F451CF07FF300412EAC /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
 		32B53F461CF07FF300412EAC /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
 		32B53F511CF166BF00412EAC /* UIViewController+WGWhichOne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+WGWhichOne.h"; sourceTree = "<group>"; };
@@ -1441,8 +1437,6 @@
 		32B53D1D1CF03A1000412EAC /* small */ = {
 			isa = PBXGroup;
 			children = (
-				32B53F431CF07FF300412EAC /* checked.png */,
-				32B53F441CF07FF300412EAC /* checked@2x.png */,
 				32B53F451CF07FF300412EAC /* unchecked.png */,
 				32B53F461CF07FF300412EAC /* unchecked@2x.png */,
 				32B53F3F1CF0799700412EAC /* regist_shuru.png */,
@@ -3277,7 +3271,6 @@
 				65987CF31C4A28A900A69EE4 /* logo.sohu.com.png in Resources */,
 				65987CDC1C4A28A900A69EE4 /* logo.cntv.cn@2x.png in Resources */,
 				7AF5D4321D1BDB84000263B0 /* me_fuwutiaokuan@2x.png in Resources */,
-				32B53F481CF07FF300412EAC /* checked@2x.png in Resources */,
 				65987CD51C4A28A900A69EE4 /* gobackBtn@2x.png in Resources */,
 				651D64D71C4506DD00DAF34E /* WSCommentController.xib in Resources */,
 				32B53F2A1CF0708300412EAC /* nameAndPas@2x.png in Resources */,
@@ -3306,7 +3299,6 @@
 				32B53F421CF0799700412EAC /* regist_shuru@2x.png in Resources */,
 				65987CF11C4A28A900A69EE4 /* logo.sina.com.png in Resources */,
 				32B53F491CF07FF300412EAC /* unchecked.png in Resources */,
-				32B53F471CF07FF300412EAC /* checked.png in Resources */,
 				7AF5D43A1D1BDB84000263B0 /* smallImage_phone@2x.png in Resources */,
 				65987CDB1C4A28A900A69EE4 /* logo.cntv.cn.png in Resources */,
 				65987CE51C4A28A900A69EE4 /* logo.kankan.com.png in Resources */,
