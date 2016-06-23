@@ -290,7 +290,7 @@
     
     WSTabBarItem *item4 = [WSTabBarItem tabBarItemWithTitle:@"话题" itemImage:[UIImage imageNamed:@"tabbar_icon_bar_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_bar_highlight"]];
     
-    WSTabBarItem *item5 = [WSTabBarItem tabBarItemWithTitle:@"我" itemImage:[UIImage imageNamed:@"tabbar_icon_me_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_me_highlight"]];
+    WSTabBarItem *item5 = [WSTabBarItem tabBarItemWithTitle:@"我的" itemImage:[UIImage imageNamed:@"tabbar_icon_me_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_me_highlight"]];
     
     
     //固定添加
