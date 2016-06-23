@@ -40,7 +40,7 @@
 //    self.imgView.contentMode =UIViewContentModeScaleAspectFit ;//UIViewContentModeScaleAspectFill;
     
     [self.imgView sd_setImageWithURL:[NSURL URLWithString:topic.Picsmall] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
-    self.detailLbl.text = topic.Edittime;
+    self.detailLbl.text = topic.Ztdes;
     self.concernCountLbl.text = [NSString stringWithFormat:@"%@关注",topic.Ztpinyin];
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:topic.Picsmall]];
     self.nameLbl.text = topic.Zttitle;
