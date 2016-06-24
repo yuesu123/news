@@ -20,5 +20,6 @@ alpha:(a)]
 #define UIColorFromRGB(rgbValue)    [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define  RGBCommonBack  RGBACOLOR(239,239,244,1)
 #define  RGBCommonLineBack  RGBACOLOR(235,235,236,1)
+#define  RGBCommonBlue  RGBACOLOR(66,175,249,1)
 
 #endif

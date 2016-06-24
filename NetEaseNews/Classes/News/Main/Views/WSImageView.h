@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface WSImageView : UIImageView
-
++(NSString*)getImageName:(NSString*)imageStr;
 @end

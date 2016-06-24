@@ -31,6 +31,8 @@
     
     [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+//    　　tableView.separatorStyle = NO;
+
     self.leftBarButton.hidden = YES;
 //    self.topicIndex = 0;
     
@@ -52,7 +54,28 @@
     }
 }
 
-
+//view布局完子控件的时候调用
+- (void)viewDidLayoutSubviews
+{
+    //iOS7只需要设置SeparatorInset(iOS7开始有的)就可以了，但是iOS8的话单单只设置这个是不行的，还需要设置LayoutMargins(iOS8开始有的)
+    if ([self.tableView respondsToSelector:@selector(setSeparatorInset:)]) {
+        [self.tableView setSeparatorInset:UIEdgeInsetsMake(0,0,0,0)];
+    }
+    
+    if ([self.tableView respondsToSelector:@selector(setLayoutMargins:)]) {
+        [self.tableView setLayoutMargins:UIEdgeInsetsMake(0,0,0,0)];
+    }
+}
+//cell即将展示的时候调用
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
 
 
 - (void)loadDataWithCache:(BOOL)cache{

@@ -288,9 +288,9 @@
     
     WSTabBarItem *item3 = [WSTabBarItem tabBarItemWithTitle:@"专栏" itemImage:[UIImage imageNamed:@"tabbar_icon_media_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_media_highlight"]];
     
-    WSTabBarItem *item4 = [WSTabBarItem tabBarItemWithTitle:@"话题" itemImage:[UIImage imageNamed:@"tabbar_icon_bar_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_bar_highlight"]];
+    WSTabBarItem *item4 = [WSTabBarItem tabBarItemWithTitle:@"专题" itemImage:[UIImage imageNamed:@"tabbar_icon_bar_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_bar_highlight"]];
     
-    WSTabBarItem *item5 = [WSTabBarItem tabBarItemWithTitle:@"我" itemImage:[UIImage imageNamed:@"tabbar_icon_me_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_me_highlight"]];
+    WSTabBarItem *item5 = [WSTabBarItem tabBarItemWithTitle:@"我的" itemImage:[UIImage imageNamed:@"tabbar_icon_me_normal"] selectedImage:[UIImage imageNamed:@"tabbar_icon_me_highlight"]];
     
     
     //固定添加

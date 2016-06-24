@@ -49,17 +49,24 @@
 - (void)loadInterface {
     
     //titleView
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"navbar_netease"]];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nil]];
     self.navigationItem.titleView = imageView;
-    
     if (self.tabBarController.selectedIndex == 0) {
         //leftitem
-        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"top_navi_bell_normal"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
-        leftItem.enabled = NO;
+//        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_home_logo"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
+        UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 26, 26)];
+//        [button.imageView  ]
+        [button setBackgroundImage:[UIImage imageNamed:@"nav_home_logo"] forState:UIControlStateNormal];
+        UIBarButtonItem*leftItem = [[UIBarButtonItem alloc]initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = leftItem;
-        
+//        leftItem.tintColor = [UIColor whiteColor];
         //rightItem
-        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
+//        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
+        
+        UIButton *buttonright = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 135, 26)];
+        [buttonright setBackgroundImage:[UIImage imageNamed:@"nav_home_search"] forState:UIControlStateNormal];
+        [buttonright addTarget:self action:@selector(rightItemClick) forControlEvents:UIControlEventTouchUpInside];
+        UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:buttonright];
         self.navigationItem.rightBarButtonItem = rightItem;
     }
    

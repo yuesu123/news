@@ -14,7 +14,7 @@
 #import <AVFoundation/AVCaptureDevice.h>//相机的权限
 #import <AVFoundation/AVMediaFormat.h> //相机的权限
 #import <AssetsLibrary/AssetsLibrary.h>//相册的权限
-
+#import "Globals.h"
 
 
 @implementation QTCommonTools
@@ -43,6 +43,7 @@ singleton_implementation(QTCommonTools)
 //    }else{
 //        newTime =  [NSDate formattedTimeFromTimeInterval:timeStamp];;
 //    }
+    newTime = [Globals sendTimeStringZhurenwong:timeStamp ];
 
 
     return newTime;

@@ -27,7 +27,6 @@
 #import "ThemeManager.h"
 
 
-
 static NSString *sg_privateNetworkBaseUrl = @"http://xapp.blnews.com.cn";
 //关于我们
 static NSString *sg_privateAboutMe = @"/s/aboutus";
@@ -39,9 +38,6 @@ static NSString *sg_privateAbouTPrivtazhence = @"/s/items";
 static NSString *sg_privateAboutBaoliao= @"/s/baoliao";
 //新闻爆料
 static NSString *sg_privateAboutMyBaoliao= @"/s/baoliaolist";
-//http://xapp.blnews.com.cn/s/baoliaolist?userid=9
-//http://xapp.blnews.com.cn/s/baoliao?userid=8
-
 
 
 
