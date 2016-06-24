@@ -14,6 +14,7 @@
 #import "NSString+WS.h"
 #import "DDNewsCache.h"
 #import "NSArray+Extensions.h"
+#import "QTCommonTools.h"
 
 @interface WSNewsCell ()
 
@@ -81,7 +82,7 @@ static NSString * threeImageID = @"threeImageCell";
     
     self.iconView.contentMode = UIViewContentModeScaleToFill;
 
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"home_onepic_place"]];
     
 //    NSArray *arr = [NSArray readFile:kCachedSelectCell];
     
@@ -93,7 +94,7 @@ static NSString * threeImageID = @"threeImageCell";
     
     self.titleLbl.text = news.Title;
     self.detailLbl.text =  [NSString stringWithFormat:@"%@%@",news.Title,news.Title];
-    [self.replyCountBtn setTitle:[NSString stringWithFormat:@"%ld跟帖",news.Id] forState:UIControlStateNormal];
+    [self.replyCountBtn setTitle:[NSString stringWithFormat:@"%@",[QTCommonTools convertServiceTimeToStandartShowTime:news.Edittime]] forState:UIControlStateNormal];
 //    for (NSInteger i=0; i<news.imgextra.count; i++) {
 //        
 //        UIImageView *imgView = self.extraImageViews[i];
@@ -104,12 +105,12 @@ static NSString * threeImageID = @"threeImageCell";
         for (NSInteger i=0; i<news.Showtype; i++) {
             UIImageView *imgView = self.extraImageViews[i];
             imgView.contentMode = UIViewContentModeScaleToFill;
-            [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:i]] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
+            [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:i]] placeholderImage:[UIImage imageNamed:@"home_onepic_place"]];
         }
     }else{
         UIImageView *imgView = self.extraImageViews[0];
         imgView.contentMode = UIViewContentModeScaleToFill;
-        [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:0]] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
+        [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:0]] placeholderImage:[UIImage imageNamed:@"zhaunti_place"]];
     }
     
     CGSize fontSize = [self.replyCountBtn.titleLabel.text sizeOfFont:self.replyCountBtn.titleLabel.font textMaxSize:CGSizeMake(125, 21)];

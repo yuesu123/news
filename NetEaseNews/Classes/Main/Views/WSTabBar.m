@@ -44,7 +44,7 @@
     if (selected) {
         
         self.itemBtn.selected = YES;
-        self.itemLbl.textColor = [UIColor redColor];
+        self.itemLbl.textColor = RGBCommonBlue;
     }else{
         
         self.itemBtn.selected = NO;
