@@ -287,7 +287,7 @@
     } else if (distance < 60 * 60) {
         distance = distance / 60;
         _timestamp = [NSString stringWithFormat:@"%d%@", distance, @"分钟前"];
-    } else if (distance < 60 * 60 * 24) {
+    } else if (distance < 60 * 60 * 24) {//24小时
         NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"M月d日 hh:mm"];
         NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];

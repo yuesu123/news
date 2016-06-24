@@ -38,8 +38,7 @@
     
     self.imgView.contentMode = UIViewContentModeScaleToFill;
 //    self.imgView.contentMode =UIViewContentModeScaleAspectFit ;//UIViewContentModeScaleAspectFill;
-    
-    [self.imgView sd_setImageWithURL:[NSURL URLWithString:topic.Picsmall] placeholderImage:[UIImage imageNamed:@"home_onepic_place"]];
+    [self.imgView sd_setImageWithURL:[NSURL URLWithString:topic.Picsmall] placeholderImage:[UIImage imageNamed:[WSImageView getImageName:@"zhuanti"]]];
     self.detailLbl.text = topic.Ztdes;
     self.concernCountLbl.text = [NSString stringWithFormat:@"%@关注",topic.Ztpinyin];
     self.nameLbl.text = topic.Zttitle;

@@ -288,11 +288,12 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     Newslist *news = self.jsonNews[indexPath.row];
-    if(indexPath.row == 1){
-        news.Showtype = 2;
-    }else if(indexPath.row == 5){
-        news.Showtype = 1;
-    }
+//    news.Showtype = 1;
+//    if(indexPath.row == 1){
+//        news.Showtype = 2;
+//    }else if(indexPath.row == 5){
+//        news.Showtype = 1;
+//    }
     WSNewsCell *cell = [WSNewsCell newsCellWithTableView:tableView cellNews:news IndexPath:indexPath];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
 

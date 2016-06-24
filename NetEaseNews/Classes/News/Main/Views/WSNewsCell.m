@@ -93,8 +93,13 @@ static NSString * threeImageID = @"threeImageCell";
     }
     
     self.titleLbl.text = news.Title;
-    self.detailLbl.text =  [NSString stringWithFormat:@"%@%@",news.Title,news.Title];
-    [self.replyCountBtn setTitle:[NSString stringWithFormat:@"%@",[QTCommonTools convertServiceTimeToStandartShowTime:news.Edittime]] forState:UIControlStateNormal];
+    self.detailLbl.hidden = YES;
+    if (strNotNil(news.Edittime)) {
+            [self.replyCountBtn setTitle:[NSString stringWithFormat:@"%@",[QTCommonTools convertServiceTimeToStandartShowTime:news.Edittime]] forState:UIControlStateNormal];
+    }else{
+        [self.replyCountBtn setTitle:@"" forState:UIControlStateNormal];
+    }
+
 //    for (NSInteger i=0; i<news.imgextra.count; i++) {
 //        
 //        UIImageView *imgView = self.extraImageViews[i];
@@ -105,12 +110,12 @@ static NSString * threeImageID = @"threeImageCell";
         for (NSInteger i=0; i<news.Showtype; i++) {
             UIImageView *imgView = self.extraImageViews[i];
             imgView.contentMode = UIViewContentModeScaleToFill;
-            [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:i]] placeholderImage:[UIImage imageNamed:@"home_onepic_place"]];
+            [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:i]] placeholderImage:[UIImage imageNamed:[WSImageView getImageName:@"home_three"]]];
         }
     }else{
         UIImageView *imgView = self.extraImageViews[0];
         imgView.contentMode = UIViewContentModeScaleToFill;
-        [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:0]] placeholderImage:[UIImage imageNamed:@"zhaunti_place"]];
+        [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:0]] placeholderImage:[UIImage imageNamed:[WSImageView getImageName:@"home_zhilan"]]];
     }
     
     CGSize fontSize = [self.replyCountBtn.titleLabel.text sizeOfFont:self.replyCountBtn.titleLabel.font textMaxSize:CGSizeMake(125, 21)];

@@ -19,6 +19,8 @@
     return self;
 }
 
+
+
 - (void)layoutSubviews{
     
     [super layoutSubviews];
@@ -44,6 +46,14 @@
 //    }else if(self.image.size.width >= self.bounds.size.width || self.image.size.height >= self.bounds.size.height){
 //        self.contentMode = UIViewContentModeScaleAspectFit;
 //    }
+}
+
++(NSString*)getImageName:(NSString*)imageStr{
+    if (Main_Screen_Width<321) {
+        return [NSString stringWithFormat:@"%@_5",imageStr];
+    }else{
+        return imageStr;
+    }
 }
 
 @end

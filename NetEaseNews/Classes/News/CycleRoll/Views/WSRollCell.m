@@ -25,7 +25,7 @@
 //    self.imageView.contentMode = UIViewContentModeScaleToFill;//
 ////    UIViewContentModeScaleToFill/UIViewContentModeScaleAspectFill;//UIViewContentModeScaleAspectFit;//UIViewContentModeScaleToFill;
 //    ECLog(@"轮播:%@",ad.Picsmall);
-    [self.imageView sd_setImageWithURL:[NSURL URLWithString:ad.Picsmall] placeholderImage:[UIImage imageNamed:@"home_roll_place"]];
+    [self.imageView sd_setImageWithURL:[NSURL URLWithString:ad.Picsmall] placeholderImage:[UIImage imageNamed:[WSImageView getImageName:@"home_roll"]]];
 //    self.imageView.backgroundColor  = [UIColor redColor];
 }
 
