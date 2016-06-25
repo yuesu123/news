@@ -51,9 +51,10 @@
 {
     [super viewDidLoad];
     // 设置行高
-    self.tableView.rowHeight = 119;
+    self.tableView.rowHeight = 90;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delaysContentTouches =NO;
+    self.navigationController.navigationBar.translucent = NO;
 
     _data = [NSMutableArray array];
     self.tableView.backgroundColor = RGBCommonBack;
@@ -75,7 +76,7 @@
 #pragma mark 网络-获取验证码
 - (void)loadDataZTListPage:(NSInteger)page{
     //http://app.53bk.com/api/ztnewslist?ztid=1&pagesize=2&pg=1
-    NSString *url = [NSString stringWithFormat:@"api/ztnewslist?ztid=%@&pagesize=1&pg=%ld",self.Id,(long)page];
+    NSString *url = [NSString stringWithFormat:@"api/ztnewslist?ztid=%@&pagesize=10&pg=%ld",self.Id,(long)page];
      __weak typeof (self) w_self = self;
     [QTFHttpTool requestGETURL:url params:nil refreshCach:YES  needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         if ([json isKindOfClass:[NSDictionary class]]) {

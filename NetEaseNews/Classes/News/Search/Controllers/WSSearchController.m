@@ -30,6 +30,8 @@
     
     NSString *url = [NSString stringWithFormat:@"api/infosearch?key=%@",searchBar.text];
     ECLog(@"搜索字段%@",searchBar.text);
+         url= [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
     [QTFHttpTool requestPOSTURL:url paras:nil needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         NSArray * wsResultArr = [WSSearchResult objectArrayWithKeyValuesArray:json[@"List"]];
         [self.result addObjectsFromArray:wsResultArr];
@@ -104,8 +106,12 @@
     WSSearchResult *result = self.result[indexPath.row];
     
     cell.textLabel.text = result.Title;
-    cell.detailTextLabel.text = result.Edittime;
-    cell.textLabel.numberOfLines = 0;
+    cell.detailTextLabel.text =[QTCommonTools convertServiceTimeToStandartShowTime:result.Edittime];
+    cell.detailTextLabel.textColor = [UIColor lightGrayColor];
+    cell.textLabel.font = [UIFont systemFontOfSize:17];
+    cell.detailTextLabel.font = [UIFont systemFontOfSize:13];
+    
+    cell.textLabel.numberOfLines = 2;
     
     return cell;
     
@@ -122,7 +128,7 @@
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 90;
+    self.tableView.rowHeight = 75;
     self.tableView.tableFooterView = [[UIView alloc] init];
 }
 - (void)viewWillAppear:(BOOL)animated{

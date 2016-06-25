@@ -37,26 +37,12 @@
     self.recommendBtn.hidden = YES;
     self.titleLable.text = ztNewslist.Title;
     [self.videoImage  sd_setImageWithURL:NSURLWithStr(ztNewslist.Picsmall)
-                        placeholderImage:[UIImage imageNamed:@"videoHead"]];
+                        placeholderImage:[UIImage imageNamed:@"zhuanti_lIst"]];
     [QTCommonTools clipImageView:_videoImage Radius:3 borderWidth:0];
-    self.introLable.text = ztNewslist.Newslink;
+    self.viewNumLab.text = [QTCommonTools convertServiceTimeToStandartShowTime:ztNewslist.Edittime];
 
 }
 
-//- (void)setZtlist:(Ztlist *)ztlist{
-//   }
-
-//- (void)setVideoAllList:(videoAllListModel *)videoAllList{
-//    self.greyLine.hidden = YES;//开始灰线是隐藏的
-//    _videoAllList = videoAllList;
-//    self.recommendBtn.hidden = YES;
-//    self.titleLable.text = [NSString stringWithFormat:@"%@",_videoAllList.title];
-//    [self.videoImage  sd_setImageWithURL:NSURLWithStr(_videoAllList.image)
-//                        placeholderImage:[UIImage imageNamed:@"videoHead"]];
-//    [QTCommonTools clipImageView:_videoImage Radius:3 borderWidth:0];
-//    self.introLable.text = [NSString stringWithFormat:@"%@",videoAllList.intro];
-//    
-//}
 
 
 

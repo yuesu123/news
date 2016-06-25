@@ -23,6 +23,8 @@
 #import "WSNewsController+CheckVersion.h"
 #import "DDNewsCache.h"
 #import "WSTopicContentListModel.h"
+#import "WSMenuInstance.h"
+#import "WSOneMenuModel.h"
 
 @interface WSNewsController ()<UIAlertViewDelegate>
 {
@@ -54,12 +56,15 @@
     
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self createRefresh];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(7 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self isShoulfCheckVersion];
     });
+    
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(notificationInactiveDic:) name:kNotificationInactiveDic object:nil];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(notificationActiveDic:) name:kNotificationActiveDic object:nil];
+
 
     
 }
@@ -215,6 +220,7 @@
             }
             
             [weakSelf.tableView reloadData];
+            
             [self refreshCurentPg:_currentPage Total:allModel.Total pgSize:allModel.Pagesize];
         }
         

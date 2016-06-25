@@ -32,6 +32,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @property (nonatomic, strong) XFZCustomKeyBoard *cuskeyBoard;
 
+@property (weak, nonatomic) IBOutlet UILabel *commmentLable;
 @end
 
 @implementation WSContentController
@@ -122,7 +123,8 @@
         //
         NSString *Goods = [QTCommonTools nsnumberToStr:_dic[@"Goods"]];
         if( [Goods intValue] > 0){
-            [_collectionBtn setTitle:Goods forState:UIControlStateNormal];
+//            [_collectionBtn setTitle:Goods forState:UIControlStateNormal];
+            self.commmentLable.text = Goods;
         }
 
     }  failur:^(NSError *error) {
@@ -169,7 +171,7 @@
     
     self.navigationController.navigationBarHidden = YES;
     
-
+   self.title = @"新闻内容";
     
     self.webView.delegate = self;
     

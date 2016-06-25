@@ -40,6 +40,10 @@
  but you still need to add "remote-notification" to the list of your supported UIBackgroundModes in your Info.plist 100%ok
  无网络启动App 检测没有网络直接去显示默认的 ok
  需要更改导航的颜色 不用网易内容也是灰色的 ok
+ 后台返回的时间转换为几天前或者啥的格式 ok
+ 我的里面 ok
+ iOS8 看看效果 基本 ok
+ 新闻内容 新闻评论的标题 不需要 100%ok
 
 
 /*

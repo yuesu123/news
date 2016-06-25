@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+//    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 //    　　tableView.separatorStyle = NO;
 
@@ -82,7 +82,7 @@
     
     typeof(self) __weak weakSelf = self;
     NSString *url = [NSString stringWithFormat:@"api/ztlist?pg=%ld&pagesize=2",_currentPage];
-    [QTFHttpTool requestGETURL:url params:nil refreshCach:YES needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
+    [QTFHttpTool requestGETURL:url params:nil refreshCach:YES needHud:NO hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         NSDictionary *dict = (NSDictionary*)json;
         //转成全部的模型
         WSTopicModel *topModel = [WSTopicModel objectWithKeyValues:dict];
@@ -138,7 +138,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    [MBProgressHUD hideHUDForView:self.view animated:YES];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     WSTopicCell *cell = [WSTopicCell topicCellWithTableView:tableView];

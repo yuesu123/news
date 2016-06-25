@@ -36,17 +36,7 @@
 
     // Do any additional setup after loading the view.
 }
-//- (void)setShareButton{
-//    if (self.type == zeroArt) {
-//        UIButton *shareButton = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 45, 25)];
-//        shareButton.titleLabel.font = [UIFont systemFontOfSize: 16.0f];
-//        //[shareButton setTitleEdgeInsets:UIEdgeInsetsMake(0, 0, -7, -5)];
-//        [shareButton setTitle:@"分享" forState:UIControlStateNormal];
-//        [shareButton addTarget:self action:@selector(shareButtonClicked) forControlEvents:UIControlEventTouchUpInside];
-//        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:shareButton];
-//    }
-//    
-//}
+
 - (void)shareButtonClicked{
     [self shareApplication];
 }
@@ -58,14 +48,7 @@
     }else{
 //        shareContendHasInviteCode = shareContend;
     }
-    //    BOOL isZanwu =  [_expertInfo.praise_rate rangeOfString:@"暂无"].location != NSNotFound;
-    //    NSString *sex = _expertInfo.sex == 1?@"他":@"她";
-    //    NSString *praise = _expertInfo.praise_rate.length>1&&!isZanwu?[NSString stringWithFormat:@"好评率%@",_expertInfo.praise_rate]:@"";
-    //    if(strNotNil(_expertInfo.nickname) ){
-    //        shareContendHasInviteCode = [NSString stringWithFormat:@"主人翁APP里的%@专家,我觉得这个专家很不错,你也可以下载APP咨询!",_expertInfo.nickname];
-    //    }else{
-    //        shareContendHasInviteCode = [NSString stringWithFormat:@"主人翁APP里的专家很不错,你也可以下载APP咨询!"];
-    //    }
+
     
     //1.定制分享的内容
     

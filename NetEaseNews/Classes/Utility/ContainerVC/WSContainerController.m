@@ -185,9 +185,7 @@ static NSString *CellID = @"ControllerCell";
     UICollectionViewCell * cell = (UICollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     //临时改变个颜色，看好，只是临时改变的。如果要永久改变，可以先改数据源，然后在cellForItemAtIndexPath中控制。（和UITableView差不多吧！O(∩_∩)O~）
 //    cell.backgroundColor = [UIColor greenColor];
-    NSLog(@"item======%d",indexPath.item);
-    NSLog(@"row=======%d",indexPath.row);
-    NSLog(@"section===%d",indexPath.section);
+
 }
 
 

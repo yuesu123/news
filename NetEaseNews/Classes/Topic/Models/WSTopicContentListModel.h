@@ -45,6 +45,7 @@
 @property (nonatomic, copy) NSString *Picsmall;
 
 @property (nonatomic, copy) NSString *Title;
+@property (nonatomic, copy) NSString *Ztdes;
 + (void)topicWithIndex:(NSInteger)index isCache:(BOOL)cache getDataSuccess:(GetDataSuccessBlock)success getDataFaileure:(GetDataFailureBlock)failure;
 + (NSArray *)cacheTopic;
 @end

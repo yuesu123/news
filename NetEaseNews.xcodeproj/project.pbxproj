@@ -36,6 +36,8 @@
 		3246941B1CFB12EE0071ADD6 /* UIScrollView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 324694061CFB12EE0071ADD6 /* UIScrollView+MJExtension.m */; };
 		3246941C1CFB12EE0071ADD6 /* UIScrollView+MJRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 324694081CFB12EE0071ADD6 /* UIScrollView+MJRefresh.m */; };
 		3246941D1CFB12EE0071ADD6 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 3246940A1CFB12EE0071ADD6 /* UIView+MJExtension.m */; };
+		3286F3C21D1D88E8008A887F /* NSMutableArray+safeMedthod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3286F3C11D1D88E8008A887F /* NSMutableArray+safeMedthod.m */; };
+		3286F3C51D1D8C0D008A887F /* NSArray+safeMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 3286F3C41D1D8C0D008A887F /* NSArray+safeMethod.m */; };
 		32A2AFEA1D0A62B6001DA7B8 /* WSCommentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32A2AFE91D0A62B6001DA7B8 /* WSCommentModel.m */; };
 		32B53D111CF02DF700412EAC /* MeTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B53D101CF02DF700412EAC /* MeTableViewController.m */; };
 		32B53D231CF0403100412EAC /* ServiceExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 32B53D221CF0403100412EAC /* ServiceExampleViewController.m */; };
@@ -501,6 +503,10 @@
 		324694081CFB12EE0071ADD6 /* UIScrollView+MJRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+MJRefresh.m"; sourceTree = "<group>"; };
 		324694091CFB12EE0071ADD6 /* UIView+MJExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+MJExtension.h"; sourceTree = "<group>"; };
 		3246940A1CFB12EE0071ADD6 /* UIView+MJExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+MJExtension.m"; sourceTree = "<group>"; };
+		3286F3C01D1D88E8008A887F /* NSMutableArray+safeMedthod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+safeMedthod.h"; sourceTree = "<group>"; };
+		3286F3C11D1D88E8008A887F /* NSMutableArray+safeMedthod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+safeMedthod.m"; sourceTree = "<group>"; };
+		3286F3C31D1D8C0D008A887F /* NSArray+safeMethod.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+safeMethod.h"; sourceTree = "<group>"; };
+		3286F3C41D1D8C0D008A887F /* NSArray+safeMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+safeMethod.m"; sourceTree = "<group>"; };
 		32A2AFE81D0A62B6001DA7B8 /* WSCommentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSCommentModel.h; sourceTree = "<group>"; };
 		32A2AFE91D0A62B6001DA7B8 /* WSCommentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSCommentModel.m; sourceTree = "<group>"; };
 		32B53D0F1CF02DF700412EAC /* MeTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MeTableViewController.h; sourceTree = "<group>"; };
@@ -3066,6 +3072,10 @@
 				7AE05C601CDCA361003A947A /* AppDelegate+other.m */,
 				7AB39F561CF2AE5700A5A10D /* Globals.h */,
 				7AB39F571CF2AE5700A5A10D /* Globals.m */,
+				3286F3C01D1D88E8008A887F /* NSMutableArray+safeMedthod.h */,
+				3286F3C31D1D8C0D008A887F /* NSArray+safeMethod.h */,
+				3286F3C41D1D8C0D008A887F /* NSArray+safeMethod.m */,
+				3286F3C11D1D88E8008A887F /* NSMutableArray+safeMedthod.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -3489,6 +3499,7 @@
 				324694151CFB12EE0071ADD6 /* MJRefreshBackStateFooter.m in Sources */,
 				324694171CFB12EE0071ADD6 /* MJRefreshNormalHeader.m in Sources */,
 				32B53F531CF166BF00412EAC /* UIViewController+WGWhichOne.m in Sources */,
+				3286F3C51D1D8C0D008A887F /* NSArray+safeMethod.m in Sources */,
 				32B53EB91CF0447000412EAC /* NSString+Extension.m in Sources */,
 				651D64E91C4506DD00DAF34E /* WSTopicController.m in Sources */,
 				652794291C703DDC00BBFDFA /* NSArray+Log.m in Sources */,
@@ -3619,6 +3630,7 @@
 				32B53EF11CF0447000412EAC /* NSObject+MJProperty.m in Sources */,
 				651D64C01C4506DD00DAF34E /* WSAudioController.m in Sources */,
 				7AAE22031CDC2F55006FA57C /* ThemeManager.m in Sources */,
+				3286F3C21D1D88E8008A887F /* NSMutableArray+safeMedthod.m in Sources */,
 				651D64EC1C4506DD00DAF34E /* WSTopic.m in Sources */,
 				7AC3EE861CE03B0300B08119 /* UILabel+WF.m in Sources */,
 				32B53EA51CF0447000412EAC /* UIImageAddtions.m in Sources */,

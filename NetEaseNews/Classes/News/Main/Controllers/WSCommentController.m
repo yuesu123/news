@@ -112,6 +112,7 @@
     if ([QTCommonTools hasMoreData:currentPage totalNews:Total pageSize:pgSize]) {
         ++_currentPage;
     }else{
+        
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
     }
 }
@@ -141,11 +142,16 @@
          model.Mvc_pingItems = arr;
          if (_currentPage ==1) {
              [self.comments removeAllObjects];
+             if (arr.count == 0) {
+                 [self showHint:@"暂无评论!"];
+                 self.tableView.mj_footer.hidden = YES;
+             }
          }
          [self.comments addObjectsFromArray:model.Mvc_pingItems];
+         if (_currentPage == 1&&arr.count == 0) {
+             return ;
+         }
          [self refreshCurentPg:_currentPage Total:model.Mvc_pingTotal pgSize:20];//2
-         [self showHint:@"暂无评论!"];
-//        [self addNotingView:weakSelf.comments.count view:self.tableView title:@"暂无评论" font:[UIFont systemFontOfSize:15] color:[UIColor redColor]];
         
         [self.tableView reloadData];
     } failur:^(NSError *error) {

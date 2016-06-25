@@ -15,6 +15,8 @@
 #import "WSDayNewsController.h"
 #import "WSMenuInstance.h"
 #import "WSOneMenuModel.h"
+#import "NSMutableArray+safeMedthod.h"
+#import "NSArray+safeMethod.h"
 
 @interface WSNewsContainerController ()
 
@@ -49,19 +51,26 @@
 - (void)loadInterface {
     
     //titleView
-    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nil]];
-    self.navigationItem.titleView = imageView;
+//    UIImageView *imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:nil]];
+//    self.navigationItem.titleView = imageView;
+    NSInteger index =  self.tabBarController.selectedIndex;
+    if (index>0) {
+        NSMutableArray *tabbarArr = [WSMenuInstance sharedWSMenuInstance].tabbarArr;
+        
+        WSOneMenuModel *model = [tabbarArr objectAtIndexSafe:index-1];
+      self.navigationItem.title = model.Classname;
+        
+    }   
+    
+//    self.navigationItem.title = @"11";
+
     if (self.tabBarController.selectedIndex == 0) {
-        //leftitem
-//        UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"nav_home_logo"] style:UIBarButtonItemStylePlain target:self action:@selector(leftItemClick)];
+        self.navigationItem.title = @"";
+
         UIButton *button = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 26, 26)];
-//        [button.imageView  ]
         [button setBackgroundImage:[UIImage imageNamed:@"nav_home_logo"] forState:UIControlStateNormal];
         UIBarButtonItem*leftItem = [[UIBarButtonItem alloc]initWithCustomView:button];
         self.navigationItem.leftBarButtonItem = leftItem;
-//        leftItem.tintColor = [UIColor whiteColor];
-        //rightItem
-//        UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"search_icon"] style:UIBarButtonItemStylePlain target:self action:@selector(rightItemClick)];
         
         UIButton *buttonright = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 135, 26)];
         [buttonright setBackgroundImage:[UIImage imageNamed:@"nav_home_search"] forState:UIControlStateNormal];

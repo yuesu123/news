@@ -334,14 +334,14 @@ singleton_implementation(QTCommonTools)
     }
 }
 
-//+(NSString*)phoneNumAddStar:(NSString*)str{
-//    str = [QTCommonTools replaceStringWithOldLongStr:str oldSmallstr:@" " withNew:@""];
-//    if ([Globals isValidPhone:str]) {
-//        NSString *tel = [str stringByReplacingCharactersInRange:NSMakeRange(3, 4) withString:@"****"];
-//        return tel;
-//    }
-//    return str;
-//}
++(NSString*)phoneNumAddStar:(NSString*)str{
+    str = [QTCommonTools replaceStringWithOldLongStr:str oldSmallstr:@" " withNew:@""];
+    if ([Globals isValidPhone:str]) {
+        NSString *tel = [str stringByReplacingCharactersInRange:NSMakeRange(3, 6) withString:@"******"];
+        return tel;
+    }
+    return str;
+}
 
 + (void)camaraCanuse:(QTCamaraCanuse)camaraCanUse camaraNotCanuse:(QTCamaraNotCanuse)camaraNotCanUse showAlert:(BOOL)showAlert showMsg:(NSString*)showMsg{
     BOOL canUse = [self camaraHadAuthorizationAndShowAlert:showAlert showMsg:showMsg];
