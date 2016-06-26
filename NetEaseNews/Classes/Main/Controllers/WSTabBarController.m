@@ -19,6 +19,7 @@
 @interface WSTabBarController ()
 @property (nonatomic ,strong) UIView *adView;
 @property (nonatomic ,strong) UIButton *skipBtn;
+@property (nonatomic, strong) UIImageView *adBottomImg1;
 @end
 
 @implementation WSTabBarController
@@ -39,12 +40,6 @@
 
 - (void)loadDataAllNewsMenu{
     [[QTUserInfo sharedQTUserInfo] loadUserInfoFromDefault];
-//    if ([CheckNetWorkState checkNetworkState]== NotReachable) {
-//        [self loadMenu:NO];
-//        //去登录 需要延时
-//        [self LoadDataLogin:YES];
-//        return;
-//    }
     [HYBNetworking getWithUrl:@"api/menu"
                  refreshCache:YES
                        params:nil
@@ -90,6 +85,7 @@
 
 
 - (void)loadMenu:(BOOL)success{
+    [_adBottomImg1 removeFromSuperview];
     [self loadViewControllers:success];
     [self loadTabBarItems:success];
 }
@@ -176,20 +172,24 @@
 
 - (void)adImage{
     [SXAdManager loadLatestAdImage];
+    UIView *adView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    _adView = adView;
+    UIImageView *adBottomImg1 = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"lauch_bottom"]];
+    adBottomImg1.frame = CGRectMake(0, self.view.height - 135, self.view.width, 135);
+    _adBottomImg1 = adBottomImg1;
+    [self.view addSubview:adBottomImg1];
     if ([SXAdManager isShouldDisplayAd]) {
         
         // ------这里主要是容错一个bug。
 //        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"top20"];
 //        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"rightItem"];
-        UIView *adView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-        _adView = adView;
+
 
         UIImageView *adImg = [[UIImageView alloc]initWithImage:[SXAdManager getAdImage]];
         //添加网易新闻有态度的门户的图片
         UIImageView *adBottomImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"lauch_bottom"]];
         adView.backgroundColor = [UIColor whiteColor];
         [adView addSubview:adBottomImg];
-//        [self addGesture:adView];
         [adView addSubview:adImg];
         adBottomImg.frame = CGRectMake(0, self.view.height - 135, self.view.width, 135);
         adImg.frame = CGRectMake(0, 0, self.view.width, self.view.height - 135);
@@ -212,7 +212,7 @@
         
         [[UIApplication sharedApplication] setStatusBarHidden:YES];
         
-        [UIView animateWithDuration:4 animations:^{
+        [UIView animateWithDuration:2.8 animations:^{
             adView.alpha = 1.0f;
         } completion:^(BOOL finished) {
             [self addImageFinish:finished time:1];
