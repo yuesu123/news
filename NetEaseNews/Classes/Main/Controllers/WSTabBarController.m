@@ -240,9 +240,15 @@
 
 
 - (void)oneFingerTwoTaps:(UIButton*)btn{
-    btn.enabled = NO;
+    
+    [btn removeFromSuperview];
     [self addImageFinish:YES time:0.2];
-    [[NSNotificationCenter defaultCenter]postNotificationName:kNotificationAddTap object:nil];    
+    
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+            [[NSNotificationCenter defaultCenter]postNotificationName:kNotificationAddTap object:nil];
+        ECLog(@"抛出点击通知");
+    });
 }
 
 

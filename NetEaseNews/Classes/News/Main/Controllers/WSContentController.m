@@ -18,7 +18,7 @@
 #import "UIImageView+WebCache.h"
 #import "UMSocialControllerService.h"
 #import "NSArray+Extensions.h"
-
+#import "QTLoginViewController.h"
 @interface WSContentController ()<UIWebViewDelegate,UMSocialUIDelegate,XFZCustomKeyBoardDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
@@ -78,7 +78,8 @@
 - (IBAction)writeCommentBtnClicked:(UIButton *)sender {
     NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
     if (!strNotNil(passW)) {//密码不存在 存在 退出了 存在本地
-        [MBProgressHUD showError:@"登录才能评论"];
+        [self showHint:@"登录才能评论"];
+        [self gotoLoginVc];
         return;
     }
     if (_bottomCommentBtn.selected) {
@@ -104,6 +105,20 @@
 
 }
 
+- (void)gotoLoginVc{
+    
+    ECLog(@"点击用户头像");
+    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Me" bundle:nil];
+    QTLoginViewController* vc = [storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+    vc.hidesBottomBarWhenPushed = YES;
+    vc.title = @"登录";
+//    [vc loginSuccessBlock:^(NSDictionary *dic) {
+//        NSString *phone =[QTUserInfo sharedQTUserInfo].phoneNum;
+//        [_loginBtn setTitle:phone forState:UIControlStateNormal];
+//        [MBProgressHUD showSuccess:@"登录成功"];
+//    }];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 - (void)loadDataPinlunDianzan{
     
     NSString *docid = nil;
@@ -410,7 +425,8 @@
     NSString *userid =[QTUserInfo sharedQTUserInfo].userId;
     NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
     if (!strNotNil(passW)) {//密码不存在 存在 退出了 存在本地
-        [MBProgressHUD showError:@"登录才能收藏"];
+        [self showHint:@"登录才能收藏"];
+        [self gotoLoginVc];
         return;
     }
     if (_collectionBtn.selected) {

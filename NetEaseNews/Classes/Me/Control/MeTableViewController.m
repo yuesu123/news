@@ -38,12 +38,20 @@
     [super viewDidLoad];
     [QTCommonTools clipAllView:_userHeaderImage Radius:_userHeaderImage.frame.size.width*0.5 borderWidth:0 borderColor:nil];
     self.tableView.tableFooterView = [[UIView alloc] init];
+    [self setLoginBtnTitle];
+
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [self setLoginBtnTitle];
+}
+
+- (void)setLoginBtnTitle{
     if (strNotNil([QTUserInfo sharedQTUserInfo].passWD)&&strNotNil([QTUserInfo sharedQTUserInfo].phoneNum)) {
         [self.loginBtn setTitle:[QTUserInfo sharedQTUserInfo].phoneNum forState:UIControlStateNormal];
     }
-    
 }
-
 
 - (void)gotoLoginVc{
     
@@ -62,6 +70,9 @@
 
 
 - (void)gotoCollectionView{
+    
+    
+    
     UIViewController *vc = [[CollectViewController alloc]init];
     vc.title = @"收藏";
     [self.navigationController pushViewController:vc animated:YES];
@@ -163,16 +174,35 @@
     if (indexPath.row == 0&&0 == indexPath.section) {
         [self gotoWeatherVc];
     }else if(indexPath.row == 1&&0 == indexPath.section){
+        [self showToLogin:@"请先登录吧!"];
+        NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+        if (!strNotNil(passW)) return;
         [self gotoCollectionView];
     }else if(indexPath.row == 2&&0 == indexPath.section){
+        [self showToLogin:@"请先登录吧!"];
+        NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+        if (!strNotNil(passW)) return;
         [self gotoBaoliaoViewController];
     }else if(indexPath.row == 3&&0 == indexPath.section){
+        [self showToLogin:@"请先登录吧!"];
+        NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+        if (!strNotNil(passW)) return;
         [self gotoMyBaoliaoViewController];
     }else if(indexPath.row == 0&&1 == indexPath.section){
         [self gotoSettingVc];
     }
-    
 }
+
+- (void)showToLogin:(NSString*)str{
+    NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+    if (!strNotNil(passW)) {//密码不存在 存在 退出了 存在本地
+        [self showHint:str];
+        [self gotoLoginVc];
+        return;
+    }
+}
+
+
 - (void)shareNew{
     NSString *invite_code =  standardUserForKey(@"invite_code");
     NSString *shareContendHasInviteCode = nil;
