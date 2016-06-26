@@ -9,6 +9,7 @@
 #import "WSTopicNewsListCell.h"
 #import "UIImageView+WebCache.h"
 #import "WSTopicContentListModel.h"
+#import "NSArray+Extensions.h"
 
 @interface WSTopicNewsListCell ()
 
@@ -36,6 +37,14 @@
     _ztNewslist = ztNewslist;
     self.recommendBtn.hidden = YES;
     self.titleLable.text = ztNewslist.Title;
+    
+    if ([[NSArray  readFile:@"zhuanti"] containsObject:ztNewslist.Title]) {
+        self.titleLable.textColor = [UIColor grayColor];
+    } else {
+        self.titleLable.textColor = [UIColor blackColor];
+    }
+    
+    
     [self.videoImage  sd_setImageWithURL:NSURLWithStr(ztNewslist.Picsmall)
                         placeholderImage:[UIImage imageNamed:@"zhuanti_lIst"]];
     [QTCommonTools clipImageView:_videoImage Radius:3 borderWidth:0];

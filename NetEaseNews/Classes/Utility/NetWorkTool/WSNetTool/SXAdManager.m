@@ -55,7 +55,7 @@
     
     [[[SXNetworkTools sharedNetworkToolsWithoutBaseUrl] GET:path parameters:nil success:^(NSURLSessionDataTask *task, NSDictionary* responseObject) {
         
-        NSArray *adArray = [responseObject valueForKey:@"Startad"];
+        NSArray *adArray = [responseObject valueForKey:@"Linkad"];
         NSString *imgUrl = adArray[0][@"Adfile"];
        BOOL one = [[NSUserDefaults standardUserDefaults]boolForKey:@"one"];
         if (imgUrl.length > 0) {

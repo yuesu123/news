@@ -25,6 +25,7 @@
 #import "WSTopicContentListModel.h"
 #import "WSMenuInstance.h"
 #import "WSOneMenuModel.h"
+#import "NSArray+Extensions.h"
 
 @interface WSNewsController ()<UIAlertViewDelegate>
 {
@@ -240,21 +241,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     Newslist *news = self.jsonNews[indexPath.row];
-    
     WSNewsCell *cell = [tableView  cellForRowAtIndexPath:indexPath];
     cell.titleLbl.textColor = [UIColor grayColor];
-    	[[DDNewsCache sharedInstance] addObject:cell.titleLbl.text];
-    
-    
-//    if ([news.tag isEqualToString:@"photoset"]) {
-//        
-//        [self pushPhotoControllerWithPhotoID:news.skipID replyCount:news.replyCount];
-//        
-//    }else{
-    
-     //    }
+    [NSArray writetargetStr:cell.titleLbl.text ToFilePath:@"state"];
     [self gotoWSContentController:news];
-    
 }
 
 

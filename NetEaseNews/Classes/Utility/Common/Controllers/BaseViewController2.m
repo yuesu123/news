@@ -196,7 +196,23 @@
     }
     
 }
-
+#pragma mark -  刷新相关30行
+- (void)createRefreshNoBegin:(UITableView*)tableView
+{
+    self.tableView = tableView;
+    __unsafe_unretained __typeof(self) weakSelf = self;
+    self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingTarget:self refreshingAction:@selector(loadLastData)];
+    // 设置回调（一旦进入刷新状态就会调用这个refreshingBlock）
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        _currentPage = 1;
+        [weakSelf.tableView.mj_footer resetNoMoreData];
+        weakSelf.tableView.mj_footer.hidden = YES;
+        [weakSelf loadDataWithCache:NO];
+    }];
+    // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadLastData方法）
+    
+    // 马上进入刷新状态
+}
 #pragma mark -  刷新相关30行
 - (void)createRefresh:(UITableView*)tableView
 {

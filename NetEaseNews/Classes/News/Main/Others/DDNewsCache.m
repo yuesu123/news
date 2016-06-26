@@ -21,5 +21,20 @@
 	return _instance;
 }
 
+- (NSString *)getPath
+{
+    //获得文件夹的路径
+    /*
+     NSString *filePath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+     NSString *newPath = [filePath stringByAppendingPathComponent:@"archive"];
+     return newPath;
+     */
+    NSString *path = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
+    NSString *newPath = [path stringByAppendingPathComponent:@"archiver"];
+    return newPath;
+}
+
+
+
 
 @end

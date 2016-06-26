@@ -9,7 +9,9 @@
 #import <Foundation/Foundation.h>
 
 @interface NSArray(NSArray_Extensions)
-- (BOOL)writeToFile:(NSString *)path;
+//将 targetStr存储到path下面(路径的一个唯一标示即可,可以1,2,3,...)底层会将path 拼接为真正的沙盒路径
++ (BOOL)writetargetStr:(NSString*)targetStr ToFilePath:(NSString *)path ;
+//读取到path下面(路径的一个唯一标示即可,可以1,2,3,...)的一个数组,底层会将path 拼接为真正的沙盒路径
 +(NSArray*)readFile:(NSString*)path;
 @end
 

@@ -130,6 +130,8 @@
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 75;
     self.tableView.tableFooterView = [[UIView alloc] init];
+//    [self createRefreshNoBegin:self.tableView];
+
 }
 - (void)viewWillAppear:(BOOL)animated{
     

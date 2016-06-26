@@ -17,6 +17,7 @@
 #import "QTUMShareTool.h"
 #import "UIImageView+WebCache.h"
 #import "UMSocialControllerService.h"
+#import "NSArray+Extensions.h"
 
 @interface WSContentController ()<UIWebViewDelegate,UMSocialUIDelegate,XFZCustomKeyBoardDelegate>
 
@@ -31,6 +32,8 @@
 @property (nonatomic, strong) NSDictionary *dic;
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @property (nonatomic, strong) XFZCustomKeyBoard *cuskeyBoard;
+@property (weak, nonatomic) IBOutlet UILabel *commentNumLable;
+@property (weak, nonatomic) IBOutlet UIButton *praiseBtn;
 
 @property (weak, nonatomic) IBOutlet UILabel *commmentLable;
 @end
@@ -51,6 +54,10 @@
         ZtNewslist *news = (ZtNewslist*)_newsItem;
         docid = [NSString convertIntgerToString:news.Infoid];
     }
+    if (_praiseBtn.selected) {
+        [MBProgressHUD showError:@"已经点赞"];
+        return;
+    }
     NSString *url = [NSString stringWithFormat:@"api/newsgoodsave?infoid=%@",docid];
     [QTFHttpTool requestGETURL:url params:nil refreshCach:YES needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         if (![json isKindOfClass:[NSDictionary class]]) {
@@ -60,6 +67,8 @@
         BOOL success = (BOOL)[dic[@"Success"] boolValue];
         NSString *Msg = dic[@"Msg"];
         if (!success) {return;}
+        _praiseBtn.selected = YES;
+//        _praiseBtn.enabled = NO;
         [MBProgressHUD showSuccess:Msg];
     }  failur:^(NSError *error) {
     }];
@@ -70,6 +79,10 @@
     NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
     if (!strNotNil(passW)) {//密码不存在 存在 退出了 存在本地
         [MBProgressHUD showError:@"登录才能评论"];
+        return;
+    }
+    if (_bottomCommentBtn.selected) {
+        [MBProgressHUD showError:@"已经评论"];
         return;
     }
     [[XFZCustomKeyBoard customKeyBoard]textViewShowView:self delegate:self];
@@ -118,12 +131,10 @@
         NSString *IsShare = [QTCommonTools nsnumberToStr:_dic[@"IsShare"]];
         _shareBtn.hidden = ![IsShare isEqualToString:@"1"];
         if([Mvc_pingTotal intValue]>0){
-            [_bottomCommentBtn setTitle:Mvc_pingTotal forState:UIControlStateNormal];
+            _commentNumLable.text = Mvc_pingTotal;
         }
-        //
         NSString *Goods = [QTCommonTools nsnumberToStr:_dic[@"Goods"]];
         if( [Goods intValue] > 0){
-//            [_collectionBtn setTitle:Goods forState:UIControlStateNormal];
             self.commmentLable.text = Goods;
         }
 
@@ -159,6 +170,7 @@
         BOOL success = (BOOL)[dic[@"Success"] boolValue];
         NSString *Msg = dic[@"Msg"];
         if (!success) {return;}
+        _bottomCommentBtn.selected = YES;
         [MBProgressHUD showSuccess:Msg];
     }  failur:^(NSError *error) {
         
@@ -401,6 +413,10 @@
         [MBProgressHUD showError:@"登录才能收藏"];
         return;
     }
+    if (_collectionBtn.selected) {
+        [MBProgressHUD showError:@"已经收藏"];
+        return;
+    }
     NSString *partUrl = nil;
     NSString *docid = nil;
     if ([_newsItem isKindOfClass:[Newslist class]]) {
@@ -421,8 +437,17 @@
         BOOL success = (BOOL)[dic[@"Success"] boolValue];
         NSString *Msg = dic[@"Msg"];
         if (!success) {return;}
-        [MBProgressHUD showSuccess:Msg];        
+        _collectionBtn.selected = YES;
+//        _collectionBtn.enabled = NO;
+        //收藏成功
+        [NSArray writetargetStr:url ToFilePath:@"collection"];
+        [MBProgressHUD showSuccess:Msg];
     } failur:^(NSError *error) { }];
+}
+
+- (void)refreshState{
+    
+    
 }
 
 

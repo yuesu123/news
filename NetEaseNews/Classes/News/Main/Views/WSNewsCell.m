@@ -40,7 +40,7 @@ static NSString * threeImageID = @"threeImageCell";
             return 80;
             break;
         case WSNewsCellTypeBigImage:
-            return 180;
+            return 160;
             break;
         case WSNewsCellTypeThreeImage:
             return 120;
@@ -81,17 +81,12 @@ static NSString * threeImageID = @"threeImageCell";
     _news = news;
     
     self.iconView.contentMode = UIViewContentModeScaleToFill;
-
     [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"home_onepic_place"]];
-    
-//    NSArray *arr = [NSArray readFile:kCachedSelectCell];
-    
-    if ([[DDNewsCache sharedInstance] containsObject:news.Title]) {
+    if ([[NSArray  readFile:@"state"] containsObject:news.Title]) {
         self.titleLbl.textColor = [UIColor grayColor];
     } else {
         self.titleLbl.textColor = [UIColor blackColor];
     }
-    
     self.titleLbl.text = news.Title;
     self.detailLbl.hidden = YES;
     if (strNotNil(news.Edittime)) {

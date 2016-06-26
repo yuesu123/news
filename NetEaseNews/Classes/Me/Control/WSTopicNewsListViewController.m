@@ -13,7 +13,7 @@
 #import "MJRefresh.h"
 #import "WSTopicContentListModel.h"
 #import "WSContentController.h"
-
+#import "NSArray+Extensions.h"
 
 
 @interface WSTopicNewsListViewController ()<UIActionSheetDelegate>{
@@ -309,10 +309,11 @@
     ZtNewslist *ztNews = [_data objectAtIndex:indexPath.row];
 
     WSContentController *contentVC = [WSContentController contentControllerWithItem:ztNews];
-//    contentVC.newsLink = @"https://wap.baidu.com";//news.Newslink;
-//    //hideBottomBar
-//    contentVC.wscontentControllerType = WSContentControllerTypeZhuanti;
-//    contentVC.docid = ztNews.Id;
+    WSTopicNewsListCell *cell = [sender  cellForRowAtIndexPath:indexPath];
+    cell.titleLable.textColor = [UIColor grayColor];
+    
+    [NSArray writetargetStr:cell.titleLable.text ToFilePath:@"zhuanti"];
+    
     [self.navigationController pushViewController:contentVC animated:YES];
     
     
