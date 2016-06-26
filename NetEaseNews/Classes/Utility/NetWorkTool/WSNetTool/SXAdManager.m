@@ -57,6 +57,8 @@
         
         NSArray *adArray = [responseObject valueForKey:@"Linkad"];
         NSString *imgUrl = adArray[0][@"Adfile"];
+        [QTUserInfo sharedQTUserInfo].adlink = adArray[0][@"Adlink"];
+        
        BOOL one = [[NSUserDefaults standardUserDefaults]boolForKey:@"one"];
         if (imgUrl.length > 0) {
             if (one) {

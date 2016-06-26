@@ -26,6 +26,7 @@
 #import "WSMenuInstance.h"
 #import "WSOneMenuModel.h"
 #import "NSArray+Extensions.h"
+#import "ServiceExampleViewController.h"
 
 @interface WSNewsController ()<UIAlertViewDelegate>
 {
@@ -65,9 +66,7 @@
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(notificationInactiveDic:) name:kNotificationInactiveDic object:nil];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(notificationActiveDic:) name:kNotificationActiveDic object:nil];
-
-
-    
+    [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(notificationAddTap:) name:kNotificationAddTap object:nil];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -105,6 +104,17 @@
         ztnews.Id = ztnewsid;
         [self gotoWSContentController:ztnews];
     }
+}
+
+- (void)notificationAddTap:(NSNotification*)noti{
+    [self gotoAddViewController];
+}
+- (void)gotoAddViewController{
+    ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
+    vc.titleStr = @"广告";
+    vc.urlStr = [QTUserInfo sharedQTUserInfo].adlink;
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)notificationActiveDic:(NSNotification*)noti{

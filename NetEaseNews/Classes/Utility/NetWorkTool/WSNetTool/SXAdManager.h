@@ -14,5 +14,5 @@
 + (BOOL)isShouldDisplayAd;
 + (UIImage *)getAdImage;
 + (void)loadLatestAdImage;
-
+@property (nonatomic, copy) NSString *adlingk;
 @end

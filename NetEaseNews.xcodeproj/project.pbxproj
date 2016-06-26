@@ -154,6 +154,7 @@
 		32CE36551CF739D900C80AAA /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CE36541CF739D900C80AAA /* AFNetworkActivityIndicatorManager.m */; };
 		32CE365B1CF73F9200C80AAA /* WSOneMenuModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CE365A1CF73F9200C80AAA /* WSOneMenuModel.m */; };
 		32CE365E1CF7433600C80AAA /* WSMenuInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 32CE365D1CF7433600C80AAA /* WSMenuInstance.m */; };
+		32E21FE51D1FC7E300B2119F /* LargeClickBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 32E21FE41D1FC7E300B2119F /* LargeClickBtn.m */; };
 		651D64951C4506DD00DAF34E /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D63941C4506DD00DAF34E /* AFHTTPSessionManager.m */; };
 		651D64961C4506DD00DAF34E /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D63971C4506DD00DAF34E /* AFNetworkReachabilityManager.m */; };
 		651D64971C4506DD00DAF34E /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 651D63991C4506DD00DAF34E /* AFSecurityPolicy.m */; };
@@ -756,6 +757,8 @@
 		32CE365A1CF73F9200C80AAA /* WSOneMenuModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSOneMenuModel.m; sourceTree = "<group>"; };
 		32CE365C1CF7433600C80AAA /* WSMenuInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSMenuInstance.h; sourceTree = "<group>"; };
 		32CE365D1CF7433600C80AAA /* WSMenuInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSMenuInstance.m; sourceTree = "<group>"; };
+		32E21FE31D1FC7E300B2119F /* LargeClickBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargeClickBtn.h; sourceTree = "<group>"; };
+		32E21FE41D1FC7E300B2119F /* LargeClickBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargeClickBtn.m; sourceTree = "<group>"; };
 		651D63751C45069D00DAF34E /* NetEaseNews.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetEaseNews.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		651D63931C4506DD00DAF34E /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		651D63941C4506DD00DAF34E /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
@@ -2147,6 +2150,8 @@
 			children = (
 				651D63F71C4506DD00DAF34E /* WSTabBar.h */,
 				651D63F81C4506DD00DAF34E /* WSTabBar.m */,
+				32E21FE31D1FC7E300B2119F /* LargeClickBtn.h */,
+				32E21FE41D1FC7E300B2119F /* LargeClickBtn.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3536,6 +3541,7 @@
 				651D64F21C4506DD00DAF34E /* WSNavigationView.m in Sources */,
 				651D64E41C4506DD00DAF34E /* AppDelegate.m in Sources */,
 				651D64CF1C4506DD00DAF34E /* WSContent.m in Sources */,
+				32E21FE51D1FC7E300B2119F /* LargeClickBtn.m in Sources */,
 				324694101CFB12EE0071ADD6 /* MJRefreshAutoGifFooter.m in Sources */,
 				32B53D291CF0419000412EAC /* BaseViewController.m in Sources */,
 				32B53EEB1CF0447000412EAC /* MJConst.m in Sources */,

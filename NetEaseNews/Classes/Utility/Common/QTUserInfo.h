@@ -42,6 +42,7 @@ singleton_interface(QTUserInfo)
 @property (nonatomic, copy) NSString *Msg;
 //yes 当前已经登录  No 未登录状态
 @property (nonatomic, assign) BOOL hadLogin;
+@property (nonatomic, copy) NSString* adlink;
 
 
 //-------下面的都没用

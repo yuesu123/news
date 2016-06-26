@@ -14,6 +14,7 @@
 #import "WSMenuInstance.h"
 #import "QTLoginViewController.h"
 #import "CheckNetWorkState.h"
+#import "LargeClickBtn.h"
 
 @interface WSTabBarController ()
 @property (nonatomic ,strong) UIView *adView;
@@ -180,26 +181,26 @@
         // ------这里主要是容错一个bug。
 //        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"top20"];
 //        [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"rightItem"];
-        
-        
-        // ------本想吧广告设置成广告显示完毕之后再加载rootViewController的，但是由于前期已经使用storyboard搭建了，写在AppDelete里会冲突，只好就随便整个view广告
         UIView *adView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
         _adView = adView;
+
         UIImageView *adImg = [[UIImageView alloc]initWithImage:[SXAdManager getAdImage]];
         //添加网易新闻有态度的门户的图片
         UIImageView *adBottomImg = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"lauch_bottom"]];
         adView.backgroundColor = [UIColor whiteColor];
         [adView addSubview:adBottomImg];
+//        [self addGesture:adView];
         [adView addSubview:adImg];
         adBottomImg.frame = CGRectMake(0, self.view.height - 135, self.view.width, 135);
         adImg.frame = CGRectMake(0, 0, self.view.width, self.view.height - 135);
-        
-        //        adImg.frame = [UIScreen mainScreen].bounds;
+        UIButton *btn = [[UIButton alloc] initWithFrame:adImg.bounds];
+        [btn addTarget:self action:@selector(oneFingerTwoTaps:) forControlEvents:UIControlEventTouchUpInside];
         adView.alpha = 0.99f;
         [self.view addSubview:adView];
+        [self.view addSubview:btn];
         
         //添加跳过按钮
-        UIButton *skipBtn = [[UIButton alloc] initWithFrame:CGRectMake(Main_Screen_Width-90, 20, 50, 30)];
+        LargeClickBtn *skipBtn = [[LargeClickBtn alloc] initWithFrame:CGRectMake(Main_Screen_Width-90, 20, 50, 30)];
         skipBtn.backgroundColor = [UIColor grayColor];
         [skipBtn setTitle:@"跳过" forState:UIControlStateNormal];
         [skipBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
@@ -214,20 +215,44 @@
         [UIView animateWithDuration:4 animations:^{
             adView.alpha = 1.0f;
         } completion:^(BOOL finished) {
-            [self addImageFinish:finished];
+            [self addImageFinish:finished time:1];
         }];
     }else{
         [[NSUserDefaults standardUserDefaults]setBool:YES forKey:@"update"];
     }
 }
 
-- (void)skipBtnClicked{
-    [self addImageFinish:YES];
+
+
+
+//- (void)addGesture:(UIView*)image{
+//    // 创建一个手势识别器
+//    image.userInteractionEnabled = YES;
+//    UITapGestureRecognizer *oneFingerTwoTaps =
+//    [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(oneFingerTwoTaps)];
+//    oneFingerTwoTaps.numberOfTapsRequired = 1;
+//    oneFingerTwoTaps.numberOfTouchesRequired = 1;
+////    [oneFingerTwoTaps setNumberOfTapsRequired:2];
+////    [oneFingerTwoTaps setNumberOfTouchesRequired:1];
+//    [image addGestureRecognizer:oneFingerTwoTaps];
+//}
+
+
+
+- (void)oneFingerTwoTaps:(UIButton*)btn{
+    btn.enabled = NO;
+    [self addImageFinish:YES time:0.2];
+    [[NSNotificationCenter defaultCenter]postNotificationName:kNotificationAddTap object:nil];    
 }
 
-- (void)addImageFinish:(BOOL)finished{
+
+- (void)skipBtnClicked{
+    [self addImageFinish:YES time:0.2];
+}
+
+- (void)addImageFinish:(BOOL)finished time:(CGFloat)dalaytime{
     [[UIApplication sharedApplication]setStatusBarHidden:NO];
-    [UIView animateWithDuration:1.0 animations:^{
+    [UIView animateWithDuration:dalaytime animations:^{
         _adView.alpha = 0.0f;
         _skipBtn.hidden = YES;
     } completion:^(BOOL finished) {
@@ -235,7 +260,6 @@
         [_skipBtn removeFromSuperview];
         [_adView removeFromSuperview];
     }];
-    [[NSNotificationCenter defaultCenter]postNotificationName:@"SXAdvertisementKey" object:nil];
 }
 
 
@@ -247,13 +271,6 @@
     UIViewController *vc2 = [sb1 instantiateInitialViewController];
     UIStoryboard *sb3 = [UIStoryboard storyboardWithName:@"News" bundle:nil];
     UIViewController *vc3 = [sb1 instantiateInitialViewController];
- 
-    //干掉不同的
-//    UIStoryboard *sb2 = [UIStoryboard storyboardWithName:@"Reader" bundle:nil];
-//    UIViewController *vc2 = [sb2 instantiateInitialViewController];
-    
-//    UIStoryboard *sb3 = [UIStoryboard storyboardWithName:@"Media" bundle:nil];
-//    UIViewController *vc3 = [sb3 instantiateInitialViewController];
     
     UIStoryboard *sb4 = [UIStoryboard storyboardWithName:@"Topic" bundle:nil];
     UIViewController *vc4 = [sb4 instantiateInitialViewController];

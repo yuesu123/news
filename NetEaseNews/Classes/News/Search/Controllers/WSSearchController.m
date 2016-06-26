@@ -17,7 +17,7 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSMutableArray *result;
-
+@property (nonatomic, copy) NSString *url;
 @end
 
 @implementation WSSearchController
@@ -31,19 +31,36 @@
     NSString *url = [NSString stringWithFormat:@"api/infosearch?key=%@",searchBar.text];
     ECLog(@"搜索字段%@",searchBar.text);
          url= [url stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    _url = url;
+    [self loadDataWithCacheUrl];
+}
 
-    [QTFHttpTool requestPOSTURL:url paras:nil needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
+- (void)loadDataWithCacheUrl{
+    NSString  *urlNew= [_url stringByAppendingString:[NSString stringWithFormat:@"&pg=%ld&pagesize=5",_currentPage]];
+    [QTFHttpTool requestPOSTURL:urlNew paras:nil needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         NSArray * wsResultArr = [WSSearchResult objectArrayWithKeyValuesArray:json[@"List"]];
+        if (_currentPage == 1) {
+            [self.result removeAllObjects];
+        }
         [self.result addObjectsFromArray:wsResultArr];
         [self.tableView reloadData];
         [self.searchBar resignFirstResponder];
         if (wsResultArr.count == 0) {
             [self showHint:@"暂无相关新闻"];
         }
-//        [self addNotingView:wsResultArr.count view:self.tableView title:@"暂无相关新闻" font:nil color:nil];
+        self.tableView.mj_footer.hidden = NO;
+        [self refreshCurentPg:_currentPage Total:(NSInteger)json[@"Total"] pgSize:(NSInteger)json[@"Pagesize"]];
+
+
     } failur:^(NSError *error) {
     }];
+
 }
+
+
+
+
+
 
 - (void)gotoNotiControllercreatItem:(WSSearchResult*)result{
 
@@ -124,15 +141,20 @@
 #pragma mark - view
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+    _currentPage = 1;
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.rowHeight = 75;
     self.tableView.tableFooterView = [[UIView alloc] init];
-//    [self createRefreshNoBegin:self.tableView];
-
+    [self createRefreshNoBegin:self.tableView];
+    self.tableView.mj_footer.hidden = YES;
 }
+
+- (void)loadDataWithCache:(BOOL)cache{
+    [self loadDataWithCacheUrl];
+}
+
 - (void)viewWillAppear:(BOOL)animated{
     
     [super viewWillAppear:animated];
