@@ -150,16 +150,16 @@
 
 - (void)addRoll:(NSArray*)arr {
     typeof(self) __weak weakSelf = self;
-    
-    NSArray *ads = nil;
-    
-//    if (self.jsonNews.count>0) {
-//        ads = [self.jsonNews.firstObject ads] ? : @[self.jsonNews.firstObject];
-//    }
+
     
     //轮播赋值
     [self.rollVC rollControllerWithAds:arr selectedItem:^(id obj) {
-        [self gotoWSContentController:obj];
+        Blocknews *model = (Blocknews*)obj;
+        Newslist *newsList =[[Newslist alloc] init];
+        newsList.Id = model.Id; //id == classId
+        newsList.Title = model.Title;
+        newsList.Hits = model.Hits;
+        [self gotoWSContentController:newsList];
 
         /*
         if([obj isKindOfClass:[WSAds class]]){

@@ -62,7 +62,7 @@
     tableview.dataSource = self;
     [self.view addSubview:tableview];
     tableview.tableFooterView = [[UIView alloc] init];
-    
+//    [self createRefresh:tableview];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     
@@ -94,7 +94,9 @@
 }
 
 - (void)LoadDataCollection{
-    NSString *url = [NSString stringWithFormat:@"api/newsshoucang?userid=%@",[QTUserInfo sharedQTUserInfo].userId];
+//    NSString *url = [NSString stringWithFormat:@"api/ztnewslist?ztid=%@&pagesize=20&pg=%ld",self.Id,(long)page];
+
+    NSString *url = [NSString stringWithFormat:@"api/newsshoucang?userid=%@&pagesize=10&pg=%ld",[QTUserInfo sharedQTUserInfo].userId,_currentPage];
     [MBProgressHUD showMessage:loadingWaitingStr toView:self.view];
     __weak typeof(self) weakSelf = self;
     [HYBNetworking getWithUrl:url refreshCache:YES success:^(id response) {
@@ -113,7 +115,6 @@
         [self addNotingView:weakSelf.totalArr.count view:self.view title:@"暂无收藏" font:nil color:nil];
 //        [self refreshCurentPg:_currentPage Total:<#(NSInteger)#> pgSize:<#(NSInteger)#>]
         
-        [self endRefresh];
         [tableview reloadData];
     } fail:^(NSError *error) {
         [MBProgressHUD hideHUDForView:weakSelf.view];

@@ -14,6 +14,8 @@
     //1.写入之前先读取已经存在过的数组
     NSArray *Arr =  [NSArray readFile:path];
     NSMutableArray *mutArr = [NSMutableArray arrayWithArray:Arr];
+    if (!strNotNil(targetStr)) return NO;
+    
     [mutArr addObject:targetStr];
     NSString *path1 = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) firstObject];
     NSString *newPath = [path1 stringByAppendingPathComponent:path];

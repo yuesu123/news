@@ -116,7 +116,7 @@
 
 - (void)gotoWSTopicNewsListViewController:(Ztlist*)zt{
     WSTopicNewsListViewController *vc = [[WSTopicNewsListViewController alloc] init];
-    vc.title = @"专题列表";
+    vc.title = @"专题新闻列表";
     vc.Id =[NSString convertIntgerToString:zt.Id]; ;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
