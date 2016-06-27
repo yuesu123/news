@@ -36,7 +36,7 @@
 }
 
 - (void)loadDataWithCacheUrl{
-    NSString  *urlNew= [_url stringByAppendingString:[NSString stringWithFormat:@"&pg=%ld&pagesize=5",_currentPage]];
+    NSString  *urlNew= [_url stringByAppendingString:[NSString stringWithFormat:@"&pg=%ld&pagesize=20",_currentPage]];
     [QTFHttpTool requestPOSTURL:urlNew paras:nil needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         NSArray * wsResultArr = [WSSearchResult objectArrayWithKeyValuesArray:json[@"List"]];
         if (_currentPage == 1) {

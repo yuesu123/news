@@ -50,7 +50,7 @@
 
 + (void)topicWithIndex:(NSInteger)currentPage isCache:(BOOL)cache getDataSuccess:(GetDataSuccessBlock)success getDataFaileure:(GetDataFailureBlock)failure{
 //http://app.53bk.com/api/ztlist?pg=1&pagesize=3
-    NSString *url = [NSString stringWithFormat:@"api/ztlist?pg=%ld&pagesize=2",currentPage];
+    NSString *url = [NSString stringWithFormat:@"api/ztlist?pg=%ld&pagesize=20",currentPage];
     [WSGetDataTool GETJSON:url GetDataType:WSGETDataTypeBaseURL progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         
         NSDictionary *dict = (NSDictionary*)responseObject;

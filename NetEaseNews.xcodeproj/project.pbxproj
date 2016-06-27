@@ -3249,7 +3249,7 @@
 				TargetAttributes = {
 					651D63741C45069D00DAF34E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 97V6YV4K4J;
+						DevelopmentTeam = E4UA8527JX;
 					};
 				};
 			};
@@ -3734,8 +3734,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: haibo hao (EK667Z58HA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo hao (EK667Z58HA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3759,7 +3759,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1103b568-8fb9-40e3-9d96-0824fe2b82ff";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -3782,8 +3782,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: haibo hao (EK667Z58HA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo hao (EK667Z58HA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3799,7 +3799,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "1103b568-8fb9-40e3-9d96-0824fe2b82ff";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
@@ -3814,6 +3814,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/Umeng/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -3837,7 +3838,7 @@
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/umeng5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kfdb.yuesu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsky.inhouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -3850,6 +3851,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/Umeng/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -3872,7 +3874,7 @@
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/umeng5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kfdb.yuesu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsky.inhouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

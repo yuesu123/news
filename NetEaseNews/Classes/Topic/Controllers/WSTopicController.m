@@ -81,7 +81,7 @@
 - (void)loadDataWithCache:(BOOL)cache{
     
     typeof(self) __weak weakSelf = self;
-    NSString *url = [NSString stringWithFormat:@"api/ztlist?pg=%ld&pagesize=2",_currentPage];
+    NSString *url = [NSString stringWithFormat:@"api/ztlist?pg=%ld&pagesize=20",_currentPage];
     [QTFHttpTool requestGETURL:url params:nil refreshCach:YES needHud:NO hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         NSDictionary *dict = (NSDictionary*)json;
         //转成全部的模型
