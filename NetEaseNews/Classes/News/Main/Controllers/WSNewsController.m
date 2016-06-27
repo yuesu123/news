@@ -210,32 +210,18 @@
     ECLog(@"加载数据请求:%@",[self newsURL]);
     [QTFHttpTool requestGETURL:[self newsURL] params:nil refreshCach:YES needHud:NO hudView:nil loadingHudText:nil errorHudText:nil sucess:^(id json) {
         WSNewsAllModel *allModel = [WSNewsAllModel objectWithKeyValues:json];
+        [self endRefresh];
         if (allModel.Newslist.count > 0) {
-            
             if (_currentPage == 1){ [weakSelf.jsonNews removeAllObjects];
                 _NewsadArr = [NSMutableArray arrayWithArray:allModel.Newsad];
-
             }
-            
             [weakSelf.jsonNews addObjectsFromArray:allModel.Newslist];
             [WSAdModel  inserAdArr:_NewsadArr toArr:weakSelf.jsonNews  path:3];
-
-            
-            //            weakSelf.index += 20;
-            //图片轮播赋值
-            
-//            if (allModel.Blocknews.count>0) {
-//                Newslist *list = [[Newslist alloc] init];
-//                list.ads = allModel.Blocknews;
-//                [weakSelf.jsonNews insertObject:list atIndex:0];
-//            }
-            //轮播赋值
+               //轮播赋值
             if(_currentPage == 1){
                 [self addRoll:allModel.Blocknews];
             }
-            
             [weakSelf.tableView reloadData];
-            
             [self refreshCurentPg:_currentPage Total:allModel.Total pgSize:allModel.Pagesize];
         }
         

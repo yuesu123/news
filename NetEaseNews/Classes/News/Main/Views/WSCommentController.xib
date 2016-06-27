@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WSCommentController">
@@ -22,19 +22,22 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LMu-aH-Lhb">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                            <animations/>
                             <color key="backgroundColor" red="0.7725490196" green="0.76470588240000004" blue="0.78039215689999997" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="e7s-i4-Ee6"/>
                             </constraints>
                         </view>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKf-QM-DVI">
-                            <rect key="frame" x="8" y="7" width="359" height="35"/>
+                        <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FKf-QM-DVI">
+                            <rect key="frame" x="8" y="8" width="359" height="35"/>
+                            <animations/>
                             <state key="normal" title="写跟帖" backgroundImage="toolbar_light_comment">
                                 <color key="titleColor" red="0.74117647060000003" green="0.74509803919999995" blue="0.75294117650000003" alpha="1" colorSpace="calibratedRGB"/>
                             </state>
                             <state key="highlighted" backgroundImage="toolbar_light_comment_highlighted"/>
                         </button>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" red="0.92156862750000001" green="0.92156862750000001" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstItem="FKf-QM-DVI" firstAttribute="centerY" secondItem="ylZ-Z7-6PP" secondAttribute="centerY" id="GG7-I2-zy8"/>
@@ -51,6 +54,7 @@
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAF-Cq-So5">
                             <rect key="frame" x="0.0" y="63" width="375" height="1"/>
+                            <animations/>
                             <color key="backgroundColor" red="1" green="0.73087660850000002" blue="0.79122232569999995" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="gow-VU-jkG"/>
@@ -58,6 +62,7 @@
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABx-TM-fpX">
                             <rect key="frame" x="0.0" y="20" width="54" height="44"/>
+                            <animations/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="54" id="Q6O-Vh-g9Q"/>
                                 <constraint firstAttribute="height" constant="44" id="yhU-ka-KGw"/>
@@ -68,6 +73,7 @@
                             </connections>
                         </button>
                     </subviews>
+                    <animations/>
                     <color key="backgroundColor" red="0.97647058819999999" green="0.96470588239999999" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="64" id="VZY-gp-u4I"/>
@@ -80,10 +86,12 @@
                 </view>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2I6-Wq-n8R">
                     <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                    <animations/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <color key="sectionIndexBackgroundColor" red="0.96862745098039216" green="0.95294117647058818" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
                 </tableView>
             </subviews>
+            <animations/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Kg4-2v-I2P" firstAttribute="top" secondItem="pOQ-bA-VZ4" secondAttribute="top" id="1j7-h2-Zdc"/>
@@ -98,7 +106,7 @@
                 <constraint firstItem="Kg4-2v-I2P" firstAttribute="leading" secondItem="pOQ-bA-VZ4" secondAttribute="leading" id="z93-IG-v1T"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-            <point key="canvasLocation" x="111.5" y="258.5"/>
+            <point key="canvasLocation" x="176.5" y="-211.5"/>
         </view>
     </objects>
     <resources>
