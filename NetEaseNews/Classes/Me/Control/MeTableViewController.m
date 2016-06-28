@@ -114,6 +114,22 @@
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
 }
+- (void)gotoMyJifenController{
+    ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
+    vc.titleStr = @"我的积分";
+    if (strNotNil([QTUserInfo sharedQTUserInfo].userId)) {
+        vc.urlStr = [NSString stringWithFormat:@"%@?userid=%@",sg_privateAboutMyJifen,[QTUserInfo sharedQTUserInfo].userId];
+    }else{
+        vc.urlStr = [NSString stringWithFormat:@"%@",sg_privateAboutMyJifen];
+        [self showLoginFirst];
+        
+    }
+    vc.hidesBottomBarWhenPushed = YES;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
+
+
 - (void)gotoMyBaoliaoViewController{
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
     vc.titleStr = @"我的报料";
@@ -163,7 +179,7 @@
     if (section == 1) {
         return 1;
     }else{
-        return 4;
+        return 5;
     }
 }
 //
@@ -188,6 +204,11 @@
         NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
         if (!strNotNil(passW)) return;
         [self gotoMyBaoliaoViewController];
+    }else if(indexPath.row == 4&&0 == indexPath.section){
+        [self showToLogin:@"请先登录吧!"];
+        NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+        if (!strNotNil(passW)) return;
+        [self gotoMyJifenController];
     }else if(indexPath.row == 0&&1 == indexPath.section){
         [self gotoSettingVc];
     }

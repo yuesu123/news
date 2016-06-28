@@ -31,4 +31,6 @@
  *  @param color  title color 使用默认传nil
  */
 - (void)addNotingView:(NSInteger)count view:(id)oldview title:(NSString*)title font:(UIFont*)font color:(UIColor*)color;
+- (void)addNotingViewTop:(NSInteger)count view:(id)oldview title:(NSString*)title font:(UIFont*)font color:(UIColor*)color;
+
 @end

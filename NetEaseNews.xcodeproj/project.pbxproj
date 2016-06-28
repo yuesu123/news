@@ -352,6 +352,7 @@
 		7A6054591CF9A29600BCB9C7 /* WSTopicNewsListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A6054571CF9A29600BCB9C7 /* WSTopicNewsListCell.m */; };
 		7A60545A1CF9A29600BCB9C7 /* WSTopicNewsListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A6054581CF9A29600BCB9C7 /* WSTopicNewsListCell.xib */; };
 		7A60545E1CF9AE2E00BCB9C7 /* WSTopicModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A60545D1CF9AE2E00BCB9C7 /* WSTopicModel.m */; };
+		7A96B3A91D22068400146936 /* me_jifen@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A96B3A81D22068400146936 /* me_jifen@2x.png */; };
 		7AAE21991CDC2DB0006FA57C /* HelpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE21931CDC2DB0006FA57C /* HelpViewController.m */; };
 		7AAE219B1CDC2DB0006FA57C /* ShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE21971CDC2DB0006FA57C /* ShareViewController.m */; };
 		7AAE21BB1CDC2DD0006FA57C /* CollectModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AAE21B01CDC2DD0006FA57C /* CollectModel.m */; };
@@ -1091,6 +1092,7 @@
 		7A60545B1CF9A69E00BCB9C7 /* WSTopicNewsListCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WSTopicNewsListCell.h; sourceTree = "<group>"; };
 		7A60545C1CF9AE2E00BCB9C7 /* WSTopicModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSTopicModel.h; sourceTree = "<group>"; };
 		7A60545D1CF9AE2E00BCB9C7 /* WSTopicModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSTopicModel.m; sourceTree = "<group>"; };
+		7A96B3A81D22068400146936 /* me_jifen@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "me_jifen@2x.png"; sourceTree = "<group>"; };
 		7AAE21921CDC2DB0006FA57C /* HelpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpViewController.h; sourceTree = "<group>"; };
 		7AAE21931CDC2DB0006FA57C /* HelpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpViewController.m; sourceTree = "<group>"; };
 		7AAE21961CDC2DB0006FA57C /* ShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShareViewController.h; sourceTree = "<group>"; };
@@ -3088,6 +3090,7 @@
 		7AF5D41D1D1BDB84000263B0 /* me_UI */ = {
 			isa = PBXGroup;
 			children = (
+				7A96B3A81D22068400146936 /* me_jifen@2x.png */,
 				7AF5D41E1D1BDB84000263B0 /* checked@2x.png */,
 				7AF5D41F1D1BDB84000263B0 /* me_adout@2x.png */,
 				7AF5D4201D1BDB84000263B0 /* me_baoliao@2x.png */,
@@ -3249,7 +3252,7 @@
 				TargetAttributes = {
 					651D63741C45069D00DAF34E = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 97V6YV4K4J;
+						DevelopmentTeam = E4UA8527JX;
 					};
 				};
 			};
@@ -3366,6 +3369,7 @@
 				32B53F291CF0708300412EAC /* nameAndPas.png in Resources */,
 				65987D051C4A28A900A69EE4 /* rating_gray.png in Resources */,
 				7AF5D42D1D1BDB84000263B0 /* checked@2x.png in Resources */,
+				7A96B3A91D22068400146936 /* me_jifen@2x.png in Resources */,
 				65987CF91C4A28A900A69EE4 /* logo.youku.com.png in Resources */,
 				32B53F411CF0799700412EAC /* regist_shuru.png in Resources */,
 				65987CD21C4A28A900A69EE4 /* bg_share_large@2x.png in Resources */,
@@ -3734,8 +3738,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: haibo hao (EK667Z58HA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo hao (EK667Z58HA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -3759,7 +3763,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "1103b568-8fb9-40e3-9d96-0824fe2b82ff";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
 			};
@@ -3782,8 +3786,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: haibo hao (EK667Z58HA)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: haibo hao (EK667Z58HA)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -3799,7 +3803,7 @@
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "1103b568-8fb9-40e3-9d96-0824fe2b82ff";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "";
 				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
@@ -3814,6 +3818,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/Umeng/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -3837,9 +3842,9 @@
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/umeng5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kfdb.yuesu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsky.inhouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d68284a1-0cd3-41f9-9f27-c38db3bb24ad";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -3849,7 +3854,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Lei Ye (K326X3LVDR)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/Umeng/UMSocial_Sdk_Extra_Frameworks/TencentOpenAPI",
@@ -3872,9 +3878,9 @@
 					"$(PROJECT_DIR)/NetEaseNews/Classes/External/umeng5.2.1/UMSocial_Sdk_Extra_Frameworks/Wechat",
 				);
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = com.kfdb.yuesu;
+				PRODUCT_BUNDLE_IDENTIFIER = com.flagsky.inhouse;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "d68284a1-0cd3-41f9-9f27-c38db3bb24ad";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

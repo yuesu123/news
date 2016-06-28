@@ -153,6 +153,81 @@
 }
 
 
+- (void)addNotingViewTop:(NSInteger)count view:(id)oldview title:(NSString*)title font:(UIFont*)font color:(UIColor*)color{
+    UIView *view ;
+    if([oldview isKindOfClass:[UIView class]]){
+        view = (UIView*)oldview;
+        //        view.backgroundColor = redCommon;
+    }
+   
+    UIView *bigview = [[UIView alloc] initWithFrame: CGRectMake(0, 0, Main_Screen_Width, 40)];
+    bigview.backgroundColor = [UIColor whiteColor];
+    UIImageView* imageView = [[UIImageView alloc]init];
+    imageView.contentMode = UIViewContentModeScaleAspectFit;
+    int minValue = MIN(view.size.width, view.size.height);
+    int imageH = minValue*0.44;//182/414 = 0.44
+    CGFloat rate = 182.0/182.0;
+    int imageW = rate*imageH;
+    imageView.frame = CGRectMake((bigview.width-imageW)*0.5, (bigview.height - imageH)*0.5-20, imageH, 0);
+    
+    imageView.image = [UIImage imageNamed:@"logo"];
+    [bigview addSubview:imageView];
+    
+    UIButton* btn = [UIButton buttonWithType:UIButtonTypeCustom];
+    
+    CGFloat y = CGRectGetMaxY(imageView.frame);
+    btn.bounds = CGRectMake(0, 0, 300, 40 );
+    btn.center = CGPointMake(bigview.center.x, 20);
+    
+    if(color){
+        [btn setTitleColor:color forState:UIControlStateNormal];
+    }else{
+        [btn setTitleColor:BlueColorCommon forState:UIControlStateNormal];
+    }
+    
+    if(font){
+        btn.titleLabel.font = font;
+    }else{
+        btn.titleLabel.font = [UIFont systemFontOfSize:16];
+    }
+    
+    btn.userInteractionEnabled = NO;
+    
+    [bigview addSubview:btn];
+    
+    
+    [view addSubview:bigview];
+    if (strNotNil(title)) {
+        [btn setTitle:title forState: UIControlStateNormal];
+    }else{
+        [btn setTitle:@"暂无数据" forState: UIControlStateNormal];
+    }
+    
+    
+    [self.view bringSubviewToFront:bigview];
+    if(count>0){ //不隐藏
+        //        for (UIView*view1 in bigview.subviews) {
+        //            [view1 removeFromSuperview];
+        //        }
+        //        [bigview removeFromSuperview];
+        //        [view removeFromSuperview];
+        //        return;
+        bigview.hidden = YES;
+        self.view.userInteractionEnabled = YES;
+        
+        //        view.hidden = YES;
+    }else{
+        bigview.hidden = NO;
+        self.view.userInteractionEnabled = YES;
+        //        view.hidden = NO;
+    }
+    
+}
+
+
+
+
+
 #pragma mark -  刷新相关30行
 - (void)createRefresh
 {

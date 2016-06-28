@@ -38,8 +38,8 @@ static NSString *sg_privateAbouTPrivtazhence = @"/s/items";
 static NSString *sg_privateAboutBaoliao= @"/s/baoliao";
 //新闻爆料
 static NSString *sg_privateAboutMyBaoliao= @"/s/baoliaolist";
-
-
+//积分
+static NSString *sg_privateAboutMyJifen= @"/s/jifen";
 
 #define kScreenSize [UIScreen mainScreen].bounds
 #define kScreenWidth kScreenSize.size.width

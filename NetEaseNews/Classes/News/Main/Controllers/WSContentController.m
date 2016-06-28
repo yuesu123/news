@@ -134,7 +134,7 @@
     }
 
     NSString *url = [NSString stringWithFormat:@"api/pinglun?%@",partUrl];
-    [QTFHttpTool requestGETURL:url params:nil refreshCach:YES needHud:YES hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
+    [QTFHttpTool requestGETURL:url params:nil refreshCach:YES needHud:NO hudView:self.view loadingHudText:nil errorHudText:nil sucess:^(id json) {
         if (![json isKindOfClass:[NSDictionary class]]) {
             return ;
         }

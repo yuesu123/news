@@ -77,16 +77,16 @@
     UIBarButtonItem*rightItem = [[UIBarButtonItem alloc]initWithCustomView:btn];
     btn.selected = NO;
     self.navigationItem.rightBarButtonItem= rightItem;
-    if (strNotNil([QTUserInfo sharedQTUserInfo].passWD)) {
-        [self LoadDataCollection];
-    }else{
-        [MBProgressHUD showError:@"请先登录"];
-    }
+//    if (strNotNil([QTUserInfo sharedQTUserInfo].passWD)) {
+//        [self LoadDataCollection];
+//    }else{
+//        [MBProgressHUD showError:@"请先登录"];
+//    }
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 7.0) {
         self.edgesForExtendedLayout =  UIRectEdgeNone;
     }
-//    [self createRefresh:tableview];
+    [self createRefresh:tableview];
 }
 
 - (void)loadDataWithCache:(BOOL)cache{
@@ -96,24 +96,29 @@
 - (void)LoadDataCollection{
 //    NSString *url = [NSString stringWithFormat:@"api/ztnewslist?ztid=%@&pagesize=20&pg=%ld",self.Id,(long)page];
 
-    NSString *url = [NSString stringWithFormat:@"api/newsshoucang?userid=%@&pagesize=10&pg=%ld",[QTUserInfo sharedQTUserInfo].userId,_currentPage];
+    NSString *url = [NSString stringWithFormat:@"api/newsshoucang?userid=%@&pagesize=20&pg=%ld",[QTUserInfo sharedQTUserInfo].userId,_currentPage];
+
     [MBProgressHUD showMessage:loadingWaitingStr toView:self.view];
     __weak typeof(self) weakSelf = self;
     [HYBNetworking getWithUrl:url refreshCache:YES success:^(id response) {
         [MBProgressHUD hideHUDForView:weakSelf.view];
-        NSArray *dicArray = (NSArray*)response;
-        
+        NSDictionary *json = (NSDictionary*)response;
+        NSArray *dicArray  = json[@"Shoulist"];
+        if (_currentPage == 1&&self.totalArr.count>0) {
+            [self.totalArr removeAllObjects];
+        }
         for (NSDictionary*dic in dicArray) {
             CollectModel *AllModel = [CollectModel objectWithKeyValues:dic];
             ZtNewsMode *ztModel = [ZtNewsMode objectWithKeyValues:dic[@"ZtNewsMode"]];
             NewsMode *newsModel = [NewsMode objectWithKeyValues:dic[@"NewsMode"]];
             AllModel.ztNewsMode = ztModel;
             AllModel.NewsMode = newsModel;
-            [self.totalArr addObject:AllModel];
+//            [self.totalArr addObject:AllModel];
         }
         
-        [self addNotingView:weakSelf.totalArr.count view:self.view title:@"暂无收藏" font:nil color:nil];
-//        [self refreshCurentPg:_currentPage Total:<#(NSInteger)#> pgSize:<#(NSInteger)#>]
+        [self addNotingView:weakSelf.totalArr.count view:self.view title:@"暂无收藏" font:[UIFont systemFontOfSize:15] color:[UIColor redColor]];
+        [self refreshCurentPg:_currentPage Total:(NSInteger)json[@"Total"] pgSize:(NSInteger)json[@"Pagesize"]];
+
         
         [tableview reloadData];
     } fail:^(NSError *error) {

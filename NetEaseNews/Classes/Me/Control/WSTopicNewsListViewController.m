@@ -100,7 +100,9 @@
             _modelAll = modelAll;
             [self.tableView reloadData];
             [self refreshCurentPg:_currentPage Total:modelAll.Total pgSize:modelAll.Pagesize];
-            [self addNotingView:w_self.data.count view:self.view title:nil font:nil color:nil];
+            [self addNotingView:w_self.data.count view:self.view title:@"暂无收藏" font:[UIFont systemFontOfSize:15] color:[UIColor redColor]];
+//            [self addNotingView:weakSelf.totalArr.count view:self.view title:@"暂无收藏" font:[UIFont systemFontOfSize:15] color:[UIColor redColor]];
+
             
         }
     } failur:^(NSError *error) {

@@ -162,7 +162,7 @@
     
     
     [view addSubview:bigview];
-    if (title) {
+    if(!strNotNil(title)) {
         [btn setTitle:@"暂无数据" forState: UIControlStateNormal];
     }else{
         [btn setTitle:title forState: UIControlStateNormal];
