@@ -226,7 +226,8 @@
             self.rollVC.view.hidden = NO;
            
         }else if((weakSelf.jsonNews.count==0)&&(allModel.Newsad.count==0)){
-            [self addNotingViewTop:weakSelf.jsonNews.count view:self.view title:@"暂无新闻" font:[UIFont systemFontOfSize:15] color:lightGrayColorMe];
+            [self addNotingViewTop:weakSelf.jsonNews.count view:self.view title:@"暂无新闻" font:[UIFont systemFontOfSize:15] color:[UIColor darkGrayColor]];
+            
             self.tableView.mj_footer.hidden = YES;
             self.rollVC.view.hidden = YES;
         }
