@@ -29,6 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *writeBtn;
 
 @property (weak, nonatomic) IBOutlet UIView *bottomView;
+@property (strong, nonatomic) UIView *bgView;
 @property (nonatomic, strong) NSDictionary *dic;
 @property (weak, nonatomic) IBOutlet UIButton *shareBtn;
 @property (nonatomic, strong) XFZCustomKeyBoard *cuskeyBoard;
@@ -36,6 +37,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *praiseBtn;
 
 @property (weak, nonatomic) IBOutlet UILabel *commmentLable;
+@property (nonatomic, strong) UIImageView *imgView;
 @end
 
 @implementation WSContentController
@@ -201,6 +203,7 @@
    self.title = @"新闻内容";
     
     self.webView.delegate = self;
+    self.webView.scalesPageToFit= YES;
     
 //    [self.webView loadHTMLString:@"<html><body bgcolor=\"#F9F6FA\"></body></html>" baseURL:nil];
 //    NSString *newsLink = nil;
@@ -272,35 +275,149 @@
 }
 
 
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
-    
-    NSString *urlStr = request.URL.absoluteString;
-    
-    if ([urlStr containsString:@"imgsrc"]) {
-        
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否保存图片？" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
-        
-        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
-        UIAlertAction *save = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            
-            
-            
-        }];
-        [alert addAction:cancel];
-        [alert addAction:save];
-        
-        [self presentViewController:alert animated:YES completion:nil];
-        
-    }
-    
-    return YES;
-}
+//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+//    
+//    NSString *urlStr = request.URL.absoluteString;
+//    
+//    if ([urlStr containsString:@"imgsrc"]) {
+//        
+//        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"是否保存图片？" message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+//        
+//        UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+//        UIAlertAction *save = [UIAlertAction actionWithTitle:@"保存" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+//            
+//            
+//            
+//        }];
+//        [alert addAction:cancel];
+//        [alert addAction:save];
+//        
+//        [self presentViewController:alert animated:YES completion:nil];
+//        
+//    }
+//    
+//    return YES;
+//}
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView{
     [MBProgressHUD hideHUDForView:self.webView animated:YES];
 
     [self loadDataPinlunDianzan];
+    
+    
+    
+    //调整字号
+    NSString *str = @"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '95%'";
+    [webView stringByEvaluatingJavaScriptFromString:str];
+    
+    //js方法遍历图片添加点击事件 返回图片个数
+    static  NSString * const jsGetImages =
+    @"function getImages(){\
+    var objs = document.getElementsByTagName(\"img\");\
+    for(var i=0;i<objs.length;i++){\
+    objs[i].onclick=function(){\
+    document.location=\"myweb:imageClick:\"+this.src;\
+    };\
+    };\
+    return objs.length;\
+    };";
+    
+    [webView stringByEvaluatingJavaScriptFromString:jsGetImages];//注入js方法
+    
+    //注入自定义的js方法后别忘了调用 否则不会生效（不调用也一样生效了，，，不明白）
+    NSString *resurlt = [webView stringByEvaluatingJavaScriptFromString:@"getImages()"];
+    //调用js方法
+    NSLog(@"---调用js方法--%@  %s  jsMehtods_result = %@",self.class,__func__,resurlt);
+
+    
+    
 }
+
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType{
+    
+    
+    //将url转换为string
+    NSString *requestString = [[request URL] absoluteString];
+    //    NSLog(@"requestString is %@",requestString);
+    
+    //hasPrefix 判断创建的字符串内容是否以pic:字符开始
+    if ([requestString hasPrefix:@"myweb:imageClick:"]) {
+        NSString *imageUrl = [requestString substringFromIndex:@"myweb:imageClick:".length];
+        //        NSLog(@"image url------%@", imageUrl);
+        
+        if (_bgView) {
+            //设置不隐藏，还原放大缩小，显示图片
+            _bgView.hidden = NO;
+            _imgView.frame = CGRectMake(10, 10, Main_Screen_Width-40, Main_Screen_Height-64-50);
+            [_imgView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];        }
+        else{
+//            [self showBigImage:imageUrl];//创建视图并显示图片
+            self.webView.scalesPageToFit = YES;
+            [self.webView  setNeedsDisplay];
+        }
+        
+        return NO;
+    }
+    return YES;
+}
+
+#pragma mark 显示大图片
+-(void)showBigImage:(NSString *)imageUrl{
+    //创建灰色透明背景，使其背后内容不可操作
+    _bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width, Main_Screen_Height)];
+    [_bgView setBackgroundColor:[UIColor colorWithRed:0.3
+                                                green:0.3
+                                                 blue:0.3
+                                                alpha:0.7]];
+    [self.view addSubview:_bgView];
+    
+    //创建边框视图
+    UIView *borderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, Main_Screen_Width-20, 240)];
+    //将图层的边框设置为圆脚
+    borderView.layer.cornerRadius = 8;
+    borderView.layer.masksToBounds = YES;
+    //给图层添加一个有色边框
+    borderView.layer.borderWidth = 8;
+    borderView.layer.borderColor = [[UIColor colorWithRed:0.9
+                                                    green:0.9
+                                                     blue:0.9
+                                                    alpha:0.7] CGColor];
+    [borderView setCenter:_bgView.center];
+    [_bgView addSubview:borderView];
+    
+    //创建关闭按钮
+    UIButton *closeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    //    [closeBtn setImage:[UIImage imageNamed:@"close.png"] forState:UIControlStateNormal];
+    closeBtn.backgroundColor = [UIColor redColor];
+    [closeBtn addTarget:self action:@selector(removeBigImage) forControlEvents:UIControlEventTouchUpInside];
+    [closeBtn setFrame:CGRectMake(borderView.frame.origin.x+borderView.frame.size.width-20, borderView.frame.origin.y-6, 26, 27)];
+    [_bgView addSubview:closeBtn];
+    
+    //创建显示图像视图
+    _imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10, 10, CGRectGetWidth(borderView.frame)-20, CGRectGetHeight(borderView.frame)-20)];
+    _imgView.userInteractionEnabled = YES;
+    [_imgView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];
+    //[imgView setImageWithURL:[NSURL URLWithString:imageUrl] placeholderImage:LOAD_IMAGE(@"house_moren")];
+    [borderView addSubview:_imgView];
+    
+    //添加捏合手势
+    [_imgView addGestureRecognizer:[[UIPinchGestureRecognizer alloc]initWithTarget:self action:@selector(handlePinch:)]];
+    
+}
+
+//关闭按钮
+-(void)removeBigImage
+{
+    _bgView.hidden = YES;
+}
+
+- (void) handlePinch:(UIPinchGestureRecognizer*) recognizer
+{
+    //缩放:设置缩放比例
+    recognizer.view.transform = CGAffineTransformScale(recognizer.view.transform, recognizer.scale, recognizer.scale);
+    recognizer.scale = 1;
+}
+
 
 - (void)setContent:(WSContent *)content{
     
