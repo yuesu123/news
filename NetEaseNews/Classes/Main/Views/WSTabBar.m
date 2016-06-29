@@ -7,6 +7,7 @@
 //
 
 #import "WSTabBar.h"
+#import "LargClickedBtn.h"
 #define kMargin 4
 #define kGrayColor [UIColor colorWithRed:117/255.0 green:117/255.0 blue:117/255.0 alpha:1]
 
@@ -14,7 +15,7 @@
 #pragma mark WSButton
 #pragma mark -
 
-@interface WSButton : UIButton
+@interface WSButton : LargClickedBtn
 
 @end
 

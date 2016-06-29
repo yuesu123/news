@@ -408,6 +408,7 @@
 		7AE05C5C1CDC7F34003A947A /* QTUMShareTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE05C5B1CDC7F34003A947A /* QTUMShareTool.m */; };
 		7AE05C5E1CDC9C87003A947A /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE05C5D1CDC9C86003A947A /* ImageIO.framework */; };
 		7AE05C611CDCA361003A947A /* AppDelegate+other.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE05C601CDCA361003A947A /* AppDelegate+other.m */; };
+		7AE0B74F1D2358FC00511879 /* LargClickedBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AE0B74E1D2358FC00511879 /* LargClickedBtn.m */; };
 		7AF1B1711CF82A1A00953D64 /* QTUserInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1B1701CF82A1A00953D64 /* QTUserInfo.m */; };
 		7AF1B1741CF8611800953D64 /* WSNewsModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AF1B1731CF8611800953D64 /* WSNewsModel.m */; };
 		7AF5D42D1D1BDB84000263B0 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AF5D41E1D1BDB84000263B0 /* checked@2x.png */; };
@@ -1193,6 +1194,8 @@
 		7AE05C5D1CDC9C86003A947A /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		7AE05C5F1CDCA361003A947A /* AppDelegate+other.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+other.h"; sourceTree = "<group>"; };
 		7AE05C601CDCA361003A947A /* AppDelegate+other.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+other.m"; sourceTree = "<group>"; };
+		7AE0B74D1D2358FC00511879 /* LargClickedBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LargClickedBtn.h; sourceTree = "<group>"; };
+		7AE0B74E1D2358FC00511879 /* LargClickedBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LargClickedBtn.m; sourceTree = "<group>"; };
 		7AF1B16F1CF82A1A00953D64 /* QTUserInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QTUserInfo.h; sourceTree = "<group>"; };
 		7AF1B1701CF82A1A00953D64 /* QTUserInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QTUserInfo.m; sourceTree = "<group>"; };
 		7AF1B1721CF8611800953D64 /* WSNewsModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewsModel.h; sourceTree = "<group>"; };
@@ -2379,6 +2382,8 @@
 				651D64401C4506DD00DAF34E /* WSImageView.m */,
 				651D64411C4506DD00DAF34E /* WSNewsCell.h */,
 				651D64421C4506DD00DAF34E /* WSNewsCell.m */,
+				7AE0B74D1D2358FC00511879 /* LargClickedBtn.h */,
+				7AE0B74E1D2358FC00511879 /* LargClickedBtn.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -3486,6 +3491,7 @@
 				324693D71CF9539A0071ADD6 /* WSTopicContentListModel.m in Sources */,
 				32B53EED1CF0447000412EAC /* MJProperty.m in Sources */,
 				32B53F011CF0447000412EAC /* Tool.m in Sources */,
+				7AE0B74F1D2358FC00511879 /* LargClickedBtn.m in Sources */,
 				7AAE21BE1CDC2DD0006FA57C /* SettingItem.m in Sources */,
 				32B53FB51CF19C2500412EAC /* SZKCleanCache.m in Sources */,
 				32B53EF81CF0447000412EAC /* MJPhotoToolbar.m in Sources */,

@@ -113,7 +113,7 @@
             NewsMode *newsModel = [NewsMode objectWithKeyValues:dic[@"NewsMode"]];
             AllModel.ztNewsMode = ztModel;
             AllModel.NewsMode = newsModel;
-//            [self.totalArr addObject:AllModel];
+            [self.totalArr addObject:AllModel];
         }
         
         [self addNotingView:weakSelf.totalArr.count view:self.view title:@"暂无收藏" font:[UIFont systemFontOfSize:15] color:[UIColor redColor]];
