@@ -227,7 +227,6 @@
         [weakSelf loadDataWithCache:NO];
     }];
     // 设置回调（一旦进入刷新状态，就调用target的action，也就是调用self的loadLastData方法）
-    
     // 马上进入刷新状态
     [self.tableView.mj_header beginRefreshing];
 }
@@ -253,6 +252,8 @@
 - (void)loadDataWithCache:(BOOL)cache{
     
 }
+
+
 
 
 

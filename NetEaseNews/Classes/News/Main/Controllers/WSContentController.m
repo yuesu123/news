@@ -306,28 +306,28 @@
     
     
     
-    //调整字号
-    NSString *str = @"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '95%'";
-    [webView stringByEvaluatingJavaScriptFromString:str];
-    
-    //js方法遍历图片添加点击事件 返回图片个数
-    static  NSString * const jsGetImages =
-    @"function getImages(){\
-    var objs = document.getElementsByTagName(\"img\");\
-    for(var i=0;i<objs.length;i++){\
-    objs[i].onclick=function(){\
-    document.location=\"myweb:imageClick:\"+this.src;\
-    };\
-    };\
-    return objs.length;\
-    };";
-    
-    [webView stringByEvaluatingJavaScriptFromString:jsGetImages];//注入js方法
-    
-    //注入自定义的js方法后别忘了调用 否则不会生效（不调用也一样生效了，，，不明白）
-    NSString *resurlt = [webView stringByEvaluatingJavaScriptFromString:@"getImages()"];
-    //调用js方法
-    NSLog(@"---调用js方法--%@  %s  jsMehtods_result = %@",self.class,__func__,resurlt);
+//    //调整字号
+//    NSString *str = @"document.getElementsByTagName('body')[0].style.webkitTextSizeAdjust= '95%'";
+//    [webView stringByEvaluatingJavaScriptFromString:str];
+//    
+//    //js方法遍历图片添加点击事件 返回图片个数
+//    static  NSString * const jsGetImages =
+//    @"function getImages(){\
+//    var objs = document.getElementsByTagName(\"img\");\
+//    for(var i=0;i<objs.length;i++){\
+//    objs[i].onclick=function(){\
+//    document.location=\"myweb:imageClick:\"+this.src;\
+//    };\
+//    };\
+//    return objs.length;\
+//    };";
+//    
+//    [webView stringByEvaluatingJavaScriptFromString:jsGetImages];//注入js方法
+//    
+//    //注入自定义的js方法后别忘了调用 否则不会生效（不调用也一样生效了，，，不明白）
+//    NSString *resurlt = [webView stringByEvaluatingJavaScriptFromString:@"getImages()"];
+//    //调用js方法
+//    NSLog(@"---调用js方法--%@  %s  jsMehtods_result = %@",self.class,__func__,resurlt);
 
     
     
@@ -341,23 +341,23 @@
     //    NSLog(@"requestString is %@",requestString);
     
     //hasPrefix 判断创建的字符串内容是否以pic:字符开始
-    if ([requestString hasPrefix:@"myweb:imageClick:"]) {
-        NSString *imageUrl = [requestString substringFromIndex:@"myweb:imageClick:".length];
-        //        NSLog(@"image url------%@", imageUrl);
-        
-        if (_bgView) {
-            //设置不隐藏，还原放大缩小，显示图片
-            _bgView.hidden = NO;
-            _imgView.frame = CGRectMake(10, 10, Main_Screen_Width-40, Main_Screen_Height-64-50);
-            [_imgView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];        }
-        else{
-//            [self showBigImage:imageUrl];//创建视图并显示图片
-            self.webView.scalesPageToFit = YES;
-            [self.webView  setNeedsDisplay];
-        }
-        
-        return NO;
-    }
+//    if ([requestString hasPrefix:@"myweb:imageClick:"]) {
+//        NSString *imageUrl = [requestString substringFromIndex:@"myweb:imageClick:".length];
+//        //        NSLog(@"image url------%@", imageUrl);
+//        
+//        if (_bgView) {
+//            //设置不隐藏，还原放大缩小，显示图片
+//            _bgView.hidden = NO;
+//            _imgView.frame = CGRectMake(10, 10, Main_Screen_Width-40, Main_Screen_Height-64-50);
+//            [_imgView sd_setImageWithURL:[NSURL URLWithString:imageUrl]];        }
+//        else{
+////            [self showBigImage:imageUrl];//创建视图并显示图片
+//            self.webView.scalesPageToFit = YES;
+//            [self.webView  setNeedsDisplay];
+//        }
+//        
+//        return NO;
+//    }
     return YES;
 }
 
