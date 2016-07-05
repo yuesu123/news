@@ -51,7 +51,7 @@
 {
     [super viewDidLoad];
     // 设置行高
-    self.tableView.rowHeight = 90;
+    self.tableView.rowHeight = 100;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.delaysContentTouches =NO;
     self.navigationController.navigationBar.translucent = NO;

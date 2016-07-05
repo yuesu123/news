@@ -159,7 +159,6 @@
    NSString*url = sg_privateAboutWether;
     NSString *urlnew = [NSString stringWithFormat:@"%@",url];
     vc.urlStr = urlnew;
-    vc.type = caseAnalyse;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

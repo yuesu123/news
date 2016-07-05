@@ -10,9 +10,7 @@
 typedef enum
 {
     zeroArt = 0,
-    storeDetail,
-    caseAnalyse,
-    appointmentNotice
+    TypeKindAdd = 1 ,
 }TypeKind;
 
 @interface ServiceExampleViewController : BaseViewController2

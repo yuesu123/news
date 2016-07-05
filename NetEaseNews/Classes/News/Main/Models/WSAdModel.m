@@ -14,7 +14,7 @@ static NSString *kremoveTag = @"yu&&**^^";
 + (void)inserAdArr:(NSMutableArray*)adArr toArr:(NSMutableArray*)allArr path:(NSInteger)path{
     for (int i = 0 ; i <allArr.count; i++) {
         Newslist *model = [allArr objectAtIndex:i];
-        if ([model.Newslink isEqualToString:kremoveTag]) {
+        if ([model.tag isEqualToString:kremoveTag]) {
             [allArr removeObjectAtIndex:i];
         }
     }
@@ -41,7 +41,8 @@ static NSString *kremoveTag = @"yu&&**^^";
     news.Newslink = adModel.Adlink;
     news.Edittime = adModel.Addtime;
     news.Showtype = 1;
-    news.Newslink = kremoveTag;
+    news.tag = kremoveTag;
+    news.isAdd = YES;
     return news;
 }
 

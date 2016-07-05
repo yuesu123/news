@@ -124,7 +124,8 @@
 @property (nonatomic, copy) NSString *Descriptions;
 
 @property (nonatomic, copy  ) NSString   *Type;
-
+@property (nonatomic, assign) BOOL isAdd;
+@property (nonatomic, copy) NSString *tag;
 
 
 @end

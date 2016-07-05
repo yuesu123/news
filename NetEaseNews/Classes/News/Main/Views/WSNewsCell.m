@@ -37,10 +37,10 @@ static NSString * threeImageID = @"threeImageCell";
     
     switch (type) {
         case WSNewsCellTypeNormal:
-            return 80;
+            return 100;
             break;
         case WSNewsCellTypeBigImage:
-            return 160;
+            return 100;
             break;
         case WSNewsCellTypeThreeImage:
             return 120;
@@ -79,9 +79,10 @@ static NSString * threeImageID = @"threeImageCell";
 - (void)setNews:(Newslist *)news{
     
     _news = news;
-    
     self.iconView.contentMode = UIViewContentModeScaleToFill;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"home_onepic_place"]];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"zhuanti_lIst"]];
+
+    
     if ([[NSArray  readFile:@"state"] containsObject:news.Title]) {
         self.titleLbl.textColor = [UIColor grayColor];
     } else {

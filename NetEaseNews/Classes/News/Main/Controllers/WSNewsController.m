@@ -146,6 +146,17 @@
     }
     [self gotoNotiControllercreatItem:_activeNotiInfo];
 }
+//cell即将展示的时候调用
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([cell respondsToSelector:@selector(setSeparatorInset:)]) {
+        [cell setSeparatorInset:UIEdgeInsetsZero];
+    }
+    if ([cell respondsToSelector:@selector(setLayoutMargins:)]) {
+        [cell setLayoutMargins:UIEdgeInsetsZero];
+    }
+}
+
 
 
 - (void)addRoll:(NSArray*)arr {
@@ -251,8 +262,26 @@
     WSNewsCell *cell = [tableView  cellForRowAtIndexPath:indexPath];
     cell.titleLbl.textColor = [UIColor grayColor];
     [NSArray writetargetStr:cell.titleLbl.text ToFilePath:@"state"];
-    [self gotoWSContentController:news];
+    if (news.isAdd)
+    {
+        [self gotoAddViewController:news.Newslink];
+    }else
+    {
+        [self gotoWSContentController:news];
+    }
+    
+    
 }
+
+//去天气webView控制器
+- (void)gotoAddViewController:(NSString*)url{
+    ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
+    vc.titleStr = @"广告";
+    vc.urlStr = url;
+    vc.type = TypeKindAdd;
+    [self.navigationController pushViewController:vc animated:YES];
+}
+
 
 
 - (void)gotoWSContentController:(id)news{

@@ -47,7 +47,6 @@
     
     [self.videoImage  sd_setImageWithURL:NSURLWithStr(ztNewslist.Picsmall)
                         placeholderImage:[UIImage imageNamed:@"zhuanti_lIst"]];
-    [QTCommonTools clipImageView:_videoImage Radius:3 borderWidth:0];
     self.viewNumLab.text = [QTCommonTools convertServiceTimeToStandartShowTime:ztNewslist.Edittime];
 
 }

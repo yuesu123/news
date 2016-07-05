@@ -106,7 +106,6 @@
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
     vc.titleStr = @"关于我们";
     vc.urlStr = sg_privateAboutMe;
-    vc.type = caseAnalyse;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
