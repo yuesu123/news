@@ -158,7 +158,7 @@
 //    zeroStudyModel *zeroModel = [_data objectAtIndex:indexPath.row];
 //    QTAboutUsViewController* vc = [[QTAboutUsViewController alloc]init];
 //    vc.type = zerostudy;
-//    vc.zeroTitle = @"开发导报";
+//    vc.zeroTitle = @"北仑新区时刊";
 //    vc.zeroStudyUrl = zeroModel.url;
 //    [self.navigationController pushViewController:vc animated:YES];
 //    

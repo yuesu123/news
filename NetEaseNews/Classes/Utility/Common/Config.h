@@ -66,7 +66,7 @@
 #define    kNotificationFreshHomeTable @"kNotifireFreshHomeTable"
 
 #define codeStr  standardUserForKey(@"invite_code")?[NSString stringWithFormat:@"邀请码%@",standardUserForKey(@"invite_code")]:@""
-#define shareTitleHasCode [NSString  stringWithFormat:@"%@%@",@"【开发导报】",@""]
+#define shareTitleHasCode [NSString  stringWithFormat:@"%@%@",@"【北仑新区时刊】",@""]
 
 //常量
 //适配时放缩比例
@@ -86,8 +86,8 @@
 
 #define shareContend   [QTPastValue sharedQTPastValue].hintData
 #define shareForAddInteger [QTPastValue sharedQTPastValue].prescriptionShareHint
-#define shareTitleDownload  @"【开发导报】"
-#define shareTitle  @"【开发导报】"
+#define shareTitleDownload  @"【北仑新区时刊】"
+#define shareTitle  @"【北仑新区时刊】"
 #define shareurlStr  @"http://a.app.qq.com/o/simple.jsp?pkgname=com.qitian.massage"
 
 #define faceCheckNo @"检测失败,请重新拍照检测"

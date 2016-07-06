@@ -8,7 +8,7 @@
 
 #import "QTUMShareTool.h"
 #import "UMSocial.h"
-#define shareTitleHasCode [NSString  stringWithFormat:@"%@%@",@"【开发导报】",@""]
+#define shareTitleHasCode [NSString  stringWithFormat:@"%@%@",@"【北仑新区时刊】",@""]
 #define shareBtnOrder        [NSArray arrayWithObjects:UMShareToWechatTimeline,UMShareToWechatSession,UMShareToQzone,UMShareToQQ,UMShareToSina,UMShareToSms,nil]
 #define shareurlStr  @"http://a.app.qq.com/o/simple.jsp?pkgname=com.qitian.massage"
 
@@ -35,7 +35,7 @@
    
     // 如果是朋友圈，则替换平台参数名即可 朋友圈调换title 和content
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = urlStr;
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;//shareTitleHasCode;//@"【开发导报】";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;//shareTitleHasCode;//@"【北仑新区时刊】";
     [UMSocialData defaultData].extConfig.wechatTimelineData.shareText = title;
     [UMSocialData defaultData].extConfig.wechatTimelineData.shareImage = image;
     
@@ -88,7 +88,7 @@
     UMSocialUrlResource *urlResourc = [[UMSocialUrlResource alloc] initWithSnsResourceType:UMSocialUrlResourceTypeDefault url:urlStr];
     // 如果是朋友圈，则替换平台参数名即可 朋友圈调换title 和content
     [UMSocialData defaultData].extConfig.wechatTimelineData.url = urlStr;
-    [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;//shareTitleHasCode;//@"【开发导报】";
+    [UMSocialData defaultData].extConfig.wechatTimelineData.title = title;//shareTitleHasCode;//@"【北仑新区时刊】";
     [UMSocialData defaultData].extConfig.wechatTimelineData.shareText = content;
     //图片没有则没有链接
     [UMSocialData defaultData].extConfig.wechatTimelineData.shareImage = image;
