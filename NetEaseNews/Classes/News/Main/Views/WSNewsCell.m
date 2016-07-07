@@ -80,7 +80,21 @@ static NSString * threeImageID = @"threeImageCell";
     
     _news = news;
     self.iconView.contentMode = UIViewContentModeScaleToFill;
-    [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"zhuanti_lIst"]];
+    
+    NSString *placeStr = nil;
+    switch (news.Showtype)
+    {
+        case 2: //三图
+            placeStr = @"zhuanti_lIst";
+            break;
+        case 1://直栏
+            placeStr = [WSImageView getImageName:@"home_zhilan"];
+            break;
+        case 0: //左图右文字 
+            placeStr = @"zhuanti_lIst";
+            break;
+    }
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:placeStr]];
 
     
     if ([[NSArray  readFile:@"state"] containsObject:news.Title]) {
@@ -96,24 +110,13 @@ static NSString * threeImageID = @"threeImageCell";
         [self.replyCountBtn setTitle:@"" forState:UIControlStateNormal];
     }
 
-//    for (NSInteger i=0; i<news.imgextra.count; i++) {
-//        
-//        UIImageView *imgView = self.extraImageViews[i];
-//        imgView.contentMode = UIViewContentModeCenter;
-//        [imgView sd_setImageWithURL:[NSURL URLWithString:news.imgextra[i][@"imgsrc"]] placeholderImage:[UIImage imageNamed:@"cell_image_background"]];
-//    }
-    if(news.Showtype == 2){
+    if(news.Showtype == 2){//
         for (NSInteger i=0; i<news.Showtype; i++) {
             UIImageView *imgView = self.extraImageViews[i];
             imgView.contentMode = UIViewContentModeScaleToFill;
             [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:i]] placeholderImage:[UIImage imageNamed:[WSImageView getImageName:@"home_three"]]];
         }
-    }else{
-        UIImageView *imgView = self.extraImageViews[0];
-        imgView.contentMode = UIViewContentModeScaleToFill;
-        [imgView sd_setImageWithURL:[NSURL URLWithString:[self getImage:news  i:0]] placeholderImage:[UIImage imageNamed:[WSImageView getImageName:@"home_zhilan"]]];
-    }
-    
+    }    
     CGSize fontSize = [self.replyCountBtn.titleLabel.text sizeOfFont:self.replyCountBtn.titleLabel.font textMaxSize:CGSizeMake(125, 21)];
     self.replyCountBtnWidth.constant = fontSize.width + 8;
 }
