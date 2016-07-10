@@ -3920,7 +3920,7 @@
 				GCC_PREFIX_HEADER = NetEaseNews/Classes/Utility/Common/PrefixHeader.h;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = NetEaseNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3962,7 +3962,7 @@
 				);
 				GCC_PREFIX_HEADER = NetEaseNews/Classes/Utility/Common/PrefixHeader.h;
 				INFOPLIST_FILE = NetEaseNews/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

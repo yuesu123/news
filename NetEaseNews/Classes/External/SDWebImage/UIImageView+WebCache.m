@@ -26,7 +26,6 @@ static char TAG_ACTIVITY_SHOW;
 }
 
 - (void)sd_setImageWithURL:(NSURL *)url placeholderImage:(UIImage *)placeholder {
-//    NSString *allUrl = [NSString stringWithFormat:@"%@%@",sg_privateNetworkBaseUrl,url];
     [self sd_setImageWithURL:[NSURL iamgeAddHttpUrl:url] placeholderImage:placeholder options:0 progress:nil completed:nil];
 }
 
