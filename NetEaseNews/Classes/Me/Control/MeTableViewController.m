@@ -150,6 +150,13 @@
     });
 }
 
+- (void)gotoVcUrl:(NSString*)url title:(NSString*)title{
+    ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
+    vc.titleStr = title;
+    NSString *urlnew = [NSString stringWithFormat:@"%@",url];
+    vc.urlStr = urlnew;
+    [self.navigationController pushViewController:vc animated:YES];
+}
 
 
 //去天气webView控制器
@@ -208,6 +215,16 @@
         NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
         if (!strNotNil(passW)) return;
         [self gotoMyJifenController];
+    }else if(indexPath.row == 5&&0 == indexPath.section){
+        [self showToLogin:@"请先登录吧!"];
+        NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+        if (!strNotNil(passW)) return;
+        [self gotoVcUrl:sg_privateAboutMyUserInfo title:@"我的信息"];
+    }else if(indexPath.row == 6&&0 == indexPath.section){
+        [self showToLogin:@"请先登录吧!"];
+        NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+        if (!strNotNil(passW)) return;
+        [self gotoVcUrl:sg_privateAboutMyImage title:@""];
     }else if(indexPath.row == 0&&1 == indexPath.section){
         [self gotoSettingVc];
     }

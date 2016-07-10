@@ -41,6 +41,16 @@ static NSString *sg_privateAboutMyBaoliao= @"/s/baoliaolist";
 //积分
 static NSString *sg_privateAboutMyJifen= @"/s/jifen";
 
+//我的信息
+static NSString *sg_privateAboutMyUserInfo= @"s/userinfo";
+
+//我的头像
+static NSString *sg_privateAboutMyImage= @"s/userphoto";
+
+//http://xapp.blnews.com.cn/s/userphoto?userid=9
+//用户信息：http://xapp.blnews.com.cn/s/userinfo?userid=9
+
+
 #define kScreenSize [UIScreen mainScreen].bounds
 #define kScreenWidth kScreenSize.size.width
 #define kScreenHeight kScreenSize.size.height
