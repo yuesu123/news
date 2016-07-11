@@ -42,10 +42,10 @@ static NSString *sg_privateAboutMyBaoliao= @"/s/baoliaolist";
 static NSString *sg_privateAboutMyJifen= @"/s/jifen";
 
 //我的信息
-static NSString *sg_privateAboutMyUserInfo= @"s/userinfo";
+static NSString *sg_privateAboutMyUserInfo= @"/s/userinfo";
 
 //我的头像
-static NSString *sg_privateAboutMyImage= @"s/userphoto";
+static NSString *sg_privateAboutMyImage= @"/s/userphoto";
 
 //http://xapp.blnews.com.cn/s/userphoto?userid=9
 //用户信息：http://xapp.blnews.com.cn/s/userinfo?userid=9

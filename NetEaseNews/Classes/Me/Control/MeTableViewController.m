@@ -153,7 +153,7 @@
 - (void)gotoVcUrl:(NSString*)url title:(NSString*)title{
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
     vc.titleStr = title;
-    NSString *urlnew = [NSString stringWithFormat:@"%@",url];
+    NSString *urlnew = [NSString stringWithFormat:@"%@?userid=%@",url,[QTUserInfo sharedQTUserInfo].userId];
     vc.urlStr = urlnew;
     [self.navigationController pushViewController:vc animated:YES];
 }
@@ -185,7 +185,7 @@
     if (section == 1) {
         return 1;
     }else{
-        return 5;
+        return 7;
     }
 }
 //
@@ -224,7 +224,7 @@
         [self showToLogin:@"请先登录吧!"];
         NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
         if (!strNotNil(passW)) return;
-        [self gotoVcUrl:sg_privateAboutMyImage title:@""];
+        [self gotoVcUrl:sg_privateAboutMyImage title:@"我的头像"];
     }else if(indexPath.row == 0&&1 == indexPath.section){
         [self gotoSettingVc];
     }

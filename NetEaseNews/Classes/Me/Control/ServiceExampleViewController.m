@@ -29,7 +29,7 @@
     //    NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:@"http://8235.wx.cdn.aodianyun.com/layout/party/4532"]];
     
     NSString *allUrl =[NSString stringWithFormat:@"%@%@",sg_privateNetworkBaseUrl,_urlStr];
-    ECLog(@"控制器地址,无前缀的是广告%@",_urlStr);
+    ECLog(@"控制器地址,无前缀的是广告%@, 短%@",allUrl,_urlStr);
     allUrl =  (_type == TypeKindAdd)?_urlStr:allUrl;
     NSURLRequest *request =[NSURLRequest requestWithURL:[NSURL URLWithString:allUrl]];
     webView.delegate = self;
