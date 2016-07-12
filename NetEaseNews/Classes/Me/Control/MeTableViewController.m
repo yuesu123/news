@@ -23,6 +23,14 @@
 
 @implementation MeTableViewController
 #pragma mark –
+- (IBAction)headImageClicked:(id)sender {
+    return;
+    [self showToLogin:@"请先登录吧!"];
+    NSString *passW =[QTUserInfo sharedQTUserInfo].passWD;
+    if (!strNotNil(passW)) return;
+    [self gotoVcUrl:sg_privateAboutMyImage title:@"我的头像"];
+    
+}
 #pragma mark Action and UI Event
 - (IBAction)loginBtnClicked:(UIButton *)sender {
     if(strNotNil([QTUserInfo sharedQTUserInfo].phoneNum)&&(strNotNil([QTUserInfo sharedQTUserInfo].passWD))){
