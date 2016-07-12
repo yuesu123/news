@@ -115,7 +115,7 @@
 }
 - (void)gotoAddViewController{
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
-    vc.titleStr = @"广告";
+    vc.titleStr = @"详情";
     vc.urlStr = [QTUserInfo sharedQTUserInfo].adlink;
     vc.hidesBottomBarWhenPushed = YES;
     [self.navigationController pushViewController:vc animated:YES];
@@ -276,7 +276,7 @@
 //去天气webView控制器
 - (void)gotoAddViewController:(NSString*)url{
     ServiceExampleViewController *vc = [[ServiceExampleViewController alloc] init];
-    vc.titleStr = @"广告";
+    vc.titleStr = @"详情";
     vc.urlStr = url;
     vc.type = TypeKindAdd;
     [self.navigationController pushViewController:vc animated:YES];
