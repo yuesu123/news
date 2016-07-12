@@ -10,6 +10,7 @@
 		3228AE5E1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */; };
 		3228AE631D0715E20076F27A /* lanuch_up@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE611D0715E20076F27A /* lanuch_up@2x.png */; };
 		3228AE681D09314C0076F27A /* lauch_bottom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3228AE671D09314C0076F27A /* lauch_bottom@2x.png */; };
+		3239A64A1D31F95F00A667A3 /* pod.json in Resources */ = {isa = PBXBuildFile; fileRef = 3239A6491D31F95F00A667A3 /* pod.json */; };
 		323FFEE51D165224002F2C74 /* WSAdModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE41D165224002F2C74 /* WSAdModel.m */; };
 		323FFEE81D16526B002F2C74 /* WSNewsAllModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 323FFEE71D16526B002F2C74 /* WSNewsAllModel.m */; };
 		323FFEF31D1666BF002F2C74 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 323FFEF21D1666BE002F2C74 /* Info.plist */; };
@@ -470,6 +471,7 @@
 		3228AE601D0713AD0076F27A /* targetHaveDone.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = targetHaveDone.h; sourceTree = "<group>"; };
 		3228AE611D0715E20076F27A /* lanuch_up@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lanuch_up@2x.png"; sourceTree = "<group>"; };
 		3228AE671D09314C0076F27A /* lauch_bottom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lauch_bottom@2x.png"; sourceTree = "<group>"; };
+		3239A6491D31F95F00A667A3 /* pod.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pod.json; sourceTree = "<group>"; };
 		323FFEE31D165224002F2C74 /* WSAdModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSAdModel.h; sourceTree = "<group>"; };
 		323FFEE41D165224002F2C74 /* WSAdModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WSAdModel.m; sourceTree = "<group>"; };
 		323FFEE61D16526B002F2C74 /* WSNewsAllModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WSNewsAllModel.h; sourceTree = "<group>"; };
@@ -1889,6 +1891,7 @@
 		651D63781C45069D00DAF34E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3239A6491D31F95F00A667A3 /* pod.json */,
 				323FFEF21D1666BE002F2C74 /* Info.plist */,
 				3228AE5D1D07116E0076F27A /* 仿北仑发布需求v3.0 05301715.numbers */,
 				3228AE5F1D07119C0076F27A /* target.h */,
@@ -3448,6 +3451,7 @@
 				7AF5D42E1D1BDB84000263B0 /* me_adout@2x.png in Resources */,
 				65987CEA1C4A28A900A69EE4 /* logo.m1905.com@2x.png in Resources */,
 				65987CD61C4A28A900A69EE4 /* gobackBtn@3x.png in Resources */,
+				3239A64A1D31F95F00A667A3 /* pod.json in Resources */,
 				32B53EE61CF0447000412EAC /* checkmark@2x.png in Resources */,
 				65987CF01C4A28A900A69EE4 /* logo.qq.com@2x.png in Resources */,
 				7A4BC5E01CE0915200BAD38E /* Me.storyboard in Resources */,
