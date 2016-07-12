@@ -292,7 +292,7 @@
     if (distance < 60 * 60 * 1) {//24小时
 
         distance = distance / (60*60);
-        _timestamp = [NSString stringWithFormat:@"%d%@", distance, @"小时前"];
+        _timestamp = [NSString stringWithFormat:@"%d%@", 1, @"小时前"];
     }else if (distance < 60 * 60 * 24 * 30*6) {
         NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
         [dateFormatter setDateFormat:@"M月d日 hh:mm"];
@@ -307,6 +307,45 @@
     
     return _timestamp;
 }
+
+
++ (NSString*)sendTimeStringZhurenwongHaveYear:(double)sendTime {
+    NSString * _timestamp;
+    NSTimeInterval timestamp = sendTime/ 1000;
+    time_t now;
+    time(&now);
+    
+    int distance = (int)difftime(now, timestamp);
+    if (distance < 0) distance = 0;
+    /*
+     if (distance < 10) {
+     _timestamp = [NSString stringWithFormat:@"刚刚"];
+     } else if (distance < 60) {
+     _timestamp = [NSString stringWithFormat:@"%d%@", distance, @"秒前"];
+     } else if (distance < 60 * 60) {
+     distance = distance / 60;
+     _timestamp = [NSString stringWithFormat:@"%d%@", distance, @"分钟前"];
+     } else
+     */
+//    if (distance < 60 * 60 * 1) {//24小时
+//        
+//        distance = distance / (60*60);
+//        _timestamp = [NSString stringWithFormat:@"%d%@", 1, @"小时前"];
+//    }else if (distance < 60 * 60 * 24 * 30*6) {
+//        NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+//        [dateFormatter setDateFormat:@"M月d日 hh:mm"];
+//        NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+//        _timestamp = [dateFormatter stringFromDate:date];
+//    } else {
+        NSDateFormatter * dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"yyyy年M月d日 hh:mm"];
+        NSDate *date = [NSDate dateWithTimeIntervalSince1970:timestamp];
+        _timestamp = [dateFormatter stringFromDate:date];
+//    }
+    
+    return _timestamp;
+}
+
 
 
 #pragma mark 设置时间格式字符串

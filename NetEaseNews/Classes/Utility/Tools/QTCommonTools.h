@@ -87,6 +87,7 @@ singleton_interface(QTCommonTools)
 
 //讲主人翁后台服务器的2015-09-12 20:39 时间转化为 3小时前等标准的格式
 + (NSString*)convertServiceTimeToStandartShowTime:(NSString*)time;
++ (NSString*)convertServiceTimeToStandartShowTimeHaveYear:(NSString*)time;
 
 + (void)alignCenter:(UILabel*)lable;
 

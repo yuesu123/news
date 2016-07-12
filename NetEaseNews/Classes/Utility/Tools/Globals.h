@@ -113,5 +113,7 @@ typedef void (^Img_Block)(UIImage *img);
 + (BOOL)isTheSameTodayFromTime:(NSDate*)toDate;
 #pragma mark 设置时间格式字符串
 + (NSString*)sendTimeStringZhurenwong:(double)sendTime;
+
++ (NSString*)sendTimeStringZhurenwongHaveYear:(double)sendTime;
 //+ (NSMutableDictionary*)setObject:(NSString*)str forKey:(NSString*)key;
 @end

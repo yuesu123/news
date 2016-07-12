@@ -224,13 +224,14 @@
         Newslist *news = (Newslist*)_newsItem;
         docid = [NSString convertIntgerToString:news.Id];
         partUrl = [NSString stringWithFormat:@"/s/news_article/%@",docid];
-    [_shareImage sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"logo108"]];
+        [_shareImage sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"logo108"]];
     }else{
         ZtNewslist *news = (ZtNewslist*)_newsItem;
         docid = [NSString convertIntgerToString:news.Id];
-        partUrl = [NSString stringWithFormat:@"/s/ztnews_article/%@",docid];
-    [_shareImage sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"logo108"]];
+//        partUrl = [NSString stringWithFormat:@"/s/ztnews_article/%@",docid];
+        partUrl = [NSString stringWithFormat:@"/s/news_article/%@",docid];
 
+       [_shareImage sd_setImageWithURL:[NSURL URLWithString:news.Picsmall] placeholderImage:[UIImage imageNamed:@"logo108"]];
     }
     NSString *url = [NSString stringWithFormat:@"%@%@",sg_privateNetworkBaseUrl,partUrl];
     ECLog(@"加载的网址%@",url);

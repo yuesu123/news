@@ -48,6 +48,8 @@
 @property (nonatomic, assign) NSInteger Subid;
 
 @property (nonatomic, assign) NSInteger Hits;
+@property (nonatomic, copy) NSString *Edittime;
+
 
 @end
 
@@ -58,5 +60,5 @@
 @property (nonatomic, assign) NSInteger Ztclassid;
 @property (nonatomic, copy) NSString *Title;
 @property (nonatomic, assign) NSInteger Hits;
-
+@property (nonatomic, copy) NSString *Edittime;
 @end

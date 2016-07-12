@@ -37,7 +37,7 @@
         UILabel *timeL = [[UILabel alloc]initWithFrame:CGRectMake(10, 40, SCREEN_WIDTH-20, 10)];
         timeL.textColor = [UIColor grayColor];
         timeL.font = [UIFont systemFontOfSize:12];
-//        [self.contentView addSubview:timeL];
+        [self.contentView addSubview:timeL];
         _timeL = timeL;
     }
     
@@ -52,13 +52,15 @@
     if (strNotNil(collectModel.NewsMode.Title)) {
         ECLog(@"新闻:%@",collectModel.NewsMode.Title);
         _titleL.text = collectModel.NewsMode.Title;
+        _timeL.text = [QTCommonTools convertServiceTimeToStandartShowTimeHaveYear:collectModel.NewsMode.Edittime];
+
     }else{
         ECLog(@"新闻:%@",collectModel.ztNewsMode.Title);
 
         _titleL.text = collectModel.ztNewsMode.Title;
+        _timeL.text = [QTCommonTools convertServiceTimeToStandartShowTimeHaveYear:collectModel.ztNewsMode.Edittime];
     }
     
-//    _timeL.text = [NSString convertIntgerToString:collectModel.NewsMode.Hits];
 }
 
 @end

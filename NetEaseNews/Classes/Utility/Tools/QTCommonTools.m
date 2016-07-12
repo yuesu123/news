@@ -44,11 +44,34 @@ singleton_implementation(QTCommonTools)
 //        newTime =  [NSDate formattedTimeFromTimeInterval:timeStamp];;
 //    }
     newTime = [Globals sendTimeStringZhurenwong:timeStamp ];
-
-
     return newTime;
 }
 
+
+
++ (NSString*)convertServiceTimeToStandartShowTimeHaveYear:(NSString*)time{
+    NSDateFormatter *fmt = [[NSDateFormatter alloc] init];
+    // Tue May 31 17:46:55 +0800 2011
+    //    fmt.dateFormat = @"EEE MMM dd HH:mm:ss Z yyyy";
+    fmt.dateFormat = @"yyyy-MM-dd HH:mm:ss";
+    //    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"];
+    
+    fmt.locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US"];
+    
+    // 将字符串(NSString)转成时间对象(NSDate), 方便进行日期处理
+    NSDate *createdTime = [fmt dateFromString:time];
+    //时间
+    NSTimeInterval timeStamp= [createdTime timeIntervalSince1970];
+    timeStamp = timeStamp*1000;
+    NSString *newTime ;
+    //    if([createdTime isToday]||[createdTime isYesterday]||[createdTime isTomorrow]) {
+    //        newTime = [Globals sendTimeStringZhurenwong:timeStamp ];
+    //    }else{
+    //        newTime =  [NSDate formattedTimeFromTimeInterval:timeStamp];;
+    //    }
+    newTime = [Globals sendTimeStringZhurenwongHaveYear:timeStamp ];
+    return newTime;
+}
 
 
 

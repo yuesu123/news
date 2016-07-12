@@ -309,6 +309,7 @@
         return;
     }
     ZtNewslist *ztNews = [_data objectAtIndex:indexPath.row];
+    
 
     WSContentController *contentVC = [WSContentController contentControllerWithItem:ztNews];
     WSTopicNewsListCell *cell = [sender  cellForRowAtIndexPath:indexPath];
@@ -319,6 +320,18 @@
     [self.navigationController pushViewController:contentVC animated:YES];
     
     
+}
+
+- (Newslist *)convertZtnewsToNews:(ZtNewslist*)adModel{
+        Newslist *news = [[Newslist alloc] init];
+        news.Id = adModel.Id;
+        news.Title = adModel.Title;
+        news.Descriptions = adModel.Ztdes;
+        news.Picsmall = adModel.Picsmall;
+        news.Newslink = adModel.Newslink;
+        news.Edittime = adModel.Edittime;
+        news.Showtype = adModel.Showtype;
+        return news;
 }
 
 

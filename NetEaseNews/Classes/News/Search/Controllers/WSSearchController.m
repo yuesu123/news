@@ -145,7 +145,7 @@
     self.searchBar.delegate = self;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    self.tableView.rowHeight = 75;
+    self.tableView.rowHeight = 70;
     self.tableView.tableFooterView = [[UIView alloc] init];
     [self createRefreshNoBegin:self.tableView];
     self.tableView.mj_footer.hidden = YES;

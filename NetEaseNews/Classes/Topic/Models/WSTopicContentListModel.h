@@ -46,6 +46,11 @@
 
 @property (nonatomic, copy) NSString *Title;
 @property (nonatomic, copy) NSString *Ztdes;
+
+/** <#name#> */
+@property (nonatomic, assign) NSInteger Showtype;
+
+
 + (void)topicWithIndex:(NSInteger)index isCache:(BOOL)cache getDataSuccess:(GetDataSuccessBlock)success getDataFaileure:(GetDataFailureBlock)failure;
 + (NSArray *)cacheTopic;
 @end
