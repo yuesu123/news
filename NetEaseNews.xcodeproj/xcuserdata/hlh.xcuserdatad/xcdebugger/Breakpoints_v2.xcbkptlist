@@ -4,99 +4,13 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSImageContentController.m"
-            timestampString = "488444749.647743"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "22"
-            endingLineNumber = "22"
-            landmarkName = "replyCount"
-            landmarkType = "19">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WSImageContentController replyCount]"
-                  moduleName = "NetEaseNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/News/Main/Controllers/WSImageContentController.m"
-                  timestampString = "488700576.339037"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "22"
-                  endingLineNumber = "22"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WSImageContentController setReplyCount:]"
-                  moduleName = "NetEaseNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/News/Main/Controllers/WSImageContentController.m"
-                  timestampString = "488700576.339326"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/News/Main/Views/WSNewsCell.m"
-            timestampString = "488445004.83962"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "replyCountBtnWidth"
-            landmarkType = "19">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WSNewsCell replyCountBtnWidth]"
-                  moduleName = "NetEaseNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/News/Main/Views/WSNewsCell.m"
-                  timestampString = "488444760.876607"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "20"
-                  endingLineNumber = "20"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[WSNewsCell setReplyCountBtnWidth:]"
-                  moduleName = "NetEaseNews"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/News/Main/Views/WSNewsCell.m"
-                  timestampString = "488444760.876869"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "32">
-               </Location>
-            </Locations>
+            scope = "0"
+            stopOnStyle = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -105,13 +19,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/News/Main/Views/WSNewsCell.m"
-            timestampString = "488448489.29673"
+            filePath = "NetEaseNews/Classes/Me/Control/MeTableViewController.m"
+            timestampString = "488769980.618727"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "118"
-            endingLineNumber = "118"
-            landmarkName = "-setNews:"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -121,13 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsContainerController.m"
-            timestampString = "488453506.884545"
+            filePath = "NetEaseNews/Classes/Me/Control/MeTableViewController.m"
+            timestampString = "488769986.738444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
-            landmarkName = "-loadInterface"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,11 +52,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
-            timestampString = "488700174.261383"
+            timestampString = "488775422.237923"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "214"
-            endingLineNumber = "214"
+            startingLineNumber = "223"
+            endingLineNumber = "223"
             landmarkName = "-loadMoreDataCount"
             landmarkType = "5">
          </BreakpointContent>
@@ -153,14 +67,158 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/Common/Controllers/BaseViewController.m"
+            timestampString = "488774636.647476"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
+            landmarkName = "-addNotingView:view:title:font:color:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/Common/Controllers/BaseViewController.m"
+            timestampString = "488774647.346233"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "-addNotingView:view:title:font:color:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/Common/Controllers/BaseViewController.m"
+            timestampString = "488774653.826181"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "143"
+            endingLineNumber = "143"
+            landmarkName = "-addNotingView:view:title:font:color:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/Common/Controllers/BaseViewController.m"
+            timestampString = "488774654.692553"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
+            landmarkName = "-addNotingView:view:title:font:color:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
             filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
-            timestampString = "488700174.261383"
+            timestampString = "488774678.058827"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "218"
+            endingLineNumber = "218"
+            landmarkName = "-loadMoreDataCount"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/NetWorkTool/WSNetTool/HYBNetworking.m"
+            timestampString = "488776255.077291"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "289"
+            endingLineNumber = "289"
+            landmarkName = "+_requestWithUrl:refreshCache:httpMedth:params:progress:success:fail:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/NetWorkTool/WSNetTool/HYBNetworking.m"
+            timestampString = "488776258.238541"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
+            landmarkName = "+_requestWithUrl:refreshCache:httpMedth:params:progress:success:fail:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/NetWorkTool/WSNetTool/HYBNetworking.m"
+            timestampString = "488776272.638635"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "+_requestWithUrl:refreshCache:httpMedth:params:progress:success:fail:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+            timestampString = "488776332.488805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "211"
+            endingLineNumber = "211"
+            landmarkName = "-addRoll:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
+            timestampString = "488776348.801327"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "212"
             endingLineNumber = "212"
-            landmarkName = "-loadMoreDataCount"
-            landmarkType = "5">
+            landmarkName = "@implementation WSNewsController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -170,12 +228,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
-            timestampString = "488700175.528269"
+            timestampString = "488776349.442563"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "219"
-            endingLineNumber = "219"
-            landmarkName = "-loadMoreDataCount"
+            startingLineNumber = "214"
+            endingLineNumber = "214"
+            landmarkName = "-loadDataWithCache:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -185,94 +243,126 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/Me/Control/CollectViewController.m"
-            timestampString = "488700536.847756"
+            filePath = "NetEaseNews/Classes/Utility/NetWorkTool/QTFTHttpTool.m"
+            timestampString = "488776411.238904"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
-            landmarkName = "-gotoWSContentController:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
-            timestampString = "488700687.564321"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "-addRoll:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/News/Main/Models/WSAdModel.m"
-            timestampString = "488700718.288204"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "+inserAdArr:toArr:path:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
-            timestampString = "488700735.557087"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "161"
-            endingLineNumber = "161"
-            landmarkName = "-addRoll:"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
+            landmarkName = "+requestGETURL:params:refreshCach:needHud:hudView:loadingHudText:errorHudText:sucess:failur:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[WSNewsController addRoll:]"
+                  symbolName = "+[QTFHttpTool requestGETURL:params:refreshCach:needHud:hudView:loadingHudText:errorHudText:sucess:failur:]"
                   moduleName = "NetEaseNews"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
-                  timestampString = "488700735.561888"
+                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/Utility/NetWorkTool/QTFTHttpTool.m"
+                  timestampString = "489894622.581534"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "76">
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "580">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__28-[WSNewsController addRoll:]_block_invoke"
+                  symbolName = "__106+[QTFHttpTool requestGETURL:params:refreshCach:needHud:hudView:loadingHudText:errorHudText:sucess:failur:]_block_invoke"
                   moduleName = "NetEaseNews"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/News/Main/Controllers/WSNewsController.m"
-                  timestampString = "488700735.562192"
+                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/Utility/NetWorkTool/QTFTHttpTool.m"
+                  timestampString = "489894622.58178"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "161"
-                  endingLineNumber = "161"
-                  offsetFromSymbolStart = "48">
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "40">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Utility/NetWorkTool/WSNetTool/HYBNetworking.m"
+            timestampString = "488776453.179161"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "327"
+            endingLineNumber = "327"
+            landmarkName = "+_requestWithUrl:refreshCache:httpMedth:params:progress:success:fail:"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "+[HYBNetworking _requestWithUrl:refreshCache:httpMedth:params:progress:success:fail:]"
+                  moduleName = "NetEaseNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/Utility/NetWorkTool/WSNetTool/HYBNetworking.m"
+                  timestampString = "489894622.584143"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "327"
+                  endingLineNumber = "327"
+                  offsetFromSymbolStart = "1784">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__85+[HYBNetworking _requestWithUrl:refreshCache:httpMedth:params:progress:success:fail:]_block_invoke"
+                  moduleName = "NetEaseNews"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hlh/Downloads/newsGithub/NetEaseNews/Classes/Utility/NetWorkTool/WSNetTool/HYBNetworking.m"
+                  timestampString = "489894622.584462"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "327"
+                  endingLineNumber = "327"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/News/Main/Views/WSNewsCell.m"
+            timestampString = "489550056.276533"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
+            landmarkName = "-getImage:i:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NetEaseNews/Classes/Me/Control/ServiceExampleViewController.m"
+            timestampString = "489894557.727483"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

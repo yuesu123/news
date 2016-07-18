@@ -286,9 +286,10 @@ static inline NSString *cachePath() {
   
   HYBURLSessionTask *session = nil;
     ECLog(@"请求的url为\n\n%@\n\n",absolute);
-  if (httpMethod == 1) {
-      if (sg_cacheGet) {
-          if (sg_shoulObtainLocalWhenUnconnected) {
+  if (httpMethod == 1/*get请求*/) {
+      if (sg_cacheGet/*需要获取缓存*/) {
+          
+          if (sg_shoulObtainLocalWhenUnconnected/*未连接时加载本地缓存*/) {
               if (sg_networkStatus == kHYBNetworkStatusNotReachable ||  sg_networkStatus == kHYBNetworkStatusUnknown ) {
                   id response = [HYBNetworking cahceResponseWithURL:absolute
                                                          parameters:params];
@@ -373,7 +374,7 @@ static inline NSString *cachePath() {
         }
       }
     }];
-  } else if (httpMethod == 2) {
+  } else if (httpMethod == 2/*post请求*/) {
       if (sg_cachePost ) {// 获取缓存
           if (sg_shoulObtainLocalWhenUnconnected) {
               if (sg_networkStatus == kHYBNetworkStatusNotReachable ||  sg_networkStatus == kHYBNetworkStatusUnknown ) {
@@ -463,6 +464,7 @@ static inline NSString *cachePath() {
     }];
   }
   
+    
   if (session) {
     [[self allTasks] addObject:session];
   }
