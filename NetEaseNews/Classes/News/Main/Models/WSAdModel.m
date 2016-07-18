@@ -14,9 +14,12 @@ static NSString *kremoveTag = @"yu&&**^^";
 + (void)inserAdArr:(NSMutableArray*)adArr toArr:(NSMutableArray*)allArr path:(NSInteger)path{
     for (int i = 0 ; i <allArr.count; i++) {
         Newslist *model = [allArr objectAtIndex:i];
-        if ([model.tag isEqualToString:kremoveTag]) {
-            [allArr removeObjectAtIndex:i];
+        if ([model isKindOfClass:[Newslist class]]) {
+            if ([model.tag isEqualToString:kremoveTag]) {
+                [allArr removeObjectAtIndex:i];
+            }
         }
+      
     }
     //每组插入广告
         for (int i = 0; i < adArr.count; i++) {

@@ -12,7 +12,7 @@
 
 
 + (NSDictionary *)objectClassInArray{
-    return @{@"Blocknews" : [Blocknews class], @"Newslist" : [Newslist class],@"Newsad":[WSAdModel class]};
+    return @{@"Blocknews" : [Blocknews class], @"Newslist" : [Newslist class],@"Newsad":[WSAdModel class],@"Tjnews":[Tjnews class]};
 }
 @end
 @implementation Newsclass
@@ -24,6 +24,10 @@
 
 @end
 
+
+@implementation Tjnews
+
+@end
 
 @implementation Newslist
 

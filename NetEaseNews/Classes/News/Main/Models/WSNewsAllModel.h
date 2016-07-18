@@ -11,12 +11,14 @@
 #import "WSGetDataTool.h"
 #import "WSAdModel.h"
 
-@class Newsclass,Blocknews,Newslist;
+@class Newsclass,Blocknews,Newslist,Tjnews;
 @interface WSNewsAllModel : NSObject
 
 @property (nonatomic, assign) NSInteger Total;
 
 @property (nonatomic, strong) NSArray<Blocknews *> *Blocknews;
+@property (nonatomic, strong) NSArray<Tjnews *> *Tjnews;
+
 
 @property (nonatomic, strong) NSMutableArray<Newslist *> *Newslist;
 
@@ -86,6 +88,31 @@
 
 
 
+@interface Tjnews : NSObject
+
+@property (nonatomic, assign) NSInteger Id;
+@property (nonatomic, assign) NSInteger Showtype;
+@property (nonatomic, copy) NSString *Newslink;
+
+@property (nonatomic, copy) NSString *Edittime;
+
+@property (nonatomic, copy) NSString *HomeTitle;
+
+@property (nonatomic, copy) NSString *Descriptions;
+
+@property (nonatomic, assign) NSInteger Hits;
+
+@property (nonatomic, copy) NSString *Picsmall;
+@property (nonatomic, copy) NSString *Picsmall2;
+@property (nonatomic, copy) NSString *Picsmall3;
+
+@property (nonatomic, assign) NSInteger Subid;
+
+@property (nonatomic, assign) NSInteger Classid;
+
+@property (nonatomic, copy) NSString *Title;
+
+@end
 
 
 //每一个新闻的news 模型 == WSNews

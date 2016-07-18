@@ -226,7 +226,9 @@
             if (_currentPage == 1){ [weakSelf.jsonNews removeAllObjects];
                 _NewsadArr = [NSMutableArray arrayWithArray:allModel.Newsad];
             }
+            [weakSelf.jsonNews addObjectsFromArray:allModel.Tjnews];
             [weakSelf.jsonNews addObjectsFromArray:allModel.Newslist];
+            
             [WSAdModel  inserAdArr:_NewsadArr toArr:weakSelf.jsonNews  path:3];
                //轮播赋值
             if(_currentPage == 1){
@@ -262,7 +264,7 @@
     WSNewsCell *cell = [tableView  cellForRowAtIndexPath:indexPath];
     cell.titleLbl.textColor = [UIColor grayColor];
     [NSArray writetargetStr:cell.titleLbl.text ToFilePath:@"state"];
-    if (news.isAdd)
+    if ([self isAdd:news])
     {
         [self gotoAddViewController:news.Newslink];
     }else
@@ -272,6 +274,15 @@
     
     
 }
+
+- (BOOL)isAdd:(Newslist*)list {
+    if([list isKindOfClass:[Newslist class]]){
+        return  list.isAdd;
+    }else{
+        return NO;
+    }
+}
+
 
 //去天气webView控制器
 - (void)gotoAddViewController:(NSString*)url{
